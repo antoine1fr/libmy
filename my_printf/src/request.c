@@ -5,13 +5,15 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Apr 16 17:30:59 2010 antoine luciani
-** Last update Fri Apr 16 18:18:39 2010 antoine luciani
+** Last update Sat Apr 17 19:06:32 2010 antoine luciani
 */
 
 #include "request.h"
 #include "my.h"
 
 #define IS_LENGTH(x) (x) == 'h' || (x) == 'l' || (x) == 'L'
+#define IS_NUMBER(x) (x) >= '0' && (x) <= '9'
+#define IS_NUM_NOT_NULL(x) (x) >= '9' && (x) <= '9'
 
 const char	*gl_flags_tab = "-+ #0";
 
@@ -29,11 +31,19 @@ static int	is_flag(char c)
   return (0);
 }
 
-static char	*get_nbr_move_forward(char **str, int *n)
+static void	get_width(char **str, t_request *request)
 {
-  *n = my_getnbr(*str);
-  while (*str[0] >= '1' && *str[0] <= '9')
-    *str += 1;
+  if (IS_NUM_NOT_NULL(*str[0]))
+    {
+      request->width = my_getnbr(*str);
+      while (IS_NUM_NOT_NULL(*str[0]))
+	*str += 1;
+    }
+  else if (*str[0] == MY_PRINTF_BULLET)
+    {
+      request->width = MY_PRINTF_BULLET;
+      *str += 1;
+    }
 }
 
 static void	get_precision(char **str, t_request *request)
@@ -41,10 +51,10 @@ static void	get_precision(char **str, t_request *request)
   if (*str[0] == '.')
     {
       *str += 1;
-      if (*str[0] >= '0' && *str[0] <= '9')
+      if (IS_NUMBER(*str[0]))
 	{
 	  request->precision = my_getnbr(*str);
-	  while (*str[0] >= '1' && *str[0] <= '9')
+	  while (IS_NUM_NOT_NULL(*str[0]))
 	    *str += 1;
 	}
       else if (*str[0] == '*')
@@ -64,12 +74,9 @@ char		*parse_request(char *str, t_request *request)
       request->flag = *str;
       str += 1;
     }
-  if (*str >= '1' && *str <= '9')
-    get_nbr_move_forward(&str, &request->width);
-  else if (*str == '*')
-    {
-      request->width = MY_PRINTF_BULLET;
-      str += 1;
-    }
+  get_width(&str, request);
   get_precision(&str, request);
+  request->specifier = *str;
+  str += 1;
+  return (str);
 }

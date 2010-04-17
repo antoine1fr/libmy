@@ -5,13 +5,14 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Apr 14 14:17:13 2010 antoine luciani
-** Last update Fri Apr 16 17:54:50 2010 antoine luciani
+** Last update Sat Apr 17 18:46:33 2010 antoine luciani
 */
 
 #ifndef REQUEST_H
 # define REQUEST_H
 
 # define MY_PRINTF_BULLET -1
+# define MY_PRINTF_NOT_SET 0
 
 /*
 ** Implementation of a printf request.

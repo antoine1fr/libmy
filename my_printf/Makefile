@@ -5,23 +5,30 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Wed Apr 14 14:07:55 2010 antoine luciani
-## Last update Fri Apr 16 17:11:19 2010 antoine luciani
+## Last update Sat Apr 17 20:37:30 2010 antoine luciani
 ##
 
 CC		=	gcc
-RM		=	rm -r
+RM		=	rm -f
+AR		=	ar -r
+RANLIB		=	ranlib
 
 
 INCLUDES	=	-Ilibs/my/include -Iinclude
 LIBS		=	-Llibs/my/lib -lmy
+
 SRC_DIR		=	src/
-SOURCES		=	$(SRC_DIR)my_printf.c
+SOURCES		=	$(SRC_DIR)request.c	\
+			$(SRC_DIR)main.c
+
 OBJS		=	$(SOURCES:.c=.o)
+
 NAME		=	libmy_printf`uname -m`-`uname -s`.a
 CFLAGS		=	$(INCLUDES) -Wall -ansi -pedantic
 
 $(NAME)		:	$(OBJS)
-		$(CC) -o $(NAME) $(OBJS) $(LIBS)
+		$(AR) $(NAME) $(OBJS)
+		$(RANLIB) $(NAME)
 
 all		:	$(NAME)
 
