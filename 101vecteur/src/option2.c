@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Apr 18 17:30:12 2010 antoine luciani
-** Last update Sun Apr 18 18:02:06 2010 antoine luciani
+** Last update Sun Apr 18 18:42:22 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -21,7 +21,7 @@ static void	opt2_cross(t_vector_n *u, t_vector_n *v)
   t_vector_n	w;
   int		i;
 
-  vec3_cross(u, v, &w);
+  vec_cross(u, v, &w);
   printf("\t\tVecteur u\tVecteur v\tVecteur u vect v\n");
   i = 0;
   while (i < w.dim)

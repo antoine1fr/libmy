@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Thu Apr 15 16:18:46 2010 antoine luciani
-## Last update Sun Apr 18 18:29:10 2010 antoine luciani
+## Last update Sun Apr 18 18:37:18 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -23,7 +23,7 @@ SOURCES		=	$(SRC_DIR)main.c		\
 			$(SRC_DIR)vec_mult.c		\
 			$(SRC_DIR)vec_dot.c		\
 			$(SRC_DIR)vec_norm.c		\
-			$(SRC_DIR)vec3_cross.c		\
+			$(SRC_DIR)vec_cross.c		\
 			$(SRC_DIR)option1.c		\
 			$(SRC_DIR)vec3_norm.c		\
 			$(SRC_DIR)vec3_normalize.c	\

@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Apr 15 15:52:54 2010 antoine luciani
-** Last update Sun Apr 18 18:30:58 2010 antoine luciani
+** Last update Sun Apr 18 18:42:46 2010 antoine luciani
 */
 
 #ifndef VECTOR_N_H
