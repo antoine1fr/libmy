@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Apr 16 17:30:59 2010 antoine luciani
-** Last update Sat Apr 17 19:06:32 2010 antoine luciani
+** Last update Sun Apr 18 14:08:08 2010 antoine luciani
 */
 
 #include "request.h"
@@ -65,6 +65,28 @@ static void	get_precision(char **str, t_request *request)
     }
 }
 
+static void	get_length(char **str, t_request *request)
+{
+  int		i;
+  int		len;
+  char		length_tab[][2] = {
+    "l", "ll", "h", "hh", "j", "z", "q", 0
+  };
+
+  i = 0;
+  while (length_tab[i] != 0)
+    {
+      len = my_strlen(length_tab[i]);
+      if (my_strncmp(*str, length_tab[i], len) == 0)
+	{
+	  my_strcpy(request->length, length_tab[i]);
+	  *str += len;
+	  return;
+	}
+      i += 1;
+    }
+}
+
 char		*parse_request(char *str, t_request *request)
 {
   if (!str || *str != '%' || !request)
@@ -76,6 +98,7 @@ char		*parse_request(char *str, t_request *request)
     }
   get_width(&str, request);
   get_precision(&str, request);
+  get_length(&str, request);
   request->specifier = *str;
   str += 1;
   return (str);

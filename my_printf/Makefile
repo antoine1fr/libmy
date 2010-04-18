@@ -5,25 +5,27 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Wed Apr 14 14:07:55 2010 antoine luciani
-## Last update Sat Apr 17 20:37:30 2010 antoine luciani
+## Last update Sun Apr 18 14:10:41 2010 antoine luciani
 ##
 
 CC		=	gcc
 RM		=	rm -f
 AR		=	ar -r
 RANLIB		=	ranlib
+ECHO		=	echo -n
+CAT		=	cat
 
 
 INCLUDES	=	-Ilibs/my/include -Iinclude
-LIBS		=	-Llibs/my/lib -lmy
 
 SRC_DIR		=	src/
-SOURCES		=	$(SRC_DIR)request.c	\
-			$(SRC_DIR)main.c
+SOURCES		=	$(SRC_DIR)request.c
 
 OBJS		=	$(SOURCES:.c=.o)
 
-NAME		=	libmy_printf`uname -m`-`uname -s`.a
+OS		=	`uname -s`
+ARCH		=	`uname -m`
+NAME		=	libmy_printf$(ARCH)-$(OS).a
 CFLAGS		=	$(INCLUDES) -Wall -ansi -pedantic
 
 $(NAME)		:	$(OBJS)
