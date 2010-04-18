@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Apr 15 15:48:50 2010 antoine luciani
-** Last update Sun Apr 18 17:16:54 2010 antoine luciani
+** Last update Sun Apr 18 17:42:05 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -22,6 +22,7 @@ typedef struct	s_option
 
 t_option	gl_options[] = {
   {1, option1},
+  {2, option2},
   {0, 0}
 };
 

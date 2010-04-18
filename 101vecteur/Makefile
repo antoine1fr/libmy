@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Thu Apr 15 16:18:46 2010 antoine luciani
-## Last update Sun Apr 18 15:53:40 2010 antoine luciani
+## Last update Sun Apr 18 17:39:21 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -24,7 +24,8 @@ SOURCES		=	$(SRC_DIR)main.c		\
 			$(SRC_DIR)vec_dot.c		\
 			$(SRC_DIR)vec_norm.c		\
 			$(SRC_DIR)vec_cross.c		\
-			$(SRC_DIR)option1.c
+			$(SRC_DIR)option1.c		\
+			$(SRC_DIR)option2.c
 
 OBJS		=	$(SOURCES:.c=.o)
 
