@@ -1,16 +1,16 @@
 /*
-** vec_cross.c for lol in /u/all/lucian_b/cu/work/projets/101vecteur
+** vec3_cross.c for lol in /u/all/lucian_b/cu/work/projets/101vecteur
 ** 
 ** Made by antoine luciani
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Apr 15 20:34:36 2010 antoine luciani
-** Last update Sun Apr 18 17:48:19 2010 antoine luciani
+** Last update Sun Apr 18 18:02:46 2010 antoine luciani
 */
 
 #include "vector_n.h"
 
-void		vec_cross(t_vector_n *v, t_vector_n *v2, t_vector_n *v3)
+void		vec3_cross(t_vector_n *v, t_vector_n *v2, t_vector_n *v3)
 {
   if (v->dim != 3)
     return;

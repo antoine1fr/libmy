@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Apr 18 14:25:39 2010 antoine luciani
-** Last update Sun Apr 18 17:20:31 2010 antoine luciani
+** Last update Sun Apr 18 18:01:42 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "my.h"
 #include "vector_n.h"
 
 static void	opt1_u_plus_v(t_vector_n *u, t_vector_n *v)
@@ -69,7 +68,7 @@ void		option1(int arg_count, char **arg_tab)
   t_vector_n	v;
   int		dim;
 
-  dim = my_getnbr(arg_tab[2]);
+  dim = atoi(arg_tab[2]);
   vec_init(&u, dim);
   vec_init(&v, dim);
   vec_fill_random(&u);
