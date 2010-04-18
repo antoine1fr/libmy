@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Apr 15 15:48:50 2010 antoine luciani
-** Last update Sun Apr 18 19:24:35 2010 antoine luciani
+** Last update Sun Apr 18 19:30:47 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -27,6 +27,9 @@ t_option	gl_options[] = {
   {0, 0}
 };
 
+/*
+** Launches the right option.
+*/
 static int	launch(int argc, char **argv)
 {
   int		op_num;

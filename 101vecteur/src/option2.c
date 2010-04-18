@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Apr 18 17:30:12 2010 antoine luciani
-** Last update Sun Apr 18 18:42:22 2010 antoine luciani
+** Last update Sun Apr 18 19:34:38 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -36,7 +36,7 @@ static void	opt2_cross(t_vector_n *u, t_vector_n *v)
   vec_clean(&w);
 }
 
-void		option2(int UNUSED arg_count, char UNUSED **arg_tab)
+void		option2(int arg_count, char **arg_tab)
 {
   t_vector_n	u;
   t_vector_n	v;

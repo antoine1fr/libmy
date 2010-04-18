@@ -5,13 +5,11 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Apr 18 15:15:16 2010 antoine luciani
-** Last update Sun Apr 18 18:45:22 2010 antoine luciani
+** Last update Sun Apr 18 19:34:49 2010 antoine luciani
 */
 
 #ifndef OPTIONS_H
 # define OPTIONS_H
-
-# define UNUSED __attribute__((unused))
 
 void	option1(int arg_count, char **arg_tab);
 void	option2(int arg_count, char **arg_tab);
