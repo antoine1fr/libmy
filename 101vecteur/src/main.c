@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Apr 15 15:48:50 2010 antoine luciani
-** Last update Sun Apr 18 18:50:50 2010 antoine luciani
+** Last update Sun Apr 18 19:24:35 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -46,11 +46,19 @@ static int	launch(int argc, char **argv)
   return (1);
 }
 
+void		print_doc()
+{
+  printf("Usage:\n");
+  printf("./101vecteur 1 vec_dim\n");
+  printf("./101vecteur 2\n");
+  printf("./101vecteur 3 u1 u2 u3 v1 v2 v3\n");
+}
+
 int		main(int argc, char **argv)
 {
-  if (argc < 3)
+  if (argc < 2)
     {
-      printf("Usage: 101vecteur option [arg1 [arg2 [...]]]\n");
+      print_doc();
       return (EXIT_FAILURE);
     }
   srand(time(0));
