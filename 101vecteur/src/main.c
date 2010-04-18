@@ -5,51 +5,57 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Apr 15 15:48:50 2010 antoine luciani
-** Last update Thu Apr 15 21:58:13 2010 antoine luciani
+** Last update Sun Apr 18 17:16:54 2010 antoine luciani
 */
 
 #include <stdlib.h>
 #include <time.h>
-#include "vector_n.h"
-#include "my.h"
 #include <stdio.h>
+#include "vector_n.h"
+#include "options.h"
 
-static void	print_vector(t_vector_n *vec)
+typedef struct	s_option
 {
-  int		i;
-  int		begin;
+  int		n;
+  void		(*f)(int arg_count, char **arg_tab);
+}		t_option;
 
-  if (!vec)
-    return;
+t_option	gl_options[] = {
+  {1, option1},
+  {0, 0}
+};
+
+static int	launch(int argc, char **argv)
+{
+  int		op_num;
+  int		i;
+
   i = 0;
-  begin = 1;
-  my_putchar('(');
-  while (i < vec->dim)
+  op_num = atoi(argv[1]);
+  while (gl_options[i].n != 0)
     {
-      if (begin)
-	begin = 0;
-      else
-	my_putchar(',');
-      my_put_nbr(vec->coord[i++]);
+      if (gl_options[i].n == op_num)
+	{
+	  gl_options[i].f(argc, argv);
+	  return (0);
+	}
+      i += 1;
     }
-  my_putstr(")\n");
+  return (1);
 }
 
 int		main(int argc, char **argv)
 {
-  t_vector_n	v1;
-  t_vector_n	v2;
-  t_vector_n	v3;
-  int		dim;
-
-  if (argc != 2)
-    return (0);
+  if (argc < 3)
+    {
+      printf("Usage: 101vecteur option [arg1 [arg2 [...]]]\n");
+      return (EXIT_FAILURE);
+    }
   srand(time(0));
-  dim = my_getnbr(argv[1]);
-  vec_init(&v1, dim);
-  vec_fill_random(&v1);
-  print_vector(&v1);
-  printf("norm : %f", vec_norm(&v1));
-  vec_clean(&v1);
-  return (0);
+  if (launch(argc, argv))
+    {
+      printf("ERROR: incorrect option number!\n");
+      return (EXIT_FAILURE);
+    }
+  return (EXIT_SUCCESS);
 }
