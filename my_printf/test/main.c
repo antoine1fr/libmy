@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Apr 18 13:37:28 2010 antoine luciani
-** Last update Sun Apr 18 13:53:06 2010 antoine luciani
+** Last update Tue Apr 20 12:02:21 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -21,7 +21,7 @@ void		print_request(t_request *request)
   my_putstr("\n\twidth: ");
   my_put_nbr(request->width);
   my_putstr("\n\tprecision: ");
-  my_putstr(request);
+  my_put_nbr(request->precision);
   my_putstr("\n\tlength: ");
   my_putstr(request->length);
   my_putstr("\n\tspecifier: ");

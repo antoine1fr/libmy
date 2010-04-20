@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Wed Apr 14 14:07:55 2010 antoine luciani
-## Last update Sun Apr 18 14:10:41 2010 antoine luciani
+## Last update Tue Apr 20 12:39:02 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -14,7 +14,6 @@ AR		=	ar -r
 RANLIB		=	ranlib
 ECHO		=	echo -n
 CAT		=	cat
-
 
 INCLUDES	=	-Ilibs/my/include -Iinclude
 

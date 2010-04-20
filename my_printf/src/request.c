@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Apr 16 17:30:59 2010 antoine luciani
-** Last update Sun Apr 18 14:08:08 2010 antoine luciani
+** Last update Tue Apr 20 12:15:30 2010 antoine luciani
 */
 
 #include "request.h"
@@ -69,7 +69,7 @@ static void	get_length(char **str, t_request *request)
 {
   int		i;
   int		len;
-  char		length_tab[][2] = {
+  char	length_tab[][2] = {
     "l", "ll", "h", "hh", "j", "z", "q", 0
   };
 
