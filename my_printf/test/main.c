@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Apr 18 13:37:28 2010 antoine luciani
-** Last update Tue Apr 20 12:02:21 2010 antoine luciani
+** Last update Tue Apr 20 13:05:05 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -38,7 +38,9 @@ int		main(int argc, char **argv)
       my_putstr("Usage: test_my_printf %[flag][width][.precision][length]specifier\n");
       return (EXIT_FAILURE);
     }
+  my_putstr("before parse_request\n");
   parse_request(argv[1], &request);
+  my_putstr("after request\n");
   print_request(&request);
   return (EXIT_SUCCESS);
 }

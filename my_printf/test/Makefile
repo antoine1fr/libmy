@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Sun Apr 18 13:38:30 2010 antoine luciani
-## Last update Tue Apr 20 12:17:19 2010 antoine luciani
+## Last update Tue Apr 20 13:02:54 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -14,12 +14,12 @@ RM		=	rm -f
 INCLUDES	=	-I../libs/my/include -I../include
 SOURCES		=	main.c
 OBJS		=	$(SOURCES:.c=.o)
-LIBS		=	-L../libs/my/lib -L../ -lmy -lmy_printf`uname -m`-`uname -s`
+LIBS		=	-L../libs/my/lib -L../ -lmy_printf`uname -m`-`uname -s` -lmy
 NAME		=	test_my_printf
 CFLAGS		=	$(INCLUDES) -Wall -ansi -pedantic
 
 $(NAME)		:	$(OBJS)
-		$(CC) -o $(NAME) $(LIBS) $(OBJS)
+		$(CC) -o $(NAME) $(OBJS) $(LIBS)
 
 all		:	$(NAME)
 

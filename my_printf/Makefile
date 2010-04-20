@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Wed Apr 14 14:07:55 2010 antoine luciani
-## Last update Tue Apr 20 12:39:02 2010 antoine luciani
+## Last update Tue Apr 20 13:01:42 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -47,4 +47,3 @@ re		:	fclean all
 
 .c.o		:	$(SOURCES)
 		$(CC) $(CFLAGS) -c $< -o $@
-
