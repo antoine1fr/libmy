@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue Apr 20 14:30:58 2010 antoine luciani
-## Last update Tue Apr 20 15:07:28 2010 antoine luciani
+## Last update Tue Apr 20 15:52:06 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -18,7 +18,8 @@ SRC_DIR		=	src/
 LIB_NAME	=	$(LIB_DIR)libmy_graphics.a
 
 SOURCES		=	$(SRC_DIR)mgr_device.c		\
-			$(SRC_DIR)mgr.c
+			$(SRC_DIR)mgr_window.c		\
+			$(SRC_DIR)my_graphics.c
 
 OBJS		=	$(SOURCES:.c=.o)
 INCLUDES	=	-I/usr/X11/include -Iinclude

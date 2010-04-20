@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 14:52:55 2010 antoine luciani
-** Last update Tue Apr 20 15:24:45 2010 antoine luciani
+** Last update Tue Apr 20 15:55:15 2010 antoine luciani
 */
 
 #ifndef _MGR_WINDOW_H_
@@ -15,7 +15,7 @@ typedef struct	s_mgr_window
 {
   void		*wnd_ptr;
   int		width;
-  int		heigth;
+  int		height;
 }		t_mgr_window;
 
 /*
@@ -27,6 +27,6 @@ typedef struct	s_mgr_window
 **
 ** @return the address of the new window or 0, if the creation failed.
 */
-t_mgr_window	*mgr_create_window(const char *title, int width, int height);
+t_mgr_window	*mgr_create_window(char *title, int width, int height);
 
 #endif /* !_MGR_WINDOW_H_ */

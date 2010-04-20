@@ -5,16 +5,18 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 15:13:53 2010 antoine luciani
-** Last update Tue Apr 20 15:22:28 2010 antoine luciani
+** Last update Tue Apr 20 15:54:22 2010 antoine luciani
 */
 
 #include "mgr_window.h"
 #include "mgr_device.h"
+
+#include <stdlib.h>
 #include <mlx.h>
 
 extern t_mgr_device	*gl_mgr_device;
 
-t_mgr_window	*mgr_create_window(const char *title, int width, int height)
+t_mgr_window	*mgr_create_window(char *title, int width, int height)
 {
   void		*wnd_ptr;
   t_mgr_window	*mgr_wnd_ptr;
