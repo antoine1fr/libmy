@@ -5,13 +5,18 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 14:27:09 2010 antoine luciani
-** Last update Tue Apr 20 14:41:26 2010 antoine luciani
+** Last update Tue Apr 20 14:49:52 2010 antoine luciani
 */
 
 #include "mgr_device.h"
 #include <mlx.h>
 #include <stdlib.h>
 
+/*
+** Creates a my_graphics device.
+**
+** @return a pointer to the device.
+*/
 t_mgr_device	*mgr_create_device()
 {
   t_mgr_device	*device;
@@ -26,4 +31,17 @@ t_mgr_device	*mgr_create_device()
       return (0);
     }
   return (device);
+}
+
+/*
+** Free the my_graphics device and all its stuff.
+** Don't forget to re-affect your t_mgr_device* to NULL.
+**
+** @param device : pointer to the my_graphics device.
+*/
+void		mgr_destroy(t_mgr_device *device)
+{
+  if (!device)
+    return;
+  free (device);
 }
