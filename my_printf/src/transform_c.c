@@ -5,13 +5,18 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Apr 21 10:17:50 2010 antoine luciani
-** Last update Wed Apr 21 10:41:13 2010 antoine luciani
+** Last update Wed Apr 21 16:17:50 2010 antoine luciani
 */
 
-#include "transformations.h"
 #include "my.h"
+#include "request.h"
 
-void	transform_c(t_request *request, void *arg)
+#include <stdarg.h>
+
+void	transform_c(t_request *request, va_list *ap)
 {
-  my_putchar(*arg->begin);
+  char	c;
+
+  c = va_arg(*ap, int);
+  my_putchar(c);
 }

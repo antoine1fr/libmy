@@ -5,12 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Apr 18 13:37:28 2010 antoine luciani
-** Last update Wed Apr 21 09:50:01 2010 antoine luciani
+** Last update Wed Apr 21 16:22:02 2010 antoine luciani
 */
 
 #include <stdlib.h>
+#include <stdio.h>
 
-#include "request.h"
+#include "my_printf.h"
 #include "my.h"
 
 void		print_request(t_request *request)
@@ -31,21 +32,7 @@ void		print_request(t_request *request)
 
 int		main(int argc, char **argv)
 {
-  t_request	request;
-
-  if (argc != 2)
-    {
-      my_putstr("Usage: test_my_printf %[flag][width][.precision][length]specifier\n");
-      return (EXIT_FAILURE);
-    }
-  my_putstr("before parse_request\n");
-  parse_request(argv[1], &request);
-  my_putstr("after request\n");
-  print_request(&request);
+  printf("%ce m'app%clle %cntoine.\n", 'J', 'e', 'A');
+  my_printf("%ce m'app%clle %cntoine.\n", 'J', 'e', 'A');
   return (EXIT_SUCCESS);
 }
-
-
-
-
-

@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Wed Apr 14 14:07:55 2010 antoine luciani
-## Last update Tue Apr 20 13:01:42 2010 antoine luciani
+## Last update Wed Apr 21 14:18:27 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -18,7 +18,9 @@ CAT		=	cat
 INCLUDES	=	-Ilibs/my/include -Iinclude
 
 SRC_DIR		=	src/
-SOURCES		=	$(SRC_DIR)request.c
+SOURCES		=	$(SRC_DIR)request.c		\
+			$(SRC_DIR)my_printf.c		\
+			$(SRC_DIR)transform_c.c
 
 OBJS		=	$(SOURCES:.c=.o)
 
