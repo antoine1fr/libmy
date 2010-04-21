@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Apr 14 14:17:13 2010 antoine luciani
-** Last update Sun Apr 18 13:56:37 2010 antoine luciani
+** Last update Wed Apr 21 09:46:17 2010 antoine luciani
 */
 
 #ifndef REQUEST_H
@@ -23,7 +23,7 @@ typedef struct		s_request
   char			flag;
   int			width;
   int			precision;
-  char			length[2];
+  char			length[3];
   char			specifier;
 }			t_request;
 

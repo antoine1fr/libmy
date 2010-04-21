@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Apr 16 17:30:59 2010 antoine luciani
-** Last update Tue Apr 20 12:15:30 2010 antoine luciani
+** Last update Wed Apr 21 09:49:32 2010 antoine luciani
 */
 
 #include "request.h"
@@ -13,7 +13,7 @@
 
 #define IS_LENGTH(x) (x) == 'h' || (x) == 'l' || (x) == 'L'
 #define IS_NUMBER(x) (x) >= '0' && (x) <= '9'
-#define IS_NUM_NOT_NULL(x) (x) >= '9' && (x) <= '9'
+#define IS_NUM_NOT_NULL(x) (x) >= '1' && (x) <= '9'
 
 const char	*gl_flags_tab = "-+ #0";
 
@@ -39,7 +39,7 @@ static void	get_width(char **str, t_request *request)
       while (IS_NUM_NOT_NULL(*str[0]))
 	*str += 1;
     }
-  else if (*str[0] == MY_PRINTF_BULLET)
+  else if (*str[0] == '*')
     {
       request->width = MY_PRINTF_BULLET;
       *str += 1;
@@ -55,7 +55,7 @@ static void	get_precision(char **str, t_request *request)
 	{
 	  request->precision = my_getnbr(*str);
 	  while (IS_NUM_NOT_NULL(*str[0]))
-	    *str += 1;
+	      *str += 1;
 	}
       else if (*str[0] == '*')
 	{
@@ -69,12 +69,12 @@ static void	get_length(char **str, t_request *request)
 {
   int		i;
   int		len;
-  char	length_tab[][2] = {
-    "l", "ll", "h", "hh", "j", "z", "q", 0
+  char	length_tab[8][3] = {
+    "ll", "l", "hh", "h", "j", "z", "q", "\0"
   };
 
   i = 0;
-  while (length_tab[i] != 0)
+  while (length_tab[i][0] != 0)
     {
       len = my_strlen(length_tab[i]);
       if (my_strncmp(*str, length_tab[i], len) == 0)
@@ -90,7 +90,9 @@ static void	get_length(char **str, t_request *request)
 char		*parse_request(char *str, t_request *request)
 {
   if (!str || *str != '%' || !request)
-    return (0);
+      return (0);
+  my_memset(request, 0, sizeof(*request));
+  str += 1;
   if (is_flag(*str))
     {
       request->flag = *str;
