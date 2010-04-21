@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Mar 15 15:33:15 2010 antoine luciani
-** Last update Tue Mar 16 22:52:54 2010 antoine luciani
+** Last update Wed Apr 21 09:40:47 2010 antoine luciani
 */
 
 int		my_strncmp(char *s1, char *s2, int n)
@@ -21,6 +21,9 @@ int		my_strncmp(char *s1, char *s2, int n)
 	return (s1[i] - s2[i]);
       i += 1;
     }
-  result = s1[i] - s2[i];
+  if (i < n)
+    result = s1[i] - s2[i];
+  else
+    result = 0;
   return (result);
 }
