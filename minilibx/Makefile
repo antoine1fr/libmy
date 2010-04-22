@@ -17,41 +17,55 @@ RM		=	rm -f
 
 NAME		=	libmlx.a
 
-SRC		=	mlx_init.c		\
-			mlx_new_window.c	\
-			mlx_pixel_put.c		\
-			mlx_loop.c		\
-			mlx_mouse_hook.c	\
-			mlx_key_hook.c		\
-			mlx_expose_hook.c	\
-			mlx_loop_hook.c		\
-			mlx_int_anti_resize_win.c	\
-			mlx_int_do_nothing.c		\
-			mlx_int_wait_first_expose.c	\
-			mlx_int_get_visual.c		\
-			mlx_flush_event.c		\
-			mlx_string_put.c		\
-			mlx_new_image.c			\
-			mlx_get_data_addr.c		\
-			mlx_put_image_to_window.c	\
-			mlx_get_color_value.c		\
-			mlx_clear_window.c		\
-			mlx_xpm.c			\
-			mlx_int_str_to_wordtab.c	\
-			mlx_destroy_window.c		\
-			mlx_int_param_event.c		\
-			mlx_int_set_win_event_mask.c	\
-			mlx_hook.c			\
-			mlx_rgb.c
+SRC_DIR		=	src/
+SRC		=	$(SRC_DIR)mlx_init.c		\
+			$(SRC_DIR)mlx_new_window.c	\
+			$(SRC_DIR)mlx_pixel_put.c		\
+			$(SRC_DIR)mlx_loop.c		\
+			$(SRC_DIR)mlx_mouse_hook.c	\
+			$(SRC_DIR)mlx_key_hook.c		\
+			$(SRC_DIR)mlx_expose_hook.c	\
+			$(SRC_DIR)mlx_loop_hook.c		\
+			$(SRC_DIR)mlx_int_anti_resize_win.c	\
+			$(SRC_DIR)mlx_int_do_nothing.c		\
+			$(SRC_DIR)mlx_int_wait_first_expose.c	\
+			$(SRC_DIR)mlx_int_get_visual.c		\
+			$(SRC_DIR)mlx_flush_event.c		\
+			$(SRC_DIR)mlx_string_put.c		\
+			$(SRC_DIR)mlx_new_image.c			\
+			$(SRC_DIR)mlx_get_data_addr.c		\
+			$(SRC_DIR)mlx_put_image_to_window.c	\
+			$(SRC_DIR)mlx_get_color_value.c		\
+			$(SRC_DIR)mlx_clear_window.c		\
+			$(SRC_DIR)mlx_xpm.c			\
+			$(SRC_DIR)mlx_int_str_to_wordtab.c	\
+			$(SRC_DIR)mlx_destroy_window.c		\
+			$(SRC_DIR)mlx_int_param_event.c		\
+			$(SRC_DIR)mlx_int_set_win_event_mask.c	\
+			$(SRC_DIR)mlx_hook.c			\
+			$(SRC_DIR)mlx_rgb.c
 
 OBJ		=	$(SRC:.c=.o)
-CFLAGS		=	-I/usr/X11R6/include -O3
+CFLAGS		=	-Iinclude -I/usr/include/X11/include -O3
 
 $(NAME)		:	$(OBJ)
 		$(AR) $(NAME) $(OBJ)
 		$(RANLIB) $(NAME)
 		$(CP) $(NAME) libmlx_$(HOSTTYPE).a
 
+all		:	$(NAME)
 
 clean		:
 		$(RM) $(OBJ) $(NAME) *~ core *.core
+
+fclean		:	clean
+		$(RM) $(NAME)
+
+re		:	fclean all
+
+.PHONY		:	all clean fclean re
+
+.SUFFIXES	:	.c .o
+
+.c.o		:	$(SRC)
+		$(CC) $(CFLAGS) -c $< -o $@
