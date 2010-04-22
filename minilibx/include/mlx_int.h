@@ -23,7 +23,11 @@
 #include	<X11/Xutil.h>
 #include	<sys/ipc.h>
 #include	<sys/shm.h>
-#include	<X11/extensions/XShm.h>
+#ifdef _COMPILATION_EPITECH_
+# include	<X11/extensions/XShm.h>
+#else
+# include	<extensions/XShm.h>
+#endif
 /* #include	<X11/xpm.h> */
 
 
@@ -112,11 +116,12 @@ typedef struct	s_xvar
 
 int	mlx_int_do_nothing();
 int	mlx_int_get_good_color();
+int	mlx_int_get_visual(t_xvar *var);
 int	mlx_int_find_in_pcm();
 int	mlx_int_anti_resize_win();
 int	mlx_int_wait_first_expose();
 int	mlx_int_rgb_conversion();
-int	mlx_int_deal_shm();
+int	mlx_int_deal_shm(t_xvar *var);
 void	*mlx_int_new_xshm_image();
 char    **mlx_int_str_to_wordtab();
 void	*mlx_new_image();

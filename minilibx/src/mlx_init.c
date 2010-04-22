@@ -8,10 +8,10 @@
 ** Last update Fri Jan 28 17:05:09 2005 Olivier Crouzet
 */
 
+#include <stdio.h>
+#include <string.h>
 
-#include	"mlx_int.h"
-
-
+#include "mlx_int.h"
 
 void		*mlx_init()
 {
