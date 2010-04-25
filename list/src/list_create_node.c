@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 26 13:55:03 2010 antoine luciani
-** Last update Fri Mar 26 14:25:16 2010 antoine luciani
+** Last update Sun Apr 25 11:07:03 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -19,6 +19,6 @@ t_list_node	*list_create_node(void *data)
   if (!node)
     return (0);
   node->data = data;
-  node->next = node->next;
+  node->next = 0;
   return (node);
 }
