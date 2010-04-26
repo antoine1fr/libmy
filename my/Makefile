@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Mon Mar 22 10:40:50 2010 antoine luciani
-## Last update Sun Apr  4 15:26:29 2010 antoine luciani
+## Last update Mon Apr 26 12:41:30 2010 antoine luciani
 ##
 
 CC	=		gcc
@@ -51,7 +51,8 @@ SOURCES	=		src/my_find_prime_sup.c		\
 			src/my_memset.c			\
 			src/my_puterr.c			\
 			src/xmalloc.c			\
-			src/my_swap.c
+			src/my_swap.c			\
+			src/my_untostr.c
 
 INCLUDE	=		-Iinclude/
 CFLAGS	=		$(INCLUDE) -W -Wall -ansi -pedantic

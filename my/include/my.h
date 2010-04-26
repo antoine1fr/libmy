@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Thu Apr 15 13:25:00 2010 antoine luciani
+** Last update Mon Apr 26 12:21:16 2010 antoine luciani
 */
 
 #ifndef MYH
@@ -53,5 +53,6 @@ void	*my_memset(void *ptr, int value, int size);
 void	*xmalloc(int size);
 char	*my_strdup(char *str);
 char	*my_strndup(char *src, int n);
+char	*my_untostr(unsigned int n, char *base);
 
 #endif /* !MY_H */
