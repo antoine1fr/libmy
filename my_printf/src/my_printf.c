@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Apr 21 10:12:31 2010 antoine luciani
-** Last update Wed Apr 21 16:20:31 2010 antoine luciani
+** Last update Mon Apr 26 11:35:16 2010 antoine luciani
 */
 
 #include "my_printf.h"
@@ -13,6 +13,7 @@
 #include <stdarg.h>
 
 void	transform_c(t_request *request, va_list *ap);
+void	transform_b(t_request *request, va_list *ap);
 
 typedef void	(*t_trans_func) (t_request *request, va_list *ap);
 

@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Wed Apr 14 14:07:55 2010 antoine luciani
-## Last update Wed Apr 21 14:18:27 2010 antoine luciani
+## Last update Mon Apr 26 11:29:58 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -43,7 +43,7 @@ fclean		:	clean
 
 re		:	fclean all
 
-.PHONY		:	all clean fclean re
+.PHONY		:	all clean fclean re make_libs
 
 .SUFFIXES	:	.c .o
 
