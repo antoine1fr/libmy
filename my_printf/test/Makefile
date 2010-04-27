@@ -16,7 +16,7 @@ SOURCES		=	main.c
 OBJS		=	$(SOURCES:.c=.o)
 LIBS		=	-L../libs/my/lib -L../ -lmy_printf`uname -m`-`uname -s` -lmy
 NAME		=	test_my_printf
-CFLAGS		=	$(INCLUDES) -Wall -ansi -pedantic
+CFLAGS		=	$(INCLUDES) -Wall -ansi -pedantic -g3
 
 $(NAME)		:	$(OBJS)
 		$(CC) -o $(NAME) $(OBJS) $(LIBS)

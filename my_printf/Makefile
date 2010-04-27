@@ -16,20 +16,23 @@ ECHO		=	echo -n
 CAT		=	cat
 
 INCLUDES	=	-Ilibs/my/include -Iinclude
+LIBS		=	-Llibs/my/lib -lmy
 
 SRC_DIR		=	src/
 SOURCES		=	$(SRC_DIR)request.c		\
 			$(SRC_DIR)my_printf.c		\
 			$(SRC_DIR)print_request.c	\
 			$(SRC_DIR)transform_c.c		\
-			$(SRC_DIR)transform_b.c
+			$(SRC_DIR)transform_b.c		\
+			$(SRC_DIR)transform_S.c
 
 OBJS		=	$(SOURCES:.c=.o)
 
 OS		=	`uname -s`
 ARCH		=	`uname -m`
 NAME		=	libmy_printf$(ARCH)-$(OS).a
-CFLAGS		=	$(INCLUDES) -Wall -ansi -pedantic
+TEST_NAME	=	test_my_printf
+CFLAGS		=	$(INCLUDES) -Wall -ansi -pedantic -g
 
 $(NAME)		:	$(OBJS)
 		$(AR) $(NAME) $(OBJS)
@@ -37,13 +40,19 @@ $(NAME)		:	$(OBJS)
 
 all		:	$(NAME)
 
+debug		:	$(OBJS)
+		$(CC) $(CFLAGS) -o $(TEST_NAME) $(SRC_DIR)main.c $(OBJS) $(LIBS)
+
 clean		:
 		$(RM) $(OBJS)
 
 fclean		:	clean
 		$(RM) $(NAME)
+		$(RM) $(TEST_NAME)
 
 re		:	fclean all
+
+re_debug	:	fclean debug
 
 .PHONY		:	all clean fclean re make_libs
 

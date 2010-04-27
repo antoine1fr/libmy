@@ -15,7 +15,9 @@
 
 int		main(int argc, char **argv)
 {
-  my_printf("2(10) = '%+4b'(2)\n", 2);
-  my_printf("%ce m'app%clle %cntoine.\n", 'J', 'e', 'A');
+  char		*str;
+
+  str = "Antoine\n";
+  my_printf("%S\n", str);
   return (EXIT_SUCCESS);
 }

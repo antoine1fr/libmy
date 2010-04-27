@@ -16,6 +16,7 @@
 
 char	*transform_c(t_request *request, va_list *ap);
 char	*transform_b(t_request *request, va_list *ap);
+char	*transform_S(t_request *request, va_list *ap);
 
 typedef char	*(*t_trans_func) (t_request *request, va_list *ap);
 
@@ -28,6 +29,7 @@ typedef struct		s_transformation
 t_transformation	gl_trans_tab[] = {
   {transform_c, 'c'},
   {transform_b, 'b'},
+  {transform_S, 'S'},
   {0, 0}
 };
 
