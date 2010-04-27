@@ -15,10 +15,11 @@
 
 #define BINARY_BASE "01"
 
-void		transform_b(t_request *request, va_list *ap)
+char		*transform_b(t_request *request, va_list *ap)
 {
   unsigned int	nb;
 
-  nb = va_arg(ap);
-  my_putnbr_base(nv, BINARY_BASE);
+  nb = va_arg(*ap, unsigned int);
+  request->is_number = 1;
+  return (my_untostr(nb, BINARY_BASE));
 }

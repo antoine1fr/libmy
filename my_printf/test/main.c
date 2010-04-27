@@ -9,30 +9,13 @@
 */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 #include "my_printf.h"
 #include "my.h"
 
-void		print_request(t_request *request)
-{
-  my_putstr("Request:\n");
-  my_putstr("\tflag: '");
-  my_putchar(request->flag);
-  my_putstr("'\n\twidth: ");
-  my_put_nbr(request->width);
-  my_putstr("\n\tprecision: ");
-  my_put_nbr(request->precision);
-  my_putstr("\n\tlength: ");
-  my_putstr(request->length);
-  my_putstr("\n\tspecifier: ");
-  my_putchar(request->specifier);
-  my_putchar('\n');
-}
-
 int		main(int argc, char **argv)
 {
-  printf("%ce m'app%clle %cntoine.\n", 'J', 'e', 'A');
+  my_printf("2(10) = '%+4b'(2)\n", 2);
   my_printf("%ce m'app%clle %cntoine.\n", 'J', 'e', 'A');
   return (EXIT_SUCCESS);
 }

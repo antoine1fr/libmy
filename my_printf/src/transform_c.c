@@ -13,10 +13,13 @@
 
 #include <stdarg.h>
 
-void	transform_c(t_request *request, va_list *ap)
+char	*transform_c(t_request *request, va_list *ap)
 {
-  char	c;
+  char	*str;
 
-  c = va_arg(*ap, int);
-  my_putchar(c);
+  str = xmalloc(sizeof(*str) * 2);
+  str[0] = va_arg(*ap, int);
+  str[1] = 0;
+  request->is_number = 0;
+  return (str);
 }

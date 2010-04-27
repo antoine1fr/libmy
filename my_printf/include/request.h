@@ -25,6 +25,7 @@ typedef struct		s_request
   int			precision;
   char			length[3];
   char			specifier;
+  int			is_number;
 }			t_request;
 
 /*
@@ -37,5 +38,13 @@ typedef struct		s_request
 ** next to the request otherwise
 */
 char	*parse_request(char *str, t_request *request);
+
+/*
+** Prints the request to the right format.
+**
+** @param str : the string to print.
+** @request : pointer to the request.
+*/
+void	print_request(char *str, t_request *request);
 
 #endif /* REQUEST_H */

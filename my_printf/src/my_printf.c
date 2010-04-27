@@ -10,12 +10,14 @@
 
 #include "my_printf.h"
 #include "my.h"
+
+#include <stdlib.h>
 #include <stdarg.h>
 
-void	transform_c(t_request *request, va_list *ap);
-void	transform_b(t_request *request, va_list *ap);
+char	*transform_c(t_request *request, va_list *ap);
+char	*transform_b(t_request *request, va_list *ap);
 
-typedef void	(*t_trans_func) (t_request *request, va_list *ap);
+typedef char	*(*t_trans_func) (t_request *request, va_list *ap);
 
 typedef struct		s_transformation
 {
@@ -25,19 +27,23 @@ typedef struct		s_transformation
 
 t_transformation	gl_trans_tab[] = {
   {transform_c, 'c'},
+  {transform_b, 'b'},
   {0, 0}
 };
 
 static void	launch_transform(t_request *request, va_list *ap)
 {
   int		i;
+  char		*str;
 
   i = 0;
   while (gl_trans_tab[i].specifier != 0)
     {
       if (gl_trans_tab[i].specifier == request->specifier)
 	{
-	  gl_trans_tab[i].launch(request, ap);
+	  str = gl_trans_tab[i].launch(request, ap);
+	  print_request(str, request);
+	  free(str);
 	  return;
 	}
       i += 1;
