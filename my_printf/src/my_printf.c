@@ -18,6 +18,7 @@ char	*transform_c(t_request *request, va_list *ap);
 char	*transform_b(t_request *request, va_list *ap);
 char	*transform_S(t_request *request, va_list *ap);
 char	*transform_s(t_request *request, va_list *ap);
+char	*transform_d(t_request *request, va_list *ap);
 
 typedef char	*(*t_trans_func) (t_request *request, va_list *ap);
 
@@ -32,6 +33,8 @@ t_transformation	gl_trans_tab[] = {
   {transform_b, 'b'},
   {transform_S, 'S'},
   {transform_s, 's'},
+  {transform_d, 'd'},
+  {transform_d, 'i'},
   {0, 0}
 };
 

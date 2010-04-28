@@ -25,7 +25,8 @@ SOURCES		=	$(SRC_DIR)request.c		\
 			$(SRC_DIR)transform_c.c		\
 			$(SRC_DIR)transform_b.c		\
 			$(SRC_DIR)transform_S.c		\
-			$(SRC_DIR)transform_s.c
+			$(SRC_DIR)transform_s.c		\
+			$(SRC_DIR)transform_d.c
 
 OBJS		=	$(SOURCES:.c=.o)
 
