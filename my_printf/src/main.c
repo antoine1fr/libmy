@@ -3,8 +3,7 @@
 
 int		main(int argc, char **argv)
 {
-  if (argc != 2)
-    return (EXIT_FAILURE);
-  my_printf(argv[1], "\tAntoine\n");
+  my_printf("Je m'appelle %s et j'ai %b en binaire!\n",
+	    "Antoine", 20);
   return (EXIT_SUCCESS);
 }
