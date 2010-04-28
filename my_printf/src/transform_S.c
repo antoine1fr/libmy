@@ -72,10 +72,24 @@ int	count_fin_char(char *str, char **tab)
   i = 0;
   while (tab[i] == 0)
     {
-      count += my_strlen(tab[i]) + 1;
+      count += 4;
       i += 1;
     }
   return (count);
+}
+
+void		copy_oct_value(char *str, char *value)
+{
+  int		len;
+  int		i;
+
+  len = my_strlen(value);
+  *str++ = '\\';
+  i = 0;
+  while (i < 3 - len)
+    str[i++] = '0';
+  str += i;
+  my_strcpy(str, value);
 }
 
 char		*transform_S(t_request *request, va_list *ap)
@@ -97,9 +111,8 @@ char		*transform_S(t_request *request, va_list *ap)
 	final_str[i++] = *str;
       else
 	{
-	  final_str[i++] = '\\';
-	  my_strcpy(&final_str[i], tab[j]);
-	  i += my_strlen(tab[j++]);
+	  copy_oct_value(&final_str[i], tab[j++]);
+	  i += 4;
 	}
       str += 1;
     }
