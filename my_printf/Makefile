@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Wed Apr 14 14:07:55 2010 antoine luciani
-## Last update Thu Apr 29 22:53:45 2010 antoine luciani
+## Last update Thu Apr 29 23:12:23 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -31,7 +31,8 @@ SOURCES		=	$(SRC_DIR)request.c		\
 			$(SRC_DIR)transform_x.c		\
 			$(SRC_DIR)transform_X.c		\
 			$(SRC_DIR)transform_u.c		\
-			$(SRC_DIR)transform_o.c
+			$(SRC_DIR)transform_o.c		\
+			$(SRC_DIR)transform_p.c
 
 OBJS		=	$(SOURCES:.c=.o)
 
