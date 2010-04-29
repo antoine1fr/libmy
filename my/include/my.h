@@ -5,10 +5,10 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Mon Apr 26 12:21:16 2010 antoine luciani
+** Last update Thu Apr 29 18:24:52 2010 antoine luciani
 */
 
-#ifndef MYH
+#ifndef MY_H
 # define MY_H
 
 int	my_find_prime_sup(int nb);
@@ -54,5 +54,6 @@ void	*xmalloc(int size);
 char	*my_strdup(char *str);
 char	*my_strndup(char *src, int n);
 char	*my_untostr(unsigned int n, char *base);
+char	*my_ntostr(int n, char *base);
 
 #endif /* !MY_H */

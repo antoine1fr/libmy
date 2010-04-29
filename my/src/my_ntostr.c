@@ -5,25 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Apr 26 12:18:22 2010 antoine luciani
-** Last update Thu Apr 29 17:42:42 2010 antoine luciani
+** Last update Thu Apr 29 18:42:40 2010 antoine luciani
 */
 
 #include "my.h"
 
-static int	count_digits(unsigned int n, int base)
-{
-  int		count;
-
-  if (n == 0)
-    return (1);
-  count = 0;
-  while (n != 0)
-    {
-      n = n / base;
-      count += 1;
-    }
-  return (count);
-}
+int	count_nbr_digits(int n, int base);
+int	count_unbr_digits(unsigned int n, int base);
 
 static char	*my_untostr_sub(char *str, int index, unsigned int n, char *base)
 {
@@ -37,6 +25,20 @@ static char	*my_untostr_sub(char *str, int index, unsigned int n, char *base)
   return (str);
 }
 
+static char	*my_ntostr_sub(char *str, int index, int n, char *base)
+{
+  int		base_len;
+  int		coef;
+
+  if (index < 0)
+    return (str);
+  coef = (n < 0) ? -1 : 1;
+  base_len = my_strlen(base);
+  str[index] = base[coef * (n % base_len)];
+  my_ntostr_sub(str, index - 1, n / base_len, base);
+  return (str);
+}
+
 char		*my_ntostr(int n, char *base)
 {
   char		*str;
@@ -47,16 +49,16 @@ char		*my_ntostr(int n, char *base)
 
   jump = (n < 0) ? 1 : 0;
   base_len = my_strlen(base);
-  digit_count = count_digits(n, base_len);
+  digit_count = count_nbr_digits(n, base_len);
   len = sizeof(*str) * (digit_count + jump);
   if (len <= 0)
     return (0);
   str = xmalloc(len);
   my_memset(str, 0, len);
-  my_untostr_sub(str + jump, len - (1 + jump), n, base);
+  my_ntostr_sub(str + jump, digit_count - 1, n, base);
   if (n < 0)
     str[0] = '-';
-  str[digit_count] = 0;
+  str[digit_count + 1] = 0;
   return (str);
 }
 
@@ -68,13 +70,13 @@ char		*my_untostr(unsigned int n, char *base)
   int		len;
 
   base_len = my_strlen(base);
-  digit_count = count_digits(n, base_len);
+  digit_count = count_unbr_digits(n, base_len);
   len = sizeof(*str) * digit_count;
   if (len <= 0)
     return (0);
   str = xmalloc(len);
   my_memset(str, 0, len);
-  my_untostr_sub(str, len - 1, n, base);
+  my_untostr_sub(str, digit_count - 1, n, base);
   str[digit_count] = 0;
   return (str);
 }
