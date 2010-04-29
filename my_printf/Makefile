@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Wed Apr 14 14:07:55 2010 antoine luciani
-## Last update Thu Apr 29 11:37:35 2010 antoine luciani
+## Last update Thu Apr 29 17:26:49 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -46,7 +46,7 @@ $(NAME)		:	$(OBJS)
 all		:	$(NAME)
 
 debug		:	$(OBJS)
-		$(CC) $(CFLAGS) -o $(TEST_NAME) $(SRC_DIR)main.c $(OBJS) $(LIBS)
+		$(CC) $(CFLAGS) -o $(TEST_NAME) $(SRC_DIR)moulinette_my_printf.c $(OBJS) $(LIBS)
 
 clean		:
 		$(RM) $(OBJS)
