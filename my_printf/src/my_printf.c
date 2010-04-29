@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Apr 21 10:12:31 2010 antoine luciani
-** Last update Thu Apr 29 20:11:06 2010 antoine luciani
+** Last update Thu Apr 29 22:59:28 2010 antoine luciani
 */
 
 #include "my_printf.h"
@@ -22,6 +22,7 @@ char	*transform_d(t_request *request, va_list *ap);
 char	*transform_x(t_request *request, va_list *ap);
 char	*transform_X(t_request *request, va_list *ap);
 char	*transform_u(t_request *request, va_list *ap);
+char	*transform_o(t_request *request, va_list *ap);
 
 typedef char	*(*t_trans_func) (t_request *request, va_list *ap);
 
@@ -41,6 +42,7 @@ t_transformation	gl_trans_tab[] = {
   {transform_x, 'x'},
   {transform_X, 'X'},
   {transform_u, 'u'},
+  {transform_o, 'o'},
   {0, 0}
 };
 
@@ -61,6 +63,7 @@ void		launch_transform(t_request *request, va_list *ap)
 	}
       i += 1;
     }
+  my_putchar(request->specifier);
 }
 
 void		my_printf(char *fmt, ...)
