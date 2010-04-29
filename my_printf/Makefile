@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Wed Apr 14 14:07:55 2010 antoine luciani
-## Last update Thu Apr 29 23:12:23 2010 antoine luciani
+## Last update Thu Apr 29 23:20:15 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -38,7 +38,7 @@ OBJS		=	$(SOURCES:.c=.o)
 
 OS		=	`uname -s`
 ARCH		=	`uname -m`
-NAME		=	libmy_printf$(ARCH)-$(OS).a
+NAME		=	libmy_printf_$(ARCH)-$(OS).a
 TEST_NAME	=	test_my_printf
 CFLAGS		=	$(INCLUDES) -Wall -ansi -pedantic -g
 
