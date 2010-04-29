@@ -36,6 +36,7 @@ t_transformation	gl_trans_tab[] = {
   {transform_s, 's'},
   {transform_d, 'd'},
   {transform_d, 'i'},
+  {transform_x, 'x'},
   {0, 0}
 };
 

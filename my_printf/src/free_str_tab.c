@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 char		**free_str_tab(char **tab)
 {
   int		i;
