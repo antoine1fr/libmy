@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Apr 26 12:18:22 2010 antoine luciani
-** Last update Thu Apr 29 11:58:56 2010 antoine luciani
+** Last update Thu Apr 29 17:42:42 2010 antoine luciani
 */
 
 #include "my.h"
@@ -34,6 +34,29 @@ static char	*my_untostr_sub(char *str, int index, unsigned int n, char *base)
   base_len = my_strlen(base);
   str[index] = base[n % base_len];
   my_untostr_sub(str, index - 1, n / base_len, base);
+  return (str);
+}
+
+char		*my_ntostr(int n, char *base)
+{
+  char		*str;
+  int		digit_count;
+  int		base_len;
+  int		len;
+  int		jump;
+
+  jump = (n < 0) ? 1 : 0;
+  base_len = my_strlen(base);
+  digit_count = count_digits(n, base_len);
+  len = sizeof(*str) * (digit_count + jump);
+  if (len <= 0)
+    return (0);
+  str = xmalloc(len);
+  my_memset(str, 0, len);
+  my_untostr_sub(str + jump, len - (1 + jump), n, base);
+  if (n < 0)
+    str[0] = '-';
+  str[digit_count] = 0;
   return (str);
 }
 
