@@ -1,3 +1,13 @@
+/*
+** transform_u.c for my_printf in /u/all/lucian_b/cu/work/projects/my_printf
+** 
+** Made by antoine luciani
+** Login   <lucian_b@epitech.net>
+** 
+** Started on  Thu Apr 29 22:41:09 2010 antoine luciani
+** Last update Thu Apr 29 22:41:10 2010 antoine luciani
+*/
+
 #include <stdarg.h>
 
 #include "my.h"

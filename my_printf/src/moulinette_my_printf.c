@@ -1,11 +1,11 @@
 /*
-** my_printf.c for my_rintf in /u/ept3/denoix_g/c/projs/my_printf
+** moulinette_my_printf.c for my_printf in /u/all/lucian_b/cu/work/projects/my_printf
 ** 
-** Made by guillaume denoix
-** Login   <denoix_g@epita.fr>
+** Made by antoine luciani
+** Login   <lucian_b@epitech.net>
 ** 
-** Started on  Tue Dec  9 15:42:35 2003 guillaume denoix
-** Last update Thu Apr 29 20:16:04 2010 antoine luciani
+** Started on  Thu Apr 29 22:40:31 2010 antoine luciani
+** Last update Thu Apr 29 22:40:35 2010 antoine luciani
 */
 
 #include <stdio.h>

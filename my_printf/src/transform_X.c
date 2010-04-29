@@ -1,3 +1,13 @@
+/*
+** transform_X.c for my_printf in /u/all/lucian_b/cu/work/projects/my_printf
+** 
+** Made by antoine luciani
+** Login   <lucian_b@epitech.net>
+** 
+** Started on  Thu Apr 29 22:40:58 2010 antoine luciani
+** Last update Thu Apr 29 22:40:59 2010 antoine luciani
+*/
+
 #include "my.h"
 #include "request.h"
 
