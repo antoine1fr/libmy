@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Apr 26 12:18:22 2010 antoine luciani
-** Last update Mon Apr 26 13:27:40 2010 antoine luciani
+** Last update Thu Apr 29 11:58:56 2010 antoine luciani
 */
 
 #include "my.h"
@@ -51,5 +51,7 @@ char		*my_untostr(unsigned int n, char *base)
     return (0);
   str = xmalloc(len);
   my_memset(str, 0, len);
-  return (my_untostr_sub(str, len - 1, n, base));
+  my_untostr_sub(str, len - 1, n, base);
+  str[digit_count] = 0;
+  return (str);
 }
