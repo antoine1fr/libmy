@@ -9,5 +9,5 @@ char		*transform_d(t_request *request, va_list *ap)
   int		n;
 
   n = va_arg(*ap, int);
-  return (my_untostr(n, DECIMAL_BASE));
+  return (my_ntostr(n, DECIMAL_BASE));
 }

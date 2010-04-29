@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Apr 21 10:12:31 2010 antoine luciani
-** Last update Thu Apr 29 11:40:26 2010 antoine luciani
+** Last update Thu Apr 29 18:55:43 2010 antoine luciani
 */
 
 #include "my_printf.h"
@@ -76,7 +76,7 @@ void		my_printf(char *fmt, ...)
 	  if (*(fmt + 1) == '%')
 	    {
 	      my_putchar(*(fmt + 1));
-	      fmt += 1;
+	      fmt += 2;
 	    }
 	  else
 	    {
