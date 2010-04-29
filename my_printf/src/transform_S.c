@@ -7,7 +7,9 @@
 #define IS_PRINTABLE(x) ((x) >= 32 && (x) <= 126)
 #define OCTAL_BASE "01234567"
 
-int	count_nonprint_char(char *str)
+char	**free_str_tab(char **tab);
+
+static int	count_nonprint_char(char *str)
 {
   int		count;
 
@@ -21,7 +23,7 @@ int	count_nonprint_char(char *str)
   return (count);
 }
 
-char	**create_str_tab(char *str)
+static char	**create_str_tab(char *str)
 {
   char		**tab;
   int		size;
@@ -42,20 +44,7 @@ char	**create_str_tab(char *str)
   return (tab);
 }
 
-char	**free_str_tab(char **tab)
-{
-  int		i;
-
-  if (!tab)
-    return (0);
-  i = 0;
-  while (tab[i] != 0)
-    free(tab[i++]);
-  free(tab);
-  return (0);
-}
-
-int	count_fin_char(char *str, char **tab)
+static int	count_fin_char(char *str, char **tab)
 {
   int		count;
   int		i;
@@ -78,7 +67,7 @@ int	count_fin_char(char *str, char **tab)
   return (count);
 }
 
-void		copy_oct_value(char *str, char *value)
+static void		copy_oct_value(char *str, char *value)
 {
   int		len;
   int		i;

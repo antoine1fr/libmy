@@ -19,6 +19,7 @@ char	*transform_b(t_request *request, va_list *ap);
 char	*transform_S(t_request *request, va_list *ap);
 char	*transform_s(t_request *request, va_list *ap);
 char	*transform_d(t_request *request, va_list *ap);
+char	*transform_x(t_request *request, va_list *ap);
 
 typedef char	*(*t_trans_func) (t_request *request, va_list *ap);
 

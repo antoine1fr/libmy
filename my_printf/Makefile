@@ -22,6 +22,7 @@ SRC_DIR		=	src/
 SOURCES		=	$(SRC_DIR)request.c		\
 			$(SRC_DIR)my_printf.c		\
 			$(SRC_DIR)print_request.c	\
+			$(SRC_DIR)free_str_tab.c	\
 			$(SRC_DIR)transform_c.c		\
 			$(SRC_DIR)transform_b.c		\
 			$(SRC_DIR)transform_S.c		\
