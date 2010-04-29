@@ -32,7 +32,7 @@ static char	*my_untostr_sub(char *str, int index, unsigned int n, char *base)
   if (index < 0)
     return (str);
   base_len = my_strlen(base);
-  str[index] = n % base_len + '0';
+  str[index] = base[n % base_len];
   my_untostr_sub(str, index - 1, n / base_len, base);
   return (str);
 }
