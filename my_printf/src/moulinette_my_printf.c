@@ -5,13 +5,22 @@
 ** Login   <denoix_g@epita.fr>
 ** 
 ** Started on  Tue Dec  9 15:42:35 2003 guillaume denoix
-** Last update Thu Apr 29 17:24:31 2010 antoine luciani
+** Last update Thu Apr 29 20:16:04 2010 antoine luciani
 */
 
 #include <stdio.h>
 
+#define COMPILE_MOULINETTE
+
 int	my_printf(char *, ...);
 
+#ifndef COMPILE_MOULINETTE
+int	main(int argc, char **argv)
+{
+  printf("%o", -1);
+  return (0);
+}
+#else
 int	main(int ac, char **av)
 {
   int	ret[2];
@@ -122,7 +131,4 @@ int	main(int ac, char **av)
   
   return(0);
 }
-
-
-
-
+#endif /* !COMPILE_MOULINETTE */

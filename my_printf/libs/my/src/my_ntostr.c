@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Apr 26 12:18:22 2010 antoine luciani
-** Last update Thu Apr 29 18:42:40 2010 antoine luciani
+** Last update Thu Apr 29 19:37:11 2010 antoine luciani
 */
 
 #include "my.h"
@@ -50,7 +50,7 @@ char		*my_ntostr(int n, char *base)
   jump = (n < 0) ? 1 : 0;
   base_len = my_strlen(base);
   digit_count = count_nbr_digits(n, base_len);
-  len = sizeof(*str) * (digit_count + jump);
+  len = sizeof(*str) * (digit_count + jump + 1);
   if (len <= 0)
     return (0);
   str = xmalloc(len);
@@ -58,7 +58,7 @@ char		*my_ntostr(int n, char *base)
   my_ntostr_sub(str + jump, digit_count - 1, n, base);
   if (n < 0)
     str[0] = '-';
-  str[digit_count + 1] = 0;
+  str[digit_count + jump] = 0;
   return (str);
 }
 
@@ -71,7 +71,7 @@ char		*my_untostr(unsigned int n, char *base)
 
   base_len = my_strlen(base);
   digit_count = count_unbr_digits(n, base_len);
-  len = sizeof(*str) * digit_count;
+  len = sizeof(*str) * (digit_count + 1);
   if (len <= 0)
     return (0);
   str = xmalloc(len);
