@@ -5,5 +5,5 @@ done on the fly.
 
 Compilation:
 Simply execute make in the root directory. Compilation has been tested on GNU/Linux
-and FreeBSD. It should compile on many unix systems because it only use a very few
+and FreeBSD. It should compile on many unix systems because it only uses a very few
 functions of the system (write, malloc, free).
