@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue Apr 20 15:30:33 2010 antoine luciani
-## Last update Tue Apr 20 15:50:02 2010 antoine luciani
+## Last update Sat Apr 24 08:07:05 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -13,7 +13,7 @@ RM		=	rm -f
 
 NAME		=	test
 SOURCES		=	main.c
-INCLUDES	=	-I../include
+INCLUDES	=	-I../include -I/usr/local/include/X11
 LIBS		=	-L../lib -L/usr/X11/lib
 LIBS		+=	-lmy_graphics -lX11 -lXext -lmlx_FreeBSD
 OBJS		=	$(SOURCES:.c=.o)

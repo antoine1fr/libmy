@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 14:58:23 2010 antoine luciani
-** Last update Tue Apr 20 15:06:24 2010 antoine luciani
+** Last update Wed Apr 21 11:52:12 2010 antoine luciani
 */
 
 #ifndef _MY_GRAPHICS_H_
@@ -13,6 +13,7 @@
 
 #include "mgr_device.h"
 #include "mgr_window.h"
+#include "mgr_image.h"
 
 typedef enum	e_mgr_error
   {
