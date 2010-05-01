@@ -15,9 +15,6 @@
 
 namespace	math
 {
-
-  class	CVector2;
-
   class			CMatrix2
   {
   public:

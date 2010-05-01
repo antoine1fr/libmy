@@ -14,15 +14,13 @@
 
 int			main()
 {
-  math::CMatrix2	mat1(1, 2, 3, 4);
-  math::CMatrix2	mat2(mat1);
-  math::CMatrix2	mat3;
-  math::CVector2	v(1, 2);
+  math::CMatrix2	mat(1, 2, 3, 4);
+  math::CVector2	u(2, 10);
+  math::CVector2	v;
 
-  std::cout << mat1 << '\n';
-  std::cout << mat2 << '\n';
-  mat3 = (mat1 * mat2) * 100;
-  std::cout << mat3 << '\n';
-  std::cout << v << '\n';
+  v = mat * u;
+  std::cout << "mat :\n" << mat << '\n';
+  std::cout << "u :\n" << u << '\n';
+  std::cout << "v = mat x u:\n" << v << '\n';
   return (0);
 }

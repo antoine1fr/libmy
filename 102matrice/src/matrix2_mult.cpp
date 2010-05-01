@@ -46,7 +46,10 @@ namespace	math
       {
 	j = 0;
 	while (j < 2)
-	  res.n[i][j] = nbr * n[i][j++];
+	  {
+	    res.n[i][j] = nbr * n[i][j];
+	    j += 1;
+	  }
 	i += 1;
       }
     return (res);

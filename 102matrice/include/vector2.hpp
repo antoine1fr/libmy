@@ -15,6 +15,8 @@
 
 namespace	math
 {
+  class		CMatrix2;
+
   class		CVector2
   {
   public:
@@ -37,6 +39,9 @@ namespace	math
     */
     CVector2	&operator = (const CVector2 &v);
   };
+
+  CVector2	operator * (const CMatrix2 &mat,
+			    const CVector2 &v);
 
   /*
   ** Output-operator overload.

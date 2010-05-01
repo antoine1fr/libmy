@@ -9,6 +9,7 @@
 //
 
 #include "vector2.hpp"
+#include "matrix2.hpp"
 
 namespace	math
 {
@@ -27,8 +28,20 @@ namespace	math
   CVector2	&CVector2::operator = (const CVector2 &v)
   {
     m_x = v.m_x;
-    m_x = v.m_y;
+    m_y = v.m_y;
     return (*this);
+  }
+
+  CVector2	operator * (const CMatrix2 &mat,
+			     const CVector2 &v)
+  {
+    CVector2	res;
+
+    res.m_x = mat.n[0][0] * v.m_x;
+    res.m_x += mat.n[0][1] * v.m_y;
+    res.m_y = mat.n[1][0] * v.m_x;
+    res.m_y += mat.n[1][1] * v.m_y;
+    return (res);
   }
 
   std::ostream	&operator << (std::ostream &out,
