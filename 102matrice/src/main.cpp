@@ -5,22 +5,22 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 15:54:08 2010 antoine luciani
-// Last update Sat May  1 17:57:57 2010 antoine luciani
+// Last update Sun May  2 01:03:01 2010 antoine luciani
 //
 
 #include <iostream>
+
 #include "matrix2.hpp"
 #include "vector2.hpp"
+#include "number.hpp"
 
 int			main()
 {
-  math::CMatrix2	mat(1, 2, 3, 4);
-  math::CVector2	u(2, 10);
-  math::CVector2	v;
+  math::CNumber		Number(2147483647);
 
-  v = mat * u;
-  std::cout << "mat :\n" << mat << '\n';
-  std::cout << "u :\n" << u << '\n';
-  std::cout << "v = mat x u:\n" << v << '\n';
+  std::cout << "Integer\t: " << Number.GetInteger() << '\n';
+  std::cout << "String(2)\t: " << Number.GetInBase(2) << '\n';
+  std::cout << "String(10)\t: " << Number.GetInBase(10) << '\n';
+  std::cout << "String(16)\t: " << Number.GetInBase(16) << '\n';
   return (0);
 }
