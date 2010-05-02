@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sun May  2 13:36:44 2010 antoine luciani
-// Last update Sun May  2 13:36:46 2010 antoine luciani
+// Last update Sun May  2 15:40:24 2010 antoine luciani
 //
 
 #include "option_functors.hpp"

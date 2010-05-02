@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 15:54:08 2010 antoine luciani
-// Last update Sun May  2 13:58:51 2010 antoine luciani
+// Last update Sun May  2 15:52:22 2010 antoine luciani
 //
 
 #include <iostream>
@@ -27,6 +27,7 @@ void	PrintDoc()
 void	InitApp(std::vector<COptionFunctor *> &v)
 {
   v.push_back(new COption1Functor);
+  v.push_back(new COption2Functor);
 }
 
 int				main(int argc, char **argv)
@@ -43,7 +44,7 @@ int				main(int argc, char **argv)
   Stream.str(argv[1]);
   Stream >> nOption;
   InitApp(vOptions);
-  if (nOption < vOptions.size())
+  if (nOption > vOptions.size())
     {
       PrintDoc();
       return (EXIT_FAILURE);

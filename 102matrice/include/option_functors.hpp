@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sun May  2 11:18:45 2010 antoine luciani
-// Last update Sun May  2 11:46:13 2010 antoine luciani
+// Last update Sun May  2 15:45:52 2010 antoine luciani
 //
 
 #ifndef _OPTION_FUNCTORS_H_
@@ -13,6 +13,9 @@
 
 #include "matrix2.hpp"
 
+/*
+** Base class of an option-functor.
+*/
 class			COptionFunctor
 {
 protected:
@@ -45,6 +48,21 @@ protected:
 private:
   math::CMatrix2	m_mat1;
   math::CMatrix2	m_mat2;
+  unsigned int		m_nBase;
+};
+
+/*
+** Implementation of the option 2.
+*/
+class			COption2Functor : public COptionFunctor
+{
+protected:
+  void			ExtractOptions(int nArgCount, char **pArgs);
+  void			Launch(int nArgCount, char **pArgs);
+
+private:
+  math::CMatrix2	m_mat;
+  int			m_nCoef;
   unsigned int		m_nBase;
 };
 

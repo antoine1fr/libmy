@@ -13,6 +13,7 @@ SOURCES		=	$(SRC_DIR)/matrix2.cpp			\
 			$(SRC_DIR)/number_operations.cpp	\
 			$(SRC_DIR)/option_functor.cpp		\
 			$(SRC_DIR)/option1_functor.cpp		\
+			$(SRC_DIR)/option2_functor.cpp		\
 			$(SRC_DIR)/main.cpp
 OBJS		=	$(SOURCES:.cpp=.o)
 INCLUDES	=	include
