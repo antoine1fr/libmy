@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sun May  2 15:32:21 2010 antoine luciani
-// Last update Sun May  2 15:58:25 2010 antoine luciani
+// Last update Sun May  2 17:19:12 2010 antoine luciani
 //
 
 #include <string>
@@ -38,6 +38,7 @@ void			COption2Functor::Launch(int nArgCount, char **pArgs)
 
   ExtractOptions(nArgCount, pArgs);
   matResult = m_mat * m_nCoef;
+  math::CNumber::SetOutputBase(m_nBase);
   std::cout << "Matrix A :\n" << m_mat << '\n';
   std::cout << "p = " << m_nCoef << '\n';
   std::cout << "Matrix p.A :\n" << matResult << '\n';

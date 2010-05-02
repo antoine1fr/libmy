@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 17:40:09 2010 antoine luciani
-// Last update Sat May  1 17:48:16 2010 antoine luciani
+// Last update Sun May  2 17:05:05 2010 antoine luciani
 //
 
 #include "vector2.hpp"
@@ -42,12 +42,5 @@ namespace	math
     res.m_y = mat.n[1][0] * v.m_x;
     res.m_y += mat.n[1][1] * v.m_y;
     return (res);
-  }
-
-  std::ostream	&operator << (std::ostream &out,
-			      const CVector2 &v)
-  {
-    out << v.m_x << '\t' << v.m_y << '\n';
-    return (out);
   }
 }

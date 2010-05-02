@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 17:29:23 2010 antoine luciani
-// Last update Sun May  2 15:07:25 2010 antoine luciani
+// Last update Sun May  2 17:03:20 2010 antoine luciani
 //
 
 #ifndef _VECTOR2_HPP_
@@ -49,6 +49,12 @@ namespace	math
   */
   std::ostream	&operator << (std::ostream &out,
 			      const CVector2 &v);
+
+  /*
+  ** Input-operator overload.
+  */
+  std::istream	&operator >> (std::istream &in,
+			      CVector2 &v);
 }
 
 #endif /* _VECTOR2_HPP_ */

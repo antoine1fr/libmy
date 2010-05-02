@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 15:54:08 2010 antoine luciani
-// Last update Sun May  2 15:52:22 2010 antoine luciani
+// Last update Sun May  2 17:16:57 2010 antoine luciani
 //
 
 #include <iostream>
@@ -28,6 +28,7 @@ void	InitApp(std::vector<COptionFunctor *> &v)
 {
   v.push_back(new COption1Functor);
   v.push_back(new COption2Functor);
+  v.push_back(new COption3Functor);
 }
 
 int				main(int argc, char **argv)
