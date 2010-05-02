@@ -5,13 +5,14 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 17:29:23 2010 antoine luciani
-// Last update Sat May  1 17:51:21 2010 antoine luciani
+// Last update Sun May  2 15:07:25 2010 antoine luciani
 //
 
 #ifndef _VECTOR2_HPP_
 # define _VECTOR2_HPP_
 
 #include <iostream>
+#include "number.hpp"
 
 namespace	math
 {
@@ -20,8 +21,8 @@ namespace	math
   class		CVector2
   {
   public:
-    int		m_x;
-    int		m_y;
+    CNumber	m_x;
+    CNumber	m_y;
 
   public:
     /*

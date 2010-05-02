@@ -5,14 +5,14 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sun May  2 14:15:45 2010 antoine luciani
-// Last update Sun May  2 14:16:20 2010 antoine luciani
+// Last update Sun May  2 15:14:05 2010 antoine luciani
 //
 
 #include "number.hpp"
 
 namespace	math
 {
-  std::string	CNumber::GetInBase(unsigned int nBase)
+  std::string	CNumber::GetInBase(unsigned int nBase) const
   {
     std::string	sNum;
     int		n;
@@ -28,7 +28,7 @@ namespace	math
   }
 
   void		CNumber::GetInBaseRec(int n, unsigned int nBase,
-				      std::string &sNum)
+				      std::string &sNum) const
   {
     int		nMod;
 

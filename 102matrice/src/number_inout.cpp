@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sun May  2 14:34:19 2010 antoine luciani
-// Last update Sun May  2 14:49:42 2010 antoine luciani
+// Last update Sun May  2 15:17:16 2010 antoine luciani
 //
 
 #include "number.hpp"
@@ -19,7 +19,7 @@ namespace	math
 
   std::ostream	&operator << (std::ostream &out, const CNumber &Number)
   {
-    out << GetInBasez(s_nBase);
+    out << Number.GetInBase(CNumber::s_nBase);
     return (out);
   }
 

@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 23:54:52 2010 antoine luciani
-// Last update Sun May  2 14:58:12 2010 antoine luciani
+// Last update Sun May  2 15:19:50 2010 antoine luciani
 //
 
 #ifndef _NUMBER_HPP_
@@ -21,6 +21,8 @@ namespace	math
   private:
     int		m_n;
     const char	*DIGITS;
+
+  public:
     static unsigned int	s_nBase;
 
   public:
@@ -42,7 +44,7 @@ namespace	math
     /*
     ** Returns the number in a given base.
     */
-    std::string	GetInBase(unsigned int nBase);
+    std::string	GetInBase(unsigned int nBase) const;
 
     /*
     ** Affectation from an unsigned int.
@@ -62,13 +64,14 @@ namespace	math
     static void	SetOutputBase (unsigned int nBase);
 
   private:
-    void	GetInBaseRec(int n, unsigned int nBase, std::string &sNum);
+    void	GetInBaseRec(int n, unsigned int nBase, std::string &sNum) const;
   };
 
   std::ostream	&operator << (std::ostream &out, const CNumber &Number);
   std::istream	&operator >> (std::istream &in, CNumber &Number);
   CNumber	operator + (const CNumber &Num1, const CNumber &Num2);
   CNumber	operator * (const CNumber &Num1, const CNumber &Num2);
+  CNumber	operator * (const CNumber &Number, int Integer);
 }
 
 #endif /* _NUMBER_HPP_ */
