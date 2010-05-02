@@ -5,13 +5,14 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 23:54:52 2010 antoine luciani
-// Last update Sun May  2 14:14:40 2010 antoine luciani
+// Last update Sun May  2 14:58:12 2010 antoine luciani
 //
 
 #ifndef _NUMBER_HPP_
 #define _NUMBER_HPP_
 
 #include <string>
+#include <iostream>
 
 namespace	math
 {
@@ -20,6 +21,7 @@ namespace	math
   private:
     int		m_n;
     const char	*DIGITS;
+    static unsigned int	s_nBase;
 
   public:
     /*
@@ -43,13 +45,30 @@ namespace	math
     std::string	GetInBase(unsigned int nBase);
 
     /*
-    ** Affectation-operator overloading.
+    ** Affectation from an unsigned int.
     */
     CNumber	&operator = (int n);
+
+    /*
+    ** Affectation from a CNumber.
+    */
+    CNumber	&operator = (const CNumber &Number);
+
+    CNumber	&operator += (const CNumber &Number);
+
+    /*
+    ** Save the base to use for output.
+    */
+    static void	SetOutputBase (unsigned int nBase);
 
   private:
     void	GetInBaseRec(int n, unsigned int nBase, std::string &sNum);
   };
+
+  std::ostream	&operator << (std::ostream &out, const CNumber &Number);
+  std::istream	&operator >> (std::istream &in, CNumber &Number);
+  CNumber	operator + (const CNumber &Num1, const CNumber &Num2);
+  CNumber	operator * (const CNumber &Num1, const CNumber &Num2);
 }
 
 #endif /* _NUMBER_HPP_ */

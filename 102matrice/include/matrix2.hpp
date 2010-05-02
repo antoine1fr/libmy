@@ -5,20 +5,21 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 15:02:11 2010 antoine luciani
-// Last update Sun May  2 14:09:22 2010 antoine luciani
+// Last update Sun May  2 14:25:08 2010 antoine luciani
 //
 
 #ifndef _MATRIX2_HPP_
 # define _MATRIX2_HPP_
 
 #include <iostream>
+#include "number.hpp"
 
 namespace	math
 {
   class			CMatrix2
   {
   public:
-    unsigned int		n[2][2];
+  CNumber  		n[2][2];
 
   public:
     /*

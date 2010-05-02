@@ -3,14 +3,16 @@ RM		=	rm -f
 
 NAME		=	102matrice
 SRC_DIR		=	src
-SOURCES		=	$(SRC_DIR)/matrix2.cpp		\
-			$(SRC_DIR)/matrix2_add.cpp	\
-			$(SRC_DIR)/matrix2_mult.cpp	\
-			$(SRC_DIR)/vector2.cpp		\
-			$(SRC_DIR)/number.cpp		\
-			$(SRC_DIR)/number_getinbase.cpp	\
-			$(SRC_DIR)/option_functor.cpp	\
-			$(SRC_DIR)/option1_functor.cpp	\
+SOURCES		=	$(SRC_DIR)/matrix2.cpp			\
+			$(SRC_DIR)/matrix2_add.cpp		\
+			$(SRC_DIR)/matrix2_mult.cpp		\
+			$(SRC_DIR)/vector2.cpp			\
+			$(SRC_DIR)/number.cpp			\
+			$(SRC_DIR)/number_getinbase.cpp		\
+			$(SRC_DIR)/number_inout.cpp		\
+			$(SRC_DIR)/number_operations.cpp	\
+			$(SRC_DIR)/option_functor.cpp		\
+			$(SRC_DIR)/option1_functor.cpp		\
 			$(SRC_DIR)/main.cpp
 OBJS		=	$(SOURCES:.cpp=.o)
 INCLUDES	=	include

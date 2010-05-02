@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 23:57:23 2010 antoine luciani
-// Last update Sun May  2 14:18:34 2010 antoine luciani
+// Last update Sun May  2 14:30:45 2010 antoine luciani
 //
 
 #include "number.hpp"
@@ -32,5 +32,10 @@ namespace	math
   {
     m_n = n;
     return (*this);
+  }
+
+  CNumber	&CNumber::operator = (const CNumber &Number)
+  {
+    m_n = Number.GetInteger();
   }
 }
