@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sun May  2 11:30:21 2010 antoine luciani
-// Last update Sun May  2 14:05:04 2010 antoine luciani
+// Last update Sun May  2 15:22:30 2010 antoine luciani
 //
 
 #include <string>
@@ -41,6 +41,7 @@ void			COption1Functor::Launch(int nArgCount,
 
   ExtractOptions(nArgCount, pArgs);
   matResult = m_mat1 + m_mat2;
+  math::CNumber::SetOutputBase(m_nBase);
   std::cout << "Matrix A :\n" << m_mat1 << '\n';
   std::cout << "Matrix B :\n" << m_mat2 << '\n';
   std::cout << "Matrix A + B :\n" << matResult << '\n';
