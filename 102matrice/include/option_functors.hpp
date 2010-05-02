@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sun May  2 11:18:45 2010 antoine luciani
-// Last update Sun May  2 17:01:26 2010 antoine luciani
+// Last update Sun May  2 17:26:25 2010 antoine luciani
 //
 
 #ifndef _OPTION_FUNCTORS_H_
@@ -80,6 +80,21 @@ private:
   unsigned int		m_nBase;
   math::CMatrix2	m_mat;
   math::CVector2	m_v;
+};
+
+/*
+** Implementation of the option 4.
+*/
+class			COption4Functor : public COptionFunctor
+{
+protected:
+  void			ExtractOptions(int nArgCount, char **pArgs);
+  void			Launch(int nArgCount, char **pArgs);
+
+private:
+  unsigned int		m_nBase;
+  math::CMatrix2	m_mat1;
+  math::CMatrix2	m_mat2;
 };
 
 #endif /* !_OPTION_FUNCTORS_H_ */
