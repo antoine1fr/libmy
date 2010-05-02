@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 15:06:39 2010 antoine luciani
-// Last update Sat May  1 17:34:26 2010 antoine luciani
+// Last update Sun May  2 02:02:51 2010 antoine luciani
 //
 
 
@@ -47,5 +47,13 @@ namespace	math
     out << mat.n[1][0] << '\t';
     out << mat.n[1][1] << '\n';
     return (out);
+  }
+
+  std::istream &operator >> (std::istream &in,
+			     CMatrix2 &mat)
+  {
+    in >> mat.n[0][0] >> mat.n[0][1];
+    in >> mat.n[1][0] >> mat.n[1][1];
+    return (in);
   }
 }

@@ -5,22 +5,57 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 15:54:08 2010 antoine luciani
-// Last update Sun May  2 01:03:01 2010 antoine luciani
+// Last update Sun May  2 02:52:38 2010 antoine luciani
 //
 
 #include <iostream>
+#include <vector>
+#include <sstream>
+#include <exception>
 
-#include "matrix2.hpp"
-#include "vector2.hpp"
-#include "number.hpp"
+#include "option_functors.hpp"
 
-int			main()
+void	PrintDoc()
 {
-  math::CNumber		Number(2147483647);
+  std::cout << "Usage :\n";
+  std::cout << "\t./102matrice 1 base a11 a12 a21 a22 b11 b12 b21 b22\n";
+  std::cout << "\t./102matrice 2 base p m11 m12 m21 m22\n";
+  std::cout << "\t./102matrice 3 base m11 m12 m21 m22 x y\n";
+  std::cout << "\t./102matrice 4 base a11 a12 a21 a22 b11 b12 b21 b22\n";
+}
 
-  std::cout << "Integer\t: " << Number.GetInteger() << '\n';
-  std::cout << "String(2)\t: " << Number.GetInBase(2) << '\n';
-  std::cout << "String(10)\t: " << Number.GetInBase(10) << '\n';
-  std::cout << "String(16)\t: " << Number.GetInBase(16) << '\n';
-  return (0);
+void	InitApp(std::vector<CFunctor *> &v)
+{
+  v.push_back(new COption1Functor);
+}
+
+int				main(int argc, char **argv)
+{
+  std::vector<CFunctor *>		vOptions;
+  std::vector<CFunctor *>::size_type	nOption;
+  std::istringstream			Stream;
+
+  if (argc < 2)
+    {
+      PrintDoc();
+      return (EXIT_FAILURE);
+    }
+  Stream.str(argv[1]);
+  Stream >> nOption;
+  InitApp(vOptions);
+  if (nOption < vOptions.size())
+    {
+      PrintDoc();
+      return (EXIT_FAILURE);
+    }
+  try
+    {
+      (*vOptions[nOption - 1])(argc, argv);
+    }
+  catch (std::exception &Except)
+    {
+      std::cout << Except.what() << '\n';
+      return (EXIT_FAILURE);
+    }
+  return (EXIT_SUCCESS);
 }
