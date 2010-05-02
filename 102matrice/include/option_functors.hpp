@@ -1,0 +1,51 @@
+//
+// option_functors.hpp for 102matrice in /u/all/lucian_b/cu/work/projects/102matrice
+// 
+// Made by antoine luciani
+// Login   <lucian_b@epitech.net>
+// 
+// Started on  Sun May  2 11:18:45 2010 antoine luciani
+// Last update Sun May  2 11:46:13 2010 antoine luciani
+//
+
+#ifndef _OPTION_FUNCTORS_H_
+# define _OPTION_FUNCTORS_H_
+
+#include "matrix2.hpp"
+
+class			COptionFunctor
+{
+protected:
+  /*
+  ** Extracts the options needed to execute the option.
+  */
+  virtual void		ExtractOptions(int nArgCount, char **pArgs) = 0;
+
+  /*
+  ** Launches the option.
+  */
+  virtual void		Launch(int nArgCount, char **pArgs) = 0;
+
+public:
+  /*
+  ** () operator overloading.
+  */
+  void			operator () (int nArgCount, char **pArgs);
+};
+
+/*
+** Implementation of the option 1.
+*/
+class			COption1Functor : public COptionFunctor
+{
+protected:
+  void			ExtractOptions(int nArgCount, char **pArgs);
+  void			Launch(int nArgCount, char **pArgs);
+
+private:
+  math::CMatrix2	m_mat1;
+  math::CMatrix2	m_mat2;
+  unsigned int		m_nBase;
+};
+
+#endif /* !_OPTION_FUNCTORS_H_ */

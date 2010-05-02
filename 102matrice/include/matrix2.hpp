@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 15:02:11 2010 antoine luciani
-// Last update Sun May  2 02:05:52 2010 antoine luciani
+// Last update Sun May  2 14:09:22 2010 antoine luciani
 //
 
 #ifndef _MATRIX2_HPP_
@@ -54,6 +54,9 @@ namespace	math
   CMatrix2	operator * (const CMatrix2 &mat1,
 			    const CMatrix2 &mat2);
 
+  /*
+  ** Input-operator overloading.
+  */
   std::istream	&operator >> (std::istream &in,
 			     CMatrix2 &mat);
 
