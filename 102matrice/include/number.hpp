@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 23:54:52 2010 antoine luciani
-// Last update Sun May  2 00:56:55 2010 antoine luciani
+// Last update Sun May  2 14:14:40 2010 antoine luciani
 //
 
 #ifndef _NUMBER_HPP_
@@ -41,6 +41,11 @@ namespace	math
     ** Returns the number in a given base.
     */
     std::string	GetInBase(unsigned int nBase);
+
+    /*
+    ** Affectation-operator overloading.
+    */
+    CNumber	&operator = (int n);
 
   private:
     void	GetInBaseRec(int n, unsigned int nBase, std::string &sNum);

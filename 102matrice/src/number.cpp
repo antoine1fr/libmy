@@ -5,7 +5,7 @@
 // Login   <lucian_b@epitech.net>
 // 
 // Started on  Sat May  1 23:57:23 2010 antoine luciani
-// Last update Sun May  2 00:59:13 2010 antoine luciani
+// Last update Sun May  2 14:18:34 2010 antoine luciani
 //
 
 #include "number.hpp"
@@ -28,32 +28,9 @@ namespace	math
     return (m_n);
   }
 
-  std::string	CNumber::GetInBase(unsigned int nBase)
+  CNumber	&CNumber::operator = (int n)
   {
-    std::string	sNum;
-    int		n;
-
-    n = m_n;
-    if (n < 0)
-      sNum = '-';
-    else if (n == 0)
-      sNum = '0';
-    else
-      GetInBaseRec(n, nBase, sNum);
-    return (sNum);
-  }
-
-  void		CNumber::GetInBaseRec(int n, unsigned int nBase,
-				      std::string &sNum)
-  {
-    int		nMod;
-
-    if (n == 0)
-      return;
-    GetInBaseRec(n / nBase, nBase, sNum);
-    nMod = n % nBase;
-    if (nMod < 0)
-      nMod = -nMod;
-    sNum += DIGITS[nMod];
+    m_n = n;
+    return (*this);
   }
 }
