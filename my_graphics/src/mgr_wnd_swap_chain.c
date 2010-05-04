@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue May  4 16:12:55 2010 antoine luciani
-** Last update Tue May  4 17:12:43 2010 antoine luciani
+** Last update Tue May  4 17:34:12 2010 antoine luciani
 */
 
 #include <mlx.h>
@@ -19,18 +19,18 @@ t_mgr_image		*mgr_wnd_swap_chain(t_mgr_window *wnd_ptr)
 {
   t_mgr_image		*ptr_tmp;
 
-  if (gl_mgr_device->render_flags & MGR_RENDER_DOUBLEBUF)
+  if (gl_mgr_device->double_buf == MGR_FALSE)
     {
-      ptr_tmp = wnd_ptr->swap_chain->back;
-      wnd_ptr->swap_chain->back = wnd_ptr->swap_chain->front;
-      wnd_ptr->swap_chain->front = ptr_tmp;
       mlx_put_image_to_window(gl_mgr_device->mlx_ptr, wnd_ptr->wnd_ptr,
-			      wnd_ptr->swap_chain->front->mlx_ptr,
+			      wnd_ptr->swap_chain->back->mlx_ptr,
 			      0, 0);
+      return (wnd_ptr->swap_chain->back);
     }
-  else
-    mlx_put_image_to_window(gl_mgr_device->mlx_ptr, wnd_ptr->wnd_ptr,
-			    wnd_ptr->swap_chain->back->mlx_ptr,
-			    0, 0);
+  ptr_tmp = wnd_ptr->swap_chain->back;
+  wnd_ptr->swap_chain->back = wnd_ptr->swap_chain->front;
+  wnd_ptr->swap_chain->front = ptr_tmp;
+  mlx_put_image_to_window(gl_mgr_device->mlx_ptr, wnd_ptr->wnd_ptr,
+			  wnd_ptr->swap_chain->front->mlx_ptr,
+			  0, 0);
   return (ptr_tmp);
 }
