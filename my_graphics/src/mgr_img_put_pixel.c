@@ -5,12 +5,10 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Apr 22 16:57:04 2010 antoine luciani
-** Last update Tue May  4 14:50:37 2010 antoine luciani
+** Last update Tue May  4 15:20:05 2010 antoine luciani
 */
 
 #include <mlx.h>
-#include <stdio.h>
-
 #include "mgr_image.h"
 #include "mgr_device.h"
 
@@ -54,7 +52,4 @@ void		mgr_img_put_pixel(t_mgr_image *img_ptr, int x, int y, int color)
     mgr_map_24bits_color(ptr, final_color, img_ptr->endian);
   else if (bytes == 4)
     *(unsigned int *)ptr = final_color;
-  printf("bytes / pix\t: %d\n", bytes);
-  printf("wrote at (%d; %d)\n", x, y);
-  printf("color\t\t: 0x%x\n", color);
 }

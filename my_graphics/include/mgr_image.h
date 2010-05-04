@@ -5,11 +5,19 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 15:59:43 2010 antoine luciani
-** Last update Thu Apr 22 16:56:00 2010 antoine luciani
+** Last update Tue May  4 15:10:16 2010 antoine luciani
 */
 
 #ifndef _MGR_IMAGE_H_
 # define _MGR_IMAGE_H_
+
+typedef struct	s_mgr_rect
+{
+  unsigned int	x;
+  unsigned int	y;
+  unsigned int	width;
+  unsigned int	height;
+}		t_mgr_rect;
 
 typedef struct	s_mgr_image
 {
@@ -43,5 +51,10 @@ t_mgr_image	*mgr_create_image(int width, int height);
 ** @param color : color of the pixel.
 */
 void		mgr_img_put_pixel(t_mgr_image *img_ptr, int x, int y, int color);
+
+/*
+** Fill a region of an image with a color.
+*/
+void		mgr_img_fill(t_mgr_image *img_ptr, t_mgr_rect *rect_ptr, int color);
 
 #endif /* !_MGR_IMAGE_H_ */
