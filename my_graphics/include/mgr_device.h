@@ -5,15 +5,18 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 14:25:13 2010 antoine luciani
-** Last update Tue Apr 20 14:50:17 2010 antoine luciani
+** Last update Tue May  4 17:10:16 2010 antoine luciani
 */
 
 #ifndef _MGR_DEVICE_H_
 # define _MGR_DEVICE_H_
 
+# define MGR_RENDER_DOUBLEBUF 2
+
 typedef struct	s_mgr_device
 {
   void		*mlx_ptr;
+  int		render_flags;
 }		t_mgr_device;
 
 /*

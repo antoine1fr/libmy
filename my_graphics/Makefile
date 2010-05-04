@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue Apr 20 14:30:58 2010 antoine luciani
-## Last update Tue May  4 15:17:18 2010 antoine luciani
+## Last update Tue May  4 16:20:06 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -22,7 +22,8 @@ SOURCES		=	$(SRC_DIR)/mgr_device.c		\
 			$(SRC_DIR)/my_graphics.c	\
 			$(SRC_DIR)/mgr_create_image.c	\
 			$(SRC_DIR)/mgr_img_put_pixel.c	\
-			$(SRC_DIR)/mgr_img_fill.c
+			$(SRC_DIR)/mgr_img_fill.c	\
+			$(SRC_DIR)/mgr_wnd_swap_chain.c
 
 OBJS		=	$(SOURCES:.c=.o)
 INCLUDES	=	-I/usr/X11/include -Iinclude

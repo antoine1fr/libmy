@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 14:27:09 2010 antoine luciani
-** Last update Tue Apr 20 14:49:52 2010 antoine luciani
+** Last update Tue May  4 17:14:38 2010 antoine luciani
 */
 
 #include "mgr_device.h"
@@ -30,6 +30,7 @@ t_mgr_device	*mgr_create_device()
       free(device->mlx_ptr);
       return (0);
     }
+  device->render_flags = 0;
   return (device);
 }
 

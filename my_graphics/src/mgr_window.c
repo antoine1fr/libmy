@@ -5,16 +5,29 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 15:13:53 2010 antoine luciani
-** Last update Tue Apr 20 15:54:22 2010 antoine luciani
+** Last update Tue May  4 16:37:16 2010 antoine luciani
 */
-
-#include "mgr_window.h"
-#include "mgr_device.h"
 
 #include <stdlib.h>
 #include <mlx.h>
 
+#include "mgr_window.h"
+#include "mgr_device.h"
+#include "mgr_image.h"
+
 extern t_mgr_device	*gl_mgr_device;
+
+static t_mgr_swap_chain	*mgr_create_swap_chain(int width, int height)
+{
+  t_mgr_swap_chain	*sc_ptr;
+
+  sc_ptr = malloc(sizeof(*sc_ptr));
+  if (!sc_ptr)
+    return (0);
+  sc_ptr->back = mgr_create_image(width, height);
+  sc_ptr->front = mgr_create_image(width, height);
+  return (sc_ptr);
+}
 
 t_mgr_window	*mgr_create_window(char *title, int width, int height)
 {
@@ -32,5 +45,15 @@ t_mgr_window	*mgr_create_window(char *title, int width, int height)
   mgr_wnd_ptr->wnd_ptr = wnd_ptr;
   mgr_wnd_ptr->width = width;
   mgr_wnd_ptr->height = height;
+  mgr_wnd_ptr->swap_chain = mgr_create_swap_chain(width, height);
   return (mgr_wnd_ptr);
+}
+
+void		mgr_destroy_window(t_mgr_window *wnd_ptr)
+{
+  if (!wnd_ptr)
+    return;
+  free(wnd_ptr->swap_chain->front);
+  free(wnd_ptr->swap_chain->back);
+  free(wnd_ptr->swap_chain);
 }
