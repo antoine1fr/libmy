@@ -1,23 +1,9 @@
 CXX		=	g++
 RM		=	rm -f
 
-NAME		=	102matrice
+NAME		=	103homogene
 SRC_DIR		=	src
-SOURCES		=	$(SRC_DIR)/matrix2.cpp			\
-			$(SRC_DIR)/matrix2_add.cpp		\
-			$(SRC_DIR)/matrix2_mult.cpp		\
-			$(SRC_DIR)/vector2.cpp			\
-			$(SRC_DIR)/vector2_inout.cpp		\
-			$(SRC_DIR)/number.cpp			\
-			$(SRC_DIR)/number_getinbase.cpp		\
-			$(SRC_DIR)/number_inout.cpp		\
-			$(SRC_DIR)/number_operations.cpp	\
-			$(SRC_DIR)/option_functor.cpp		\
-			$(SRC_DIR)/option1_functor.cpp		\
-			$(SRC_DIR)/option2_functor.cpp		\
-			$(SRC_DIR)/option3_functor.cpp		\
-			$(SRC_DIR)/option4_functor.cpp		\
-			$(SRC_DIR)/main.cpp
+SOURCES		=	$(SRC_DIR)/main.cpp
 OBJS		=	$(SOURCES:.cpp=.o)
 INCLUDES	=	include
 CXXFLAGS	+=	-I$(INCLUDES) -W -Wall -ansi -pedantic -g

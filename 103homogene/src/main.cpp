@@ -1,5 +1,5 @@
 //
-// main.cpp for 102matrice in /u/all/lucian_b/cu/work/projects/102matrices
+// main.cpp for 103homogene in /u/all/lucian_b/cu/work/projects/102matrices
 // 
 // Made by antoine luciani
 // Login   <lucian_b@epitech.net>
@@ -8,6 +8,7 @@
 // Last update Sun May  2 17:28:35 2010 antoine luciani
 //
 
+#include <stdlib.h>
 #include <iostream>
 #include <vector>
 #include <sstream>
@@ -15,21 +16,17 @@
 
 #include "option_functors.hpp"
 
-void	PrintDoc()
+static void	PrintDoc()
 {
   std::cout << "Usage :\n";
-  std::cout << "\t./102matrice 1 base a11 a12 a21 a22 b11 b12 b21 b22\n";
-  std::cout << "\t./102matrice 2 base p m11 m12 m21 m22\n";
-  std::cout << "\t./102matrice 3 base m11 m12 m21 m22 x y\n";
-  std::cout << "\t./102matrice 4 base a11 a12 a21 a22 b11 b12 b21 b22\n";
 }
 
-void	InitApp(std::vector<COptionFunctor *> &v)
+static void	InitApp(std::vector<COptionFunctor *> &v)
 {
-  v.push_back(new COption1Functor);
-  v.push_back(new COption2Functor);
-  v.push_back(new COption3Functor);
-  v.push_back(new COption4Functor);
+}
+
+static void	CleanupApp(std::vector<COptionFunctor *> &v)
+{
 }
 
 int				main(int argc, char **argv)
@@ -60,5 +57,6 @@ int				main(int argc, char **argv)
       std::cout << Except.what() << '\n';
       return (EXIT_FAILURE);
     }
+  CleanupApp(vOptions);
   return (EXIT_SUCCESS);
 }
