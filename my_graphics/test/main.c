@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 15:26:58 2010 antoine luciani
-** Last update Tue May  4 16:40:41 2010 antoine luciani
+** Last update Thu May  6 12:46:50 2010 antoine luciani
 */
 
 #include "my_graphics.h"
@@ -25,13 +25,13 @@ int		main(int argc, char **argv)
     return (EXIT_FAILURE);
   wnd_ptr = mgr_create_window("my_graphics - test", 300, 300);
   img_ptr = wnd_ptr->swap_chain->back;
-  rect.x = 0;
-  rect.y = 0;
-  rect.width = 300;
-  rect.height = 300;
+  rect.x = 250;
+  rect.y = 250;
+  rect.width = 100;
+  rect.height = 200;
   mgr_img_fill(img_ptr, &rect, 0x00ff00ff);
   while (1)
-    img_ptr = mgr_wnd_swap_chain(wnd_ptr);
+      img_ptr = mgr_wnd_swap_chain(wnd_ptr);
   mgr_destroy_window(wnd_ptr);
   mgr_quit();
   return (EXIT_SUCCESS);

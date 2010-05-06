@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 16:08:52 2010 antoine luciani
-** Last update Wed Apr 21 13:46:55 2010 antoine luciani
+** Last update Thu May  6 12:51:43 2010 antoine luciani
 */
 
 #include "mgr_image.h"
@@ -34,5 +34,7 @@ t_mgr_image		*mgr_create_image(int width, int height)
 				      &img_ptr->bpp,
 				      &img_ptr->line_size,
 				      &img_ptr->endian);
+  img_ptr->width = width;
+  img_ptr->height = height;
   return (img_ptr);
 }

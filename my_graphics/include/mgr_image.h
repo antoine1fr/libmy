@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 15:59:43 2010 antoine luciani
-** Last update Tue May  4 15:10:16 2010 antoine luciani
+** Last update Thu May  6 12:34:40 2010 antoine luciani
 */
 
 #ifndef _MGR_IMAGE_H_
@@ -23,8 +23,8 @@ typedef struct	s_mgr_image
 {
   void		*mlx_ptr;
   char		*buffer;
-  int		width;
-  int		height;
+  unsigned int	width;
+  unsigned int	height;
   int		bpp;
   int		endian;
   int		line_size;
