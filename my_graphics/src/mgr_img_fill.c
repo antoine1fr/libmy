@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue May  4 15:08:27 2010 antoine luciani
-** Last update Thu May  6 12:49:42 2010 antoine luciani
+** Last update Thu May  6 12:55:54 2010 antoine luciani
 */
 
 #include <stdio.h>
@@ -27,13 +27,7 @@ void		mgr_img_fill(t_mgr_image *img_ptr, t_mgr_rect *rect_ptr, int color)
     {
       x = rect_ptr->x;
       while ((x < x_end) && (x < img_ptr->width))
-	{
-	  printf("x = %d\n", x);
-	  printf("y = %d\n", y);
-	  printf("x_end = %d\n", x_end);
-	  printf("y_end = %d\n", y_end);
 	  mgr_img_put_pixel(img_ptr, x++, y, color);
-	}
       y += 1;
     }
 }

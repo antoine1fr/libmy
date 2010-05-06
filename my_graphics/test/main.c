@@ -5,13 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 15:26:58 2010 antoine luciani
-** Last update Thu May  6 12:46:50 2010 antoine luciani
+** Last update Thu May  6 12:55:26 2010 antoine luciani
 */
 
-#include "my_graphics.h"
 #include <stdlib.h>
 #include <mlx.h>
 #include <string.h>
+#include "my_graphics.h"
 
 extern t_mgr_device	*gl_mgr_device;
 
