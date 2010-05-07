@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 15:26:58 2010 antoine luciani
-** Last update Fri May  7 10:23:46 2010 antoine luciani
+** Last update Fri May  7 11:06:32 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -26,10 +26,10 @@ int		main(int argc, char **argv)
     return (EXIT_FAILURE);
   wnd_ptr = mgr_create_window("my_graphics - test", 300, 300);
   img_ptr = wnd_ptr->swap_chain->back;
-  vec_end.x = 0;
+  vec_beg.x = 50;
+  vec_beg.y = 300;
+  vec_end.x = 60;
   vec_end.y = 0;
-  vec_beg.x = 1000;
-  vec_beg.y = 25;
   mgr_draw_line(&vec_beg, &vec_end, img_ptr, 0x0000ff00);
   while (1)
       img_ptr = mgr_wnd_swap_chain(wnd_ptr);

@@ -5,10 +5,9 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue May  4 15:08:27 2010 antoine luciani
-** Last update Thu May  6 12:55:54 2010 antoine luciani
+** Last update Fri May  7 10:48:33 2010 antoine luciani
 */
 
-#include <stdio.h>
 #include "mgr_image.h"
 
 void		mgr_img_fill(t_mgr_image *img_ptr, t_mgr_rect *rect_ptr, int color)

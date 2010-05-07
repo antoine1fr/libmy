@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu May  6 11:40:44 2010 antoine luciani
-** Last update Fri May  7 10:23:27 2010 antoine luciani
+** Last update Fri May  7 11:05:08 2010 antoine luciani
 */
 
 #include "mgr_primitive.h"
@@ -47,6 +47,40 @@ static void	mgr_draw_line1(struct s_mgr_vec2i *beg,
     }
 }
 
+static void	mgr_draw_line2(struct s_mgr_vec2i *beg,
+			       struct s_mgr_vec2i *end,
+			       struct s_mgr_image *img,
+			       int color)
+{
+  int		x;
+  int		y;
+  t_mgr_vec2i	v1;
+  t_mgr_vec2i	v2;
+
+  if (!beg || !end || !img)
+    return;
+  if (beg->y > end->y)
+    {
+      mgr_vec2i_copy(beg, &v2);
+      mgr_vec2i_copy(end, &v1);
+    }
+  else
+    {
+      mgr_vec2i_copy(beg, &v1);
+      mgr_vec2i_copy(end, &v2);
+    }
+  y = v1.y;
+  printf("v1(%d, %d) ; v2(%d, %d)\n",
+	 v1.x, v1.y, v2.x, v2.y);
+  while (y < v2.y && y < img->height)
+    {
+      x = v1.x + (y * (v2.x - v1.x) / (v2.y - v1.y));
+      printf("(%d, %d)\n", x, y);
+      mgr_img_put_pixel(img, x, y, color);
+      y += 1;
+    }
+}
+
 void		mgr_draw_line(struct s_mgr_vec2i *beg,
 			      struct s_mgr_vec2i *end,
 			      struct s_mgr_image *img,
@@ -59,6 +93,8 @@ void		mgr_draw_line(struct s_mgr_vec2i *beg,
   diff_y = end->y - beg->y;
   diff_x = (diff_x < 0) ? -diff_x : diff_x;
   diff_y = (diff_y < 0) ? -diff_y : diff_y;
-  if (diff_y < diff_x)
+  if (diff_y <= diff_x)
     mgr_draw_line1(beg, end, img, color);
+  else
+    mgr_draw_line2(beg, end, img, color);
 }
