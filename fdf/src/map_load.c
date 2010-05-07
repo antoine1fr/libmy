@@ -1,11 +1,11 @@
 /*
 ** map_load.c for fdf in /u/all/lucian_b/cu/work/projets/fdf
 ** 
-** Made by antoine luciani
+n** Made by antoine luciani
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sat Apr 17 14:10:05 2010 antoine luciani
-** Last update Sat Apr 17 17:45:34 2010 antoine luciani
+** Last update Fri May  7 20:43:13 2010 antoine luciani
 */
 
 #include <sys/types.h>
