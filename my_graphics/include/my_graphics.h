@@ -5,15 +5,17 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Apr 20 14:58:23 2010 antoine luciani
-** Last update Wed Apr 21 11:52:12 2010 antoine luciani
+** Last update Thu May  6 12:57:32 2010 antoine luciani
 */
 
 #ifndef _MY_GRAPHICS_H_
 # define _MY_GRAPHICS_H_
 
+#include "mgr_vec2i.h"
 #include "mgr_device.h"
 #include "mgr_window.h"
 #include "mgr_image.h"
+#include "mgr_primitive.h"
 
 typedef enum	e_mgr_error
   {
