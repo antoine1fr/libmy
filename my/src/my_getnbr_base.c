@@ -8,7 +8,9 @@
 ** Last update Tue Mar 16 10:41:38 2010 antoine luciani
 */
 
-int		is_valid_digit(char c, char *base)
+#include "my.h"
+
+static int	is_valid_digit(char c, char *base)
 {
   int		i;
 
@@ -22,7 +24,7 @@ int		is_valid_digit(char c, char *base)
   return (0);
 }
 
-char		*find_first_digit(char *str, char *base)
+static char	*find_first_digit(char *str, char *base)
 {
   int		i;
 
@@ -36,7 +38,7 @@ char		*find_first_digit(char *str, char *base)
   return (0);
 }
 
-int		get_digit_weight(char c, char *base)
+static int	get_digit_weight(char c, char *base)
 {
   int		i;
 
@@ -48,16 +50,6 @@ int		get_digit_weight(char c, char *base)
       i += 1;
     }
   return (-1);
-}
-
-int		my_strlen(char *str)
-{
-  int		len;
-
-  len = 0;
-  while (str[len] != '\0')
-    len += 1;
-  return (len);
 }
 
 int		my_getnbr_base(char *str, char *base)
@@ -74,7 +66,7 @@ int		my_getnbr_base(char *str, char *base)
   start += 1;
   len = my_strlen(base);
   i = 0;
-  while (start[i] != '\0')
+  while (start[i] != '\0' && is_valid_digit(start[i], base))
     {
       result = result * len + get_digit_weight(start[i], base);
       i += 1;
