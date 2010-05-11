@@ -5,11 +5,12 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue May 11 17:31:14 2010 antoine luciani
-** Last update Tue May 11 23:14:53 2010 antoine luciani
+** Last update Wed May 12 00:58:47 2010 antoine luciani
 */
 
 #include <stdlib.h>
 #include <fcntl.h>
+#include <stdio.h>
 
 #include "map.h"
 #include "list.h"
@@ -36,17 +37,28 @@ static int	test_tokenize_file(const char *file_name)
     return (1);
   list_init(&list);
   map_tokenize_file(file_desc, &list);
+  printf("list's size : %d\n", list.node_count);
+  list_print_data(&list, print_token_info);
   list_clean(&list);
   return (0);
 }
 
 int		main(int argc, char **argv)
 {
+  t_map		*map;
+
   if (argc != 2)
     {
-      my_putstr("Missing the map's file name!\n");
+      my_putstr("ERROR : missing the map's file name!\n");
       return (EXIT_FAILURE);
     }
+  if ((map = map_load(argv[1])) == 0)
+    {
+      my_putstr("ERROR : could not load the map!\n");
+      return (EXIT_FAILURE);
+    }
+  /*
   test_tokenize_file(argv[1]);
+  */
   return (EXIT_SUCCESS);
 }

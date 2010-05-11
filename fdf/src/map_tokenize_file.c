@@ -5,11 +5,10 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue May 11 21:19:21 2010 antoine luciani
-** Last update Tue May 11 23:15:53 2010 antoine luciani
+** Last update Tue May 11 23:37:39 2010 antoine luciani
 */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 #include "my.h"
 #include "list.h"
@@ -26,8 +25,6 @@ void		create_and_add_token(t_list *list,
 {
   t_token	*token;
 
-  printf("type\t= %d\n", type);
-  printf("value\t=%d\n", value);
   token = xmalloc(sizeof(*token));
   token->type = type;
   token->value = value;
@@ -67,30 +64,20 @@ static char	*find_number_end(char *line, char *base)
 */
 void		tokenize_line(char *line, struct s_list *list)
 {
-  int		value;
-
   while (*line != 0)
     {
       if (*line >= '0' && *line <= '9')
 	{
 	  if (line[0] == '0' && line[1] == 'x')
 	    {
-	      my_putstr("TOKEN_COLOR\t: ");
-	      my_put_nbr(TOKEN_COLOR);
-	      my_putchar('\n');
 	      create_and_add_token(list, TOKEN_COLOR,
 				   my_getnbr_base(line + 2, HEX_BASE));
 	      line = find_number_end(line, HEX_BASE);
 	    }
 	  else if (*line >= '0' && *line <= '9')
 	    {
-	      my_putstr("TOKEN_HEIGHT\t: ");
-	      my_put_nbr(TOKEN_HEIGHT);
-	      my_putchar('\n');
-	      value = my_getnbr_base(line, DEC_BASE);
-	      printf("tokenize_line : value = %d\n", value);
 	      create_and_add_token(list, TOKEN_HEIGHT,
-				   value);
+				   my_getnbr_base(line, DEC_BASE));
 	      line = find_number_end(line, DEC_BASE);
 	    }
 	}

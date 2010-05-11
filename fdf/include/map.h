@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sat Apr 17 14:01:45 2010 antoine luciani
-** Last update Tue May 11 23:02:15 2010 antoine luciani
+** Last update Wed May 12 00:50:12 2010 antoine luciani
 */
 
 #ifndef MAP_H

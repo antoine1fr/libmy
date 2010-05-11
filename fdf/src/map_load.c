@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue May 11 14:56:16 2010 antoine luciani
-** Last update Tue May 11 21:40:34 2010 antoine luciani
+** Last update Wed May 12 01:01:41 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -16,6 +16,56 @@
 #include "my.h"
 #include "list.h"
 #include "map.h"
+
+int		compute_map_size(t_map *map, t_list *token_list)
+{
+  t_list_node	*node_ptr;
+  t_token	*token_ptr;
+  int		width;
+
+  node_ptr = token_list->first;
+  width = 0;
+  map->width = -1;
+  map->height = 0;
+  while (node_ptr != 0)
+    {
+      token_ptr = (t_token *)node_ptr->data;
+      if (token_ptr->type == TOKEN_LINE_END)
+	{
+	  if (map->width == -1)
+	    map->width = width;
+	  else if (map->width != width)
+	    return (1);
+	  map->height += 1;
+	  width = 0;
+	}
+      else if (token_ptr->type == TOKEN_HEIGHT)
+	width += 1;
+      node_ptr = node_ptr->next;
+    }
+  return (0);
+}
+
+void		fill_map(t_map *map, t_list *token_list)
+{
+  int		i;
+  t_list_node	*node_ptr;
+  t_token	*token_ptr;
+
+  map->points = xmalloc(sizeof(*(map->points)) * map->width * map->height);
+  node_ptr = token_list->first;
+  i = 0;
+  while (node_ptr)
+    {
+      token_ptr = (t_token *)node_ptr->data;
+      if (token_ptr->type == TOKEN_HEIGHT)
+	  map->points[i].height = token_ptr->value;
+      else if (token_ptr->type == TOKEN_COLOR)
+	map->points[i - 1].color = token_ptr->value;
+      i += 1;
+      node_ptr = node_ptr->next;
+    }
+}
 
 /*
 ** Loads a map from a file.
@@ -32,5 +82,13 @@ t_map		*map_load(const char *file_name)
   map = xmalloc(sizeof(*map));
   my_memset(map, 0, sizeof(*map));
   map_tokenize_file(fd, &token_list);
+  if (token_list.node_count == 0)
+    return (0);
+  if (compute_map_size(map, &token_list))
+    {
+      list_clean(&token_list);
+      return (0);
+    }
+  fill_map(map, &token_list);
   return (map);
 }
