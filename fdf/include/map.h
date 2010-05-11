@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sat Apr 17 14:01:45 2010 antoine luciani
-** Last update Sat Apr 17 14:10:49 2010 antoine luciani
+** Last update Tue May 11 14:19:54 2010 antoine luciani
 */
 
 #ifndef MAP_H
@@ -24,6 +24,6 @@ typedef struct	s_map
   int		height;
 }		t_map;
 
-t_map	*map_load(char *filename);
+t_map	*map_load(const char *file_name);
 
 #endif /* MAP_H */
