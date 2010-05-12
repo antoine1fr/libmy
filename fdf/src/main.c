@@ -43,7 +43,7 @@ static int	test_tokenize_file(const char *file_name)
   return (0);
 }
 
-void		print_map(t_list *list_ptr)
+void		print_map_from_tokens(t_list *list_ptr)
 {
   t_list_node	*node_ptr;
   t_token	*token_ptr;
@@ -62,6 +62,23 @@ void		print_map(t_list *list_ptr)
     }
 }
 
+void		print_map(t_map *map_ptr)
+{
+  int		i;
+  int		point_count;
+
+  point_count = map_ptr->width * map_ptr->height;
+  i = 0;
+  while (i < point_count)
+    {
+      printf("%d,0x%x ",
+	     map_ptr->points[i].height, map_ptr->points[i].color);
+      i += 1;
+      if (i % map_ptr->width == 0)
+	printf("\n");
+    }
+}
+
 int		main(int argc, char **argv)
 {
   t_map		*map;
@@ -76,6 +93,7 @@ int		main(int argc, char **argv)
       my_putstr("ERROR : could not load the map!\n");
       return (EXIT_FAILURE);
     }
+  print_map(map);
   /*
   test_tokenize_file(argv[1]);
   */

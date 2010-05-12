@@ -17,6 +17,8 @@
 #include "list.h"
 #include "map.h"
 
+void		print_map_from_tokens(t_list *list_ptr);
+
 int		compute_map_size(t_map *map, t_list *token_list)
 {
   t_list_node	*node_ptr;
@@ -34,8 +36,10 @@ int		compute_map_size(t_map *map, t_list *token_list)
 	{
 	  if (map->width == -1)
 	    map->width = width;
+	  /*
 	  else if (map->width != width)
 	    return (1);
+	  */
 	  map->height += 1;
 	  width = 0;
 	}
@@ -59,10 +63,12 @@ void		fill_map(t_map *map, t_list *token_list)
     {
       token_ptr = (t_token *)node_ptr->data;
       if (token_ptr->type == TOKEN_HEIGHT)
+	{
 	  map->points[i].height = token_ptr->value;
+	  map->points[i++].color = 0xffffff;
+	}
       else if (token_ptr->type == TOKEN_COLOR)
 	map->points[i - 1].color = token_ptr->value;
-      i += 1;
       node_ptr = node_ptr->next;
     }
 }
@@ -84,7 +90,7 @@ t_map		*map_load(const char *file_name)
   map_tokenize_file(fd, &token_list);
   if (token_list.node_count == 0)
     return (0);
-  print_map(&token_list);
+  print_map_from_tokens(&token_list);
   if (compute_map_size(map, &token_list))
     {
       list_clean(&token_list);

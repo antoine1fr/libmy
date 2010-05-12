@@ -84,7 +84,6 @@ void		tokenize_line(char *line, struct s_list *list)
       else
 	  line += 1;
     }
-  create_and_add_token(list, TOKEN_LINE_END, 0);
 }
 
 /*
@@ -98,5 +97,6 @@ void		map_tokenize_file(int fd, t_list *token_list)
     {
       tokenize_line(line, token_list);
       free(line);
+      create_and_add_token(token_list, TOKEN_LINE_END, 0);
     }
 }
