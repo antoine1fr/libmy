@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu May  6 11:40:44 2010 antoine luciani
-** Last update Fri May  7 11:05:08 2010 antoine luciani
+** Last update Wed May 12 20:45:36 2010 antoine luciani
 */
 
 #include "mgr_primitive.h"
@@ -70,12 +70,9 @@ static void	mgr_draw_line2(struct s_mgr_vec2i *beg,
       mgr_vec2i_copy(end, &v2);
     }
   y = v1.y;
-  printf("v1(%d, %d) ; v2(%d, %d)\n",
-	 v1.x, v1.y, v2.x, v2.y);
   while (y < v2.y && y < img->height)
     {
       x = v1.x + (y * (v2.x - v1.x) / (v2.y - v1.y));
-      printf("(%d, %d)\n", x, y);
       mgr_img_put_pixel(img, x, y, color);
       y += 1;
     }
