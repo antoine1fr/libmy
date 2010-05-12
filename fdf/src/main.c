@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue May 11 17:31:14 2010 antoine luciani
-** Last update Wed May 12 17:57:19 2010 antoine luciani
+** Last update Wed May 12 19:44:46 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -15,6 +15,8 @@
 #include "map.h"
 #include "list.h"
 #include "my.h"
+#include "matrix4f.h"
+#include "vector4f.h"
 
 static void	print_token_info(t_token *token_ptr)
 {
@@ -79,20 +81,30 @@ void		print_map(t_map *map_ptr)
     }
 }
 
-int		main(int argc, char **argv)
+/*
+** 1 * 1 + 2 * 2 + 3 * 3 + 4 * 4 = 1 + 4 + 9 + 16 = 30
+**
+** 10 * 1 + 1 * 2 + 2 * 3 + 0 * 4 = 10 + 2 + 6 + 0 = 18
+**
+** 0
+**
+** 1 * 1 + 1 * 2 + 3 * 3 + 2 * 4 = 1 + 2 + 9 + 8 = 20
+**
+** 30 18 0 20
+*/
+int		main()
 {
-  t_map		*map;
+  t_matrix4f	mat = {
+    {1, 2, 3, 4},
+    {10, 1, 2, 0},
+    {0, 0, 0, 0},
+    {1, 1, 3, 2}
+  };
+  t_vector4f	u = {1, 2, 3, 4};
+  t_vector4f	v;
 
-  if (argc != 2)
-    {
-      my_putstr("ERROR : missing the map's file name!\n");
-      return (EXIT_FAILURE);
-    }
-  if ((map = map_load(argv[1])) == 0)
-    {
-      my_putstr("ERROR : could not load the map!\n");
-      return (EXIT_FAILURE);
-    }
-  map_destroy(map);
+  mat4f_mult_vec4f(mat, &u, &v);
+  printf("%f | %f | %f | %f\n",
+	 v.x, v.y, v.z, v.w);
   return (EXIT_SUCCESS);
 }
