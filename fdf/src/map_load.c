@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue May 11 14:56:16 2010 antoine luciani
-** Last update Wed May 12 01:01:41 2010 antoine luciani
+** Last update Wed May 12 17:45:52 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -106,6 +106,7 @@ t_map		*map_load(const char *file_name)
     return (0);
   map = xmalloc(sizeof(*map));
   my_memset(map, 0, sizeof(*map));
+  list_init(&token_list);
   map_tokenize_file(fd, &token_list);
   if (token_list.node_count == 0)
     return (0);
