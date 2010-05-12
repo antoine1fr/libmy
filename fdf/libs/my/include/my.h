@@ -55,5 +55,6 @@ char	*my_strdup(char *str);
 char	*my_strndup(char *src, int n);
 char	*my_untostr(unsigned int n, char *base);
 char	*my_ntostr(int n, char *base);
+void	my_str_to_upper(char *str);
 
 #endif /* !MY_H */

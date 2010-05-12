@@ -93,9 +93,5 @@ int		main(int argc, char **argv)
       my_putstr("ERROR : could not load the map!\n");
       return (EXIT_FAILURE);
     }
-  print_map(map);
-  /*
-  test_tokenize_file(argv[1]);
-  */
   return (EXIT_SUCCESS);
 }

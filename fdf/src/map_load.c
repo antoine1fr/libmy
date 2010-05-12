@@ -65,12 +65,31 @@ void		fill_map(t_map *map, t_list *token_list)
       if (token_ptr->type == TOKEN_HEIGHT)
 	{
 	  map->points[i].height = token_ptr->value;
-	  map->points[i++].color = 0xffffff;
+	  map->points[i].color = 0xffffff;
+	  i += 1;
 	}
       else if (token_ptr->type == TOKEN_COLOR)
 	map->points[i - 1].color = token_ptr->value;
       node_ptr = node_ptr->next;
     }
+}
+
+int		get_map_height_count(t_list *token_list)
+{
+  int		count;
+  t_list_node	*node_ptr;
+  t_token	*token_ptr;
+
+  count = 0;
+  node_ptr = token_list->first;
+  while (node_ptr)
+    {
+      token_ptr = (t_token *)node_ptr->data;
+      if (token_ptr->type == TOKEN_HEIGHT)
+	count += 1;
+      node_ptr = node_ptr->next;
+    }
+  return (count);
 }
 
 /*
@@ -90,12 +109,15 @@ t_map		*map_load(const char *file_name)
   map_tokenize_file(fd, &token_list);
   if (token_list.node_count == 0)
     return (0);
-  print_map_from_tokens(&token_list);
   if (compute_map_size(map, &token_list))
     {
       list_clean(&token_list);
       return (0);
     }
+  my_putstr("get_map_height_count() returns : ");
+  my_put_nbr(get_map_height_count(&token_list));
+  my_putchar('\n');
+  print_map_from_tokens(&token_list);
   fill_map(map, &token_list);
   return (map);
 }

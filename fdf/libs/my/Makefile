@@ -54,7 +54,8 @@ SOURCES	=		src/my_find_prime_sup.c		\
 			src/my_swap.c			\
 			src/my_ntostr.c			\
 			src/count_nbr_digits.c		\
-			src/count_unbr_digits.c
+			src/count_unbr_digits.c		\
+			src/my_str_to_upper.c
 
 INCLUDE	=		-Iinclude/
 CFLAGS	=		$(INCLUDE) -W -Wall -ansi -pedantic

@@ -17,6 +17,18 @@ static int	is_valid_digit(char c, char *base)
   i = 0;
   while (base[i] != '\0')
     {
+      /*
+	if (base[i] >= 'a' && base[i] <= 'z')
+	{
+	lower = base[i];
+	upper = base[i] - 'a' + 'A';
+	}
+	else if (base[i] >= 'A' && base[i] <= 'Z')
+	{
+	lower = base[i] - 'A' + 'a';
+	upper = base[i];
+	}
+      */
       if (c == base[i])
 	return (1);
       i += 1;
@@ -61,6 +73,8 @@ int		my_getnbr_base(char *str, char *base)
 
   if (str[0] == '\0' || base[0] == '\0')
     return (0);
+  my_str_to_upper(str);
+  my_str_to_upper(base);
   start = find_first_digit(str, base);
   result = get_digit_weight(*start, base);
   start += 1;
