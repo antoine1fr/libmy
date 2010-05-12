@@ -72,7 +72,7 @@ void		tokenize_line(char *line, struct s_list *list)
 	    {
 	      create_and_add_token(list, TOKEN_COLOR,
 				   my_getnbr_base(line + 2, HEX_BASE));
-	      line = find_number_end(line, HEX_BASE);
+	      line = find_number_end(line + 2, HEX_BASE);
 	    }
 	  else if (*line >= '0' && *line <= '9')
 	    {
@@ -82,12 +82,9 @@ void		tokenize_line(char *line, struct s_list *list)
 	    }
 	}
       else
-	{
-	  if (*line == '\n')
-	    create_and_add_token(list + 1, TOKEN_LINE_END, 0);
 	  line += 1;
-	}
     }
+  create_and_add_token(list, TOKEN_LINE_END, 0);
 }
 
 /*

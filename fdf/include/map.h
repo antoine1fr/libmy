@@ -11,7 +11,7 @@
 #ifndef MAP_H
 # define MAP_H
 
-#define DEC_BASE "012345679"
+#define DEC_BASE "0123456789"
 #define HEX_BASE "0123456789ABCDEF"
 
 struct s_list;

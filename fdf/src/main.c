@@ -43,6 +43,25 @@ static int	test_tokenize_file(const char *file_name)
   return (0);
 }
 
+void		print_map(t_list *list_ptr)
+{
+  t_list_node	*node_ptr;
+  t_token	*token_ptr;
+
+  node_ptr = list_ptr->first;
+  while (node_ptr != 0)
+    {
+      token_ptr = (t_token *)node_ptr->data;
+      if (token_ptr->type == TOKEN_HEIGHT)
+	  printf("%d ", token_ptr->value);
+      else if(token_ptr->type == TOKEN_COLOR)
+	  printf(", 0x%x ", token_ptr->value);
+      else
+	printf("\n");
+      node_ptr = node_ptr->next;
+    }
+}
+
 int		main(int argc, char **argv)
 {
   t_map		*map;

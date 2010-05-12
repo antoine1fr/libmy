@@ -84,6 +84,7 @@ t_map		*map_load(const char *file_name)
   map_tokenize_file(fd, &token_list);
   if (token_list.node_count == 0)
     return (0);
+  print_map(&token_list);
   if (compute_map_size(map, &token_list))
     {
       list_clean(&token_list);
