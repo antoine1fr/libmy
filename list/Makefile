@@ -21,6 +21,7 @@ SOURCES		=	$(SRC_DIR)list_append_data.c	\
 			$(SRC_DIR)list_push_data.c	\
 			$(SRC_DIR)list_push_node.c	\
 			$(SRC_DIR)list_print_data.c	\
+			$(SRC_DIR)list_pop_element.c	\
 			$(SRC_DIR)list_clean.c		\
 
 OBJS		=	$(SOURCES:.c=.o)

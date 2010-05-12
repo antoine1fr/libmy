@@ -74,4 +74,9 @@ int		list_push_data(t_list *list, void *data);
 */
 void		list_print_data(t_list *list, void (*f)());
 
+/*
+** Remove the last element of a list.
+*/
+t_list_node	*list_pop_element(t_list *list);
+
 #endif
