@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue May 11 14:56:16 2010 antoine luciani
-** Last update Wed May 12 17:45:52 2010 antoine luciani
+** Last update Wed May 12 17:52:14 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -115,10 +115,6 @@ t_map		*map_load(const char *file_name)
       list_clean(&token_list);
       return (0);
     }
-  my_putstr("get_map_height_count() returns : ");
-  my_put_nbr(get_map_height_count(&token_list));
-  my_putchar('\n');
-  print_map_from_tokens(&token_list);
   fill_map(map, &token_list);
   return (map);
 }

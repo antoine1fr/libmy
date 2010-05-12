@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue May 11 14:06:06 2010 antoine luciani
-## Last update Tue May 11 21:25:31 2010 antoine luciani
+## Last update Wed May 12 17:56:23 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -15,6 +15,7 @@ SRC_DIR		=	src
 SOURCES		=	$(SRC_DIR)/get_next_line.c		\
 			$(SRC_DIR)/map_load.c			\
 			$(SRC_DIR)/map_tokenize_file.c		\
+			$(SRC_DIR)/map_destroy.c		\
 			$(SRC_DIR)/main.c
 OBJS		=	$(SOURCES:.c=.o)
 LIBS		=	-Llibs/list/lib -Llibs/my/lib -lmy -llist

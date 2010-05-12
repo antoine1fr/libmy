@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue May 11 17:31:14 2010 antoine luciani
-** Last update Wed May 12 00:58:47 2010 antoine luciani
+** Last update Wed May 12 17:57:19 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -93,5 +93,6 @@ int		main(int argc, char **argv)
       my_putstr("ERROR : could not load the map!\n");
       return (EXIT_FAILURE);
     }
+  map_destroy(map);
   return (EXIT_SUCCESS);
 }

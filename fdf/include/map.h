@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sat Apr 17 14:01:45 2010 antoine luciani
-** Last update Wed May 12 00:50:12 2010 antoine luciani
+** Last update Wed May 12 17:53:27 2010 antoine luciani
 */
 
 #ifndef MAP_H
@@ -44,5 +44,6 @@ typedef struct	s_map
 
 t_map	*map_load(const char *file_name);
 void	map_tokenize_file(int fd, struct s_list *list);
+void	map_destroy(t_map *map_ptr);
 
 #endif /* MAP_H */
