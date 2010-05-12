@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue May 11 17:31:14 2010 antoine luciani
-** Last update Wed May 12 19:44:46 2010 antoine luciani
+** Last update Wed May 12 21:05:50 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -17,6 +17,10 @@
 #include "my.h"
 #include "matrix4f.h"
 #include "vector4f.h"
+#include "my_graphics.h"
+
+#define ISOMETRIC_K1 1.0f
+#define ISOMETRIC_K2 1.0f
 
 static void	print_token_info(t_token *token_ptr)
 {
@@ -81,30 +85,35 @@ void		print_map(t_map *map_ptr)
     }
 }
 
-/*
-** 1 * 1 + 2 * 2 + 3 * 3 + 4 * 4 = 1 + 4 + 9 + 16 = 30
-**
-** 10 * 1 + 1 * 2 + 2 * 3 + 0 * 4 = 10 + 2 + 6 + 0 = 18
-**
-** 0
-**
-** 1 * 1 + 1 * 2 + 3 * 3 + 2 * 4 = 1 + 2 + 9 + 8 = 20
-**
-** 30 18 0 20
-*/
 int		main()
 {
   t_matrix4f	mat = {
-    {1, 2, 3, 4},
-    {10, 1, 2, 0},
-    {0, 0, 0, 0},
-    {1, 1, 3, 2}
+    {ISOMETRIC_K1, -ISOMETRIC_K2, 0.f, 0.f},
+    {ISOMETRIC_K1 / 2.f, ISOMETRIC_K2 / 2.f, 1.f, 0.f},
+    {0.f, 0.f, 0.f, 0.f},
+    {0.f, 0.f, 0.f, 1.f}
   };
-  t_vector4f	u = {1, 2, 3, 4};
-  t_vector4f	v;
+  t_vector4f	quad[4] = {
+    {0.f, 0.f, 0.f, 1.f},
+    {10.f, 0.f, 0.f, 1.f},
+    {10.f, 10.f, 0.f, 1.f},
+    {0.f, 10.f, 0.f, 1.f}
+  };
+  t_vector4f	quad_proj[4];
+  int		i;
+  t_mgr_window	*wnd_ptr;
+  t_mgr_image	*back_buffer;
 
-  mat4f_mult_vec4f(mat, &u, &v);
-  printf("%f | %f | %f | %f\n",
-	 v.x, v.y, v.z, v.w);
+  mgr_init();
+  wnd_ptr = mgr_create_window("test - proj", 400, 400);
+  back_buffer = wnd_ptr->swap_chain->back;
+  i = 0;
+  while (i < 4)
+    {
+      mat4f_mult_vec4f(mat, &quad[i], &quad_proj[i]);
+      i += 1;
+    }
+  mgr_destroy(wnd_ptr);
+  mgr_quit();
   return (EXIT_SUCCESS);
 }
