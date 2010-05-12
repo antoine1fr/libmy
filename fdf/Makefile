@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue May 11 14:06:06 2010 antoine luciani
-## Last update Wed May 12 21:17:47 2010 antoine luciani
+## Last update Wed May 12 23:40:44 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -20,6 +20,7 @@ SOURCES		=	$(SRC_DIR)/get_next_line.c		\
 			$(SRC_DIR)/main.c
 OBJS		=	$(SOURCES:.c=.o)
 LIBS		=	-Llibs/list/lib -Llibs/my/lib -Llibs/my_graphics/lib -lmy -llist -lmy_graphics
+LIBS		+=	-L/usr/X11/lib -lX11 -lXext -lmlx_FreeBSD -lm
 
 LDFLAGS		+=	-Iinclude -Ilibs/my/include -Ilibs/list/include -Ilibs/my_graphics/include
 CFLAGS		+=	-W -Wall -Wextra -g3
