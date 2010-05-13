@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Thu Apr 29 18:24:52 2010 antoine luciani
+** Last update Thu May 13 03:42:46 2010 antoine luciani
 */
 
 #ifndef MY_H
@@ -36,6 +36,7 @@ int	my_str_isprintable(char *str);
 int	my_str_isupper(char *str);
 char	**my_str_to_wordtab(char *str);
 char	**my_str_to_wordtab_delim(char *str, char delim);
+void	my_free_to_wordtab(char **tab);
 char	*my_strcapitalize(char *str);
 char	*my_strcat(char *dest, char *src);
 int	my_strcmp(char *s1, char *s2);
