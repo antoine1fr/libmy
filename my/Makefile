@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Mon Mar 22 10:40:50 2010 antoine luciani
-## Last update Thu Apr 29 18:26:12 2010 antoine luciani
+## Last update Thu May 13 03:38:42 2010 antoine luciani
 ##
 
 CC	=		gcc
@@ -34,6 +34,7 @@ SOURCES	=		src/my_find_prime_sup.c		\
 			src/my_str_isupper.c 		\
 			src/my_str_to_wordtab.c 	\
 			src/my_str_to_wordtab_delim.c 	\
+			src/my_free_to_wordtab.c	\
 			src/my_strcapitalize.c 		\
 			src/my_strcat.c 		\
 			src/my_strcmp.c 		\
