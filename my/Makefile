@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Mon Mar 22 10:40:50 2010 antoine luciani
-## Last update Thu May 13 03:38:42 2010 antoine luciani
+## Last update Thu May 20 14:14:53 2010 antoine luciani
 ##
 
 CC	=		gcc
@@ -57,8 +57,8 @@ SOURCES	=		src/my_find_prime_sup.c		\
 			src/count_nbr_digits.c		\
 			src/count_unbr_digits.c
 
-INCLUDE	=		-Iinclude/
-CFLAGS	=		$(INCLUDE) -W -Wall -ansi -pedantic
+LDFLAGS	+=		-Iinclude/
+CFLAGS	+=		-W -Wall -Wextra -ansi -pedantic
 OBJ	=		$(SOURCES:.c=.o)
 NAME	=		libmy.a
 RM	=		rm -f
@@ -88,4 +88,4 @@ re		: 	fclean all
 .SUFFIXES	:	.c .o
 
 .c.o		:
-			$(CC) -c $(CFLAGS) $< -o $@
+			$(CC) -c $(LDFLAGS) $(CFLAGS) $< -o $@
