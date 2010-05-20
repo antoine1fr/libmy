@@ -5,13 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Mar 21 14:40:56 2010 antoine luciani
-** Last update Sun Mar 21 15:39:46 2010 antoine luciani
+** Last update Thu May 20 14:12:01 2010 antoine luciani
 */
 
 #include <stdlib.h>
 #include "my.h"
 
-int		substring_length(char *str, char delim)
+static int	substring_length(char *str, char delim)
 {
   int		len;
 
@@ -24,7 +24,7 @@ int		substring_length(char *str, char delim)
   return (len);
 }
 
-int		count_substrings(char *str, char delim)
+static int	count_substrings(char *str, char delim)
 {
   int		i;
 
