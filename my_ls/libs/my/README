@@ -1,0 +1,9 @@
+Introduction:
+Libmy is a library I have coded during my 3 first weeks at Epitech.
+I use it in my everyday-projects at school so bug fixing and new feature adding are
+done on the fly.
+
+Compilation:
+Simply execute make in the root directory. Compilation has been tested on GNU/Linux
+and FreeBSD. It should compile on many unix systems because it only uses a very few
+functions of the system (write, malloc, free).
