@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon May 24 10:34:38 2010 antoine luciani
-** Last update Mon May 24 10:40:52 2010 antoine luciani
+** Last update Mon May 24 10:45:30 2010 antoine luciani
 */
 
 #ifndef BTREE_H_
@@ -18,5 +18,7 @@ typedef struct		s_btree_node
   void			*data;
   void			*sort_data;
 }			t_btree_node;
+
+void	btree_init_node(t_btree_node **root_ptr);
 
 #endif /* !BTREE_H_ */

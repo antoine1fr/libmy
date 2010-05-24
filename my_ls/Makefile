@@ -4,24 +4,26 @@
 ## Made by antoine luciani
 ## Login   <lucian_b@epitech.net>
 ## 
-## Started on  Sun May 23 10:56:57 2010 antoine luciani
-## Last update Sun May 23 11:27:38 2010 antoine luciani
+## Started on  Mon May 24 10:54:06 2010 antoine luciani
+## Last update Mon May 24 11:01:55 2010 antoine luciani
 ##
 
 CC		=	gcc
 RM		=	rm -f
 
 NAME		=	my_ls
-LDFLAGS		+=	-Iinclude -Ilibs/my/include
+LDFLAGS		+=	-Iinclude -Ilibs/my/include -Ilibs/list/include
 CFLAGS		+=	-W -Wall -Wextra -ansi -pedantic
-LIBS		=	-Llibs/my/lib -lmy
+THIRD		=	-Llibs/my/lib -Llibs/list/lib -lmy -llist
 
 SRC_DIR		=	src
-SOURCES		=	$(SRC_DIR)/main.c
+SOURCES		=	$(SRC_DIR)/main.c			\
+			$(SRC_DIR)/btree_init_node.c
+
 OBJECTS		=	$(SOURCES:.c=.o)
 
 $(NAME)		:	$(OBJECTS)
-		$(CC) -o $(NAME) $(OBJECTS) $(LIBS)
+		$(CC) -o $(NAME) $(OBJECTS) $(THIRD)
 
 all		:	$(NAME)
 
@@ -29,7 +31,7 @@ clean		:
 		$(RM) $(OBJECTS)
 
 fclean		:	clean
-		$(RM) $(NAME)
+		$(RM) $(OBJECTS)
 
 re		:	fclean all
 
@@ -37,5 +39,5 @@ re		:	fclean all
 
 .SUFFIXES	:	.c .o
 
-.c.o		:	$(OBJECTS)
+.c.o		:	$(SOURCES)
 		$(CC) $(LDFLAGS) $(CFLAGS) -c $< -o $@
