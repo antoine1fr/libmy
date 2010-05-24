@@ -21,7 +21,8 @@ SOURCES		=	$(SRC_DIR)/main.c			\
 			$(SRC_DIR)/btree_init_node.c		\
 			$(SRC_DIR)/btree_init.c			\
 			$(SRC_DIR)/btree_append_node.c		\
-			$(SRC_DIR)/btree_clean.c
+			$(SRC_DIR)/btree_clean.c		\
+			$(SRC_DIR)/btree_append_data.c
 
 OBJECTS		=	$(SOURCES:.c=.o)
 

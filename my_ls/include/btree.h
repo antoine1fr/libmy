@@ -46,7 +46,17 @@ void	btree_init_node(t_btree_node **node_ptr);
 void	btree_append_node(t_btree_node *node_ptr, t_btree *tree_ptr);
 
 /*
+** Appends data to a binary tree.
+**
+** Notes :
+** - sort_data is used to place the data correctly in the tree
+** - data will be freed automatically but not sort_data
+*/
+void	btree_append_data(void *data, void *sort_data, t_btree *tree_ptr);
+
+/*
 ** Cleans a binary tree
 */
 void	btree_clean(t_btree *tree_ptr);
+
 #endif /* !BTREE_H_ */

@@ -38,22 +38,15 @@ int		comp_strings(void *ptr1, void *ptr2)
 int		main()
 {
   t_btree	tree;
-  t_btree_node	*node_ptr;
   char		*str;
 
   btree_init(&tree, comp_strings, free);
-  node_ptr = 0;
-  btree_init_node(&node_ptr);
   str = my_strdup("blabla");
-  node_ptr->data = str;
-  node_ptr->sort_data = str;
-  btree_append_node(node_ptr, &tree);
+  btree_append_data(str, str, &tree);
   str = my_strdup("antoine");
-  node_ptr = 0;
-  btree_init_node(&node_ptr);
-  node_ptr->data = str;
-  node_ptr->sort_data = str;
-  btree_append_node(node_ptr, &tree);
+  btree_append_data(str, str, &tree);
+  str = my_strdup("blibli");
+  btree_append_data(str, str, &tree);
   print_tree(&tree);
   btree_clean(&tree);
   return (EXIT_SUCCESS);
