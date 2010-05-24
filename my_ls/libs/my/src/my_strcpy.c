@@ -8,7 +8,7 @@
 ** Last update Mon Mar 15 09:39:18 2010 antoine luciani
 */
 
-char		*my_strcpy(char *dest, char *src)
+char		*my_strcpy(char *dest, const char *src)
 {
   char		*ptr;
 

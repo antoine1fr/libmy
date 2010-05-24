@@ -35,7 +35,8 @@ t_error	mls_read_dir(const char *path, char flags,
 ** If this element is a directory, then it is also
 ** added to dir_list for a future printing.
 */
-t_bool	mls_process_element(DIR *dir_ptr, char flags,
-			    t_btree *elt_tree, t_list *dir_list);
+t_bool	mls_process_element(DIR *dir_ptr, const char *root,
+			    char flags, t_btree *elt_tree,
+			    t_list *dir_list);
 
 #endif /* !MY_LS_H_ */

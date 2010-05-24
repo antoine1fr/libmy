@@ -8,7 +8,7 @@
 ** Last update Thu Mar 11 10:12:37 2010 antoine luciani
 */
 
-int		my_strlen(char *str)
+int		my_strlen(const char *str)
 {
   int		length;
 
