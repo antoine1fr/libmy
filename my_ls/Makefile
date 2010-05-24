@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Mon May 24 10:54:06 2010 antoine luciani
-## Last update Mon May 24 11:01:55 2010 antoine luciani
+## Last update Mon May 24 12:52:21 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -18,7 +18,9 @@ THIRD		=	-Llibs/my/lib -Llibs/list/lib -lmy -llist
 
 SRC_DIR		=	src
 SOURCES		=	$(SRC_DIR)/main.c			\
-			$(SRC_DIR)/btree_init_node.c
+			$(SRC_DIR)/btree_init_node.c		\
+			$(SRC_DIR)/btree_init.c			\
+			$(SRC_DIR)/btree_append_node.c
 
 OBJECTS		=	$(SOURCES:.c=.o)
 
