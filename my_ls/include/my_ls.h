@@ -1,3 +1,13 @@
+/*
+** my_ls.h for my_ls in /u/all/lucian_b/cu/work/projects/my_ls
+** 
+** Made by antoine luciani
+** Login   <lucian_b@epitech.net>
+** 
+** Started on  Mon May 24 23:42:03 2010 antoine luciani
+** Last update Mon May 24 23:42:05 2010 antoine luciani
+*/
+
 #ifndef MY_LS_H_
 # define MY_LS_H_
 

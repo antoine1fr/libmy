@@ -1,3 +1,13 @@
+/*
+** btree_clean.c for my_ls in /u/all/lucian_b/cu/work/projects/my_ls
+** 
+** Made by antoine luciani
+** Login   <lucian_b@epitech.net>
+** 
+** Started on  Mon May 24 23:40:54 2010 antoine luciani
+** Last update Mon May 24 23:40:55 2010 antoine luciani
+*/
+
 #include <stdlib.h>
 #include "btree.h"
 

@@ -1,3 +1,13 @@
+/*
+** mls_readdir.c for my_ls in /u/all/lucian_b/cu/work/projects/my_ls
+** 
+** Made by antoine luciani
+** Login   <lucian_b@epitech.net>
+** 
+** Started on  Mon May 24 23:41:16 2010 antoine luciani
+** Last update Mon May 24 23:41:44 2010 antoine luciani
+*/
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>

@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun May 23 10:38:44 2010 antoine luciani
-** Last update Mon May 24 12:57:08 2010 antoine luciani
+** Last update Mon May 24 23:39:15 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -15,7 +15,6 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 #include "btree.h"
 #include "list.h"
@@ -44,7 +43,8 @@ void		simple_dir_print(t_btree_node *node_ptr)
     return;
   simple_dir_print(node_ptr->left_ptr);
   elt_ptr = (t_mls_element *)node_ptr->data;
-  printf("%s\n", elt_ptr->dirent_ptr->d_name);
+  my_putstr(elt_ptr->dirent_ptr->d_name);
+  my_putchar('\n');
   simple_dir_print(node_ptr->right_ptr);
 }
 
