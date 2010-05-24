@@ -16,6 +16,6 @@ void		btree_init_node(t_btree_node **node_ptr)
   if (!node_ptr)
     return;
   else if (*node_ptr == 0)
-    node_ptr = xmalloc(sizeof(**node_ptr));
+    *node_ptr = xmalloc(sizeof(**node_ptr));
   my_memset(*node_ptr, 0, sizeof(**node_ptr));
 }

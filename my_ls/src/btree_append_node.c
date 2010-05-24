@@ -20,9 +20,9 @@ void		btree_append_node(t_btree_node *node_ptr, t_btree *tree_ptr)
   while (*current != 0)
     {
       if (tree_ptr->compare(node_ptr->sort_data, (*current)->sort_data) < 0)
-	*current = (*current)->left_ptr;
+	current = &((*current)->left_ptr);
       else
-	*current = (*current)->right_ptr;
+	current = &((*current)->right_ptr);
     }
   *current = node_ptr;
 }

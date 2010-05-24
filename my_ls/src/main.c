@@ -13,10 +13,48 @@
 #include "my.h"
 #include "btree.h"
 
-int		main(int argc, char **argv)
+void		print_node(t_btree_node *node_ptr)
+{
+  if (!node_ptr)
+    return;
+  print_node(node_ptr->left_ptr);
+  my_putstr((char *)node_ptr->data);
+  my_putchar('\n');
+  print_node(node_ptr->right_ptr);
+}
+
+void		print_tree(t_btree *tree_ptr)
+{
+  if (!tree_ptr)
+    return;
+  print_node(tree_ptr->root_ptr);
+}
+
+int		comp_strings(void *ptr1, void *ptr2)
+{
+  return (my_strcmp((char *)ptr1, (char *)ptr2));
+}
+
+int		main()
 {
   t_btree	tree;
+  t_btree_node	*node_ptr;
+  char		*str;
 
-  btree_init(&tree, my_strcmp, free);
+  btree_init(&tree, comp_strings, free);
+  node_ptr = 0;
+  btree_init_node(&node_ptr);
+  str = my_strdup("blabla");
+  node_ptr->data = str;
+  node_ptr->sort_data = str;
+  btree_append_node(node_ptr, &tree);
+  str = my_strdup("antoine");
+  node_ptr = 0;
+  btree_init_node(&node_ptr);
+  node_ptr->data = str;
+  node_ptr->sort_data = str;
+  btree_append_node(node_ptr, &tree);
+  print_tree(&tree);
+  btree_clean(&tree);
   return (EXIT_SUCCESS);
 }

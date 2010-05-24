@@ -13,14 +13,15 @@ RM		=	rm -f
 
 NAME		=	my_ls
 LDFLAGS		+=	-Iinclude -Ilibs/my/include -Ilibs/list/include
-CFLAGS		+=	-W -Wall -Wextra -ansi -pedantic
-THIRD		=	-Llibs/my/lib -Llibs/list/lib -lmy -llist
+CFLAGS		+=	-W -Wall -Wextra -ansi -pedantic -g3
+THIRD		=	-Llibs/my/lib -lmy
 
 SRC_DIR		=	src
 SOURCES		=	$(SRC_DIR)/main.c			\
 			$(SRC_DIR)/btree_init_node.c		\
 			$(SRC_DIR)/btree_init.c			\
-			$(SRC_DIR)/btree_append_node.c
+			$(SRC_DIR)/btree_append_node.c		\
+			$(SRC_DIR)/btree_clean.c
 
 OBJECTS		=	$(SOURCES:.c=.o)
 
