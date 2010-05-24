@@ -10,44 +10,40 @@
 
 #include <stdlib.h>
 
-#include "my.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <dirent.h>
+#include <stdlib.h>
+
 #include "btree.h"
+#include "list.h"
+#include "my.h"
+#include "my_ls.h"
 
-void		print_node(t_btree_node *node_ptr)
-{
-  if (!node_ptr)
-    return;
-  print_node(node_ptr->left_ptr);
-  my_putstr((char *)node_ptr->data);
-  my_putchar('\n');
-  print_node(node_ptr->right_ptr);
-}
-
-void		print_tree(t_btree *tree_ptr)
-{
-  if (!tree_ptr)
-    return;
-  print_node(tree_ptr->root_ptr);
-}
-
-int		comp_strings(void *ptr1, void *ptr2)
+int		comp_elements(void *ptr1, void *ptr2)
 {
   return (my_strcmp((char *)ptr1, (char *)ptr2));
 }
 
-int		main()
+void		clean_element(void *ptr)
 {
-  t_btree	tree;
-  char		*str;
+  t_mls_element	*elt_ptr;
 
-  btree_init(&tree, comp_strings, free);
-  str = my_strdup("blabla");
-  btree_append_data(str, str, &tree);
-  str = my_strdup("antoine");
-  btree_append_data(str, str, &tree);
-  str = my_strdup("blibli");
-  btree_append_data(str, str, &tree);
-  print_tree(&tree);
-  btree_clean(&tree);
+  elt_ptr = (t_mls_element *)ptr;
+  free(elt_ptr->stat_ptr);
+  free(elt_ptr);
+}
+
+int		main(int argc, char **argv)
+{
+  t_btree	elt_tree;
+  t_list	dir_list;
+
+  if (argc != 2)
+    return (EXIT_FAILURE);
+  btree_init(&elt_tree, comp_elements, clean_element);
+  list_init(&dir_list);
+  mls_read_dir(argv[1], 0, &elt_tree, &dir_list);
   return (EXIT_SUCCESS);
 }
