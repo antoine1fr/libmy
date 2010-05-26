@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon May 24 23:42:03 2010 antoine luciani
-** Last update Mon May 24 23:42:05 2010 antoine luciani
+** Last update Wed May 26 14:51:50 2010 antoine luciani
 */
 
 #ifndef MY_LS_H_
@@ -48,5 +48,10 @@ t_error	mls_read_dir(const char *path, char flags,
 t_bool	mls_process_element(DIR *dir_ptr, const char *root,
 			    char flags, t_btree *elt_tree,
 			    t_list *dir_list);
+
+/*
+** Constructs a path from a root path and a relative path.
+*/
+char	*mls_construct_path(const char *root, const char *rel_path);
 
 #endif /* !MY_LS_H_ */
