@@ -5,8 +5,10 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon May 24 23:40:34 2010 antoine luciani
-** Last update Mon May 24 23:40:35 2010 antoine luciani
+** Last update Wed May 26 16:19:35 2010 antoine luciani
 */
+
+#include <stdio.h>
 
 #include "my.h"
 #include "btree.h"
@@ -16,9 +18,10 @@ void		btree_append_data(void *data, void *sort_data,
 {
   t_btree_node	*node_ptr;
 
-  if (!data || !sort_data)
+  if (!data || !sort_data || !tree_ptr)
     return;
-  node_ptr = xmalloc(sizeof(*node_ptr));
+  node_ptr = 0;
+  btree_init_node(&node_ptr);
   node_ptr->data = data;
   node_ptr->sort_data = sort_data;
   btree_append_node(node_ptr, tree_ptr);

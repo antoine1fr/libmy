@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun May 23 10:38:44 2010 antoine luciani
-** Last update Mon May 24 23:39:15 2010 antoine luciani
+** Last update Wed May 26 17:44:54 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "btree.h"
 #include "list.h"
@@ -44,26 +45,49 @@ void		simple_dir_print(t_btree_node *node_ptr)
   simple_dir_print(node_ptr->left_ptr);
   elt_ptr = (t_mls_element *)node_ptr->data;
   my_putstr(elt_ptr->dirent_ptr->d_name);
-  my_putchar('\n');
   simple_dir_print(node_ptr->right_ptr);
 }
 
-int		main(int argc, char **argv)
+char		*gen_str()
+{
+  int		i;
+  char		*str;
+
+  str = xmalloc(sizeof(*str) * 15);
+  i = 0;
+  while (i < 15)
+    {
+      str[i] = (rand() % ('z' - 'a')) + 'a';
+      i += 1;
+    }
+  return (str);
+}
+
+void		print_tree(t_btree_node *node_ptr)
+{
+  if (!node_ptr)
+    return;
+  print_tree(node_ptr->left_ptr);
+  my_putstr((char *)node_ptr->data);
+  my_putchar('\n');
+  print_tree(node_ptr->right_ptr);
+}
+
+int		main()
 {
   t_btree	elt_tree;
-  t_list	dir_list;
-  t_error	error_code;
+  int		i;
+  char		*str;
 
-  if (argc != 2)
+  btree_init(&elt_tree, comp_elements, free);
+  srand(time(0));
+  i = 0;
+  while (i < 1000000)
     {
-      my_puterr("ERROR : missing argument(s)!\n");
-      return (EXIT_FAILURE);
+      str = gen_str();
+      btree_append_data(str, str, &elt_tree);
+      i += 1;
     }
-  btree_init(&elt_tree, comp_elements, clean_element);
-  list_init(&dir_list);
-  error_code = mls_read_dir(argv[1], 0, &elt_tree, &dir_list);
-  simple_dir_print(elt_tree.root_ptr);
   btree_clean(&elt_tree);
-  list_clean(&dir_list);
   return (EXIT_SUCCESS);
 }

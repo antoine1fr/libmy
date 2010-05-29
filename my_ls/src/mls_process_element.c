@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed May 26 14:36:04 2010 antoine luciani
-** Last update Wed May 26 14:47:20 2010 antoine luciani
+** Last update Sat May 29 17:05:55 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -24,6 +24,29 @@
 #define IS_VALID_DIR(x) (my_strcmp((x)->dirent_ptr->d_name, "..") &&	\
 			 my_strcmp((x)->dirent_ptr->d_name, "."))
 
+static t_bool	mls_process_dirent(t_mls_element *elt_ptr, DIR *dir_ptr)
+{
+  struct dirent	*dirent_ptr;
+
+  dirent_ptr = readdir(dir_ptr);
+  if (!dirent_ptr)
+    return (false);
+  elt_ptr->dirent_ptr = xmalloc(sizeof(*(elt_ptr->dirent_ptr)));
+  my_memcpy(elt_ptr->dirent_ptr, dirent_ptr);
+  return (true);
+}
+
+static void	mls_clean_element(t_mls_element *elt_ptr)
+{
+  if (!elt_ptr)
+    return;
+  if (elt_ptr->dirent_ptr)
+    free(elt_ptr->dirent_ptr);
+  if (elt_ptr->stat_ptr)
+    free(elt_ptr->dirent_ptr);
+  free(elt_ptr);
+}
+
 t_bool		mls_process_element(DIR *dir_ptr, const char *root,
 				    char flags, t_btree *elt_tree,
 				    t_list *dir_list)
@@ -32,17 +55,18 @@ t_bool		mls_process_element(DIR *dir_ptr, const char *root,
   t_mls_element	*elt;
   char		*path;
 
-  dirent_ptr = readdir(dir_ptr);
-  if (!dirent_ptr)
-    return (MLS_FALSE);
-  path = mls_construct_path(root, dirent_ptr->d_name);
   elt = xmalloc(sizeof(*elt));
+  if (mls_process_dirent(elt, dir_ptr) == MLS_FALSE)
+    {
+      mls_clean_element(elt);
+      return (MLS_FALSE);
+    }
+  path = mls_construct_path(root, dirent_ptr->d_name);
   elt->stat_ptr = xmalloc(sizeof(*(elt->stat_ptr)));
   if (stat(path, elt->stat_ptr) == -1)
     {
       perror(strerror(errno));
-      free(elt->stat_ptr);
-      free(elt);
+      mls_clean_element(elt);
       return (MLS_FALSE);
     }
   elt->dirent_ptr = dirent_ptr;
