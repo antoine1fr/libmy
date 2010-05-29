@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Sat May 29 16:57:17 2010 antoine luciani
+** Last update Sat May 29 17:14:10 2010 antoine luciani
 */
 
 #ifndef MY_H
@@ -40,7 +40,7 @@ void	my_free_to_wordtab(char **tab);
 char	*my_strcapitalize(char *str);
 char	*my_strcat(char *dest, char *src);
 int	my_strcmp(char *s1, char *s2);
-char	*my_strcpy(char *dest, char *src);
+char	*my_strcpy(char *dest, const char *src);
 int	my_strlcat(char *dest, char *src, int size);
 int	my_strlen(const char *str);
 char	*my_strlowcase(char *str);
