@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon May 24 23:41:16 2010 antoine luciani
-** Last update Wed May 26 15:57:12 2010 antoine luciani
+** Last update Sat May 29 18:13:41 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -27,7 +27,7 @@ t_error		mls_read_dir(const char *path, char flags,
   while (mls_process_element(dir_ptr, path, flags,
 			     elt_tree, dir_list))
     ;
-  if (closedir(dir_ptr) != 0)
+  if (closedir(dir_ptr) == -1)
     return (ERROR_CLOSE_FILE);
   return (ERROR_NONE);
 }

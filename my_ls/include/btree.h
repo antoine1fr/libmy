@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon May 24 10:34:38 2010 antoine luciani
-** Last update Mon May 24 12:55:09 2010 antoine luciani
+** Last update Sat May 29 17:43:52 2010 antoine luciani
 */
 
 #ifndef BTREE_H_
@@ -58,5 +58,11 @@ void	btree_append_data(void *data, void *sort_data, t_btree *tree_ptr);
 ** Cleans a binary tree
 */
 void	btree_clean(t_btree *tree_ptr);
+
+/*
+** Generates 1000000 strings and sorts them into
+** a binary tree.
+*/
+void	btree_bench();
 
 #endif /* !BTREE_H_ */

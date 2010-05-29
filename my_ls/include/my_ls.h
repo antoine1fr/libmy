@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon May 24 23:42:03 2010 antoine luciani
-** Last update Wed May 26 14:51:50 2010 antoine luciani
+** Last update Sat May 29 17:41:59 2010 antoine luciani
 */
 
 #ifndef MY_LS_H_
