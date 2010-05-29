@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Thu May 13 03:42:46 2010 antoine luciani
+** Last update Sat May 29 16:52:23 2010 antoine luciani
 */
 
 #ifndef MY_H
@@ -56,5 +56,6 @@ char	*my_strdup(char *str);
 char	*my_strndup(char *src, int n);
 char	*my_untostr(unsigned int n, char *base);
 char	*my_ntostr(int n, char *base);
+void	my_memcpy(void *dest, void *src, unsigned int size);
 
 #endif /* !MY_H */

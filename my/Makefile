@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Mon Mar 22 10:40:50 2010 antoine luciani
-## Last update Thu May 20 14:14:53 2010 antoine luciani
+## Last update Sat May 29 16:52:49 2010 antoine luciani
 ##
 
 CC	=		gcc
@@ -55,7 +55,8 @@ SOURCES	=		src/my_find_prime_sup.c		\
 			src/my_swap.c			\
 			src/my_ntostr.c			\
 			src/count_nbr_digits.c		\
-			src/count_unbr_digits.c
+			src/count_unbr_digits.c		\
+			src/my_memcpy.c
 
 LDFLAGS	+=		-Iinclude/
 CFLAGS	+=		-W -Wall -Wextra -ansi -pedantic
