@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Sat May 29 16:52:23 2010 antoine luciani
+** Last update Sat May 29 16:57:17 2010 antoine luciani
 */
 
 #ifndef MY_H
@@ -42,7 +42,7 @@ char	*my_strcat(char *dest, char *src);
 int	my_strcmp(char *s1, char *s2);
 char	*my_strcpy(char *dest, char *src);
 int	my_strlcat(char *dest, char *src, int size);
-int	my_strlen(char *str);
+int	my_strlen(const char *str);
 char	*my_strlowcase(char *str);
 char	*my_strncat(char *dest, char *src, int n);
 int	my_strncmp(char *s1, char *s2, int n);

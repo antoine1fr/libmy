@@ -5,10 +5,10 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Mar 11 10:09:20 2010 antoine luciani
-** Last update Thu Mar 11 10:12:37 2010 antoine luciani
+** Last update Sat May 29 16:57:32 2010 antoine luciani
 */
 
-int		my_strlen(char *str)
+int		my_strlen(const char *str)
 {
   int		length;
 
