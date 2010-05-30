@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun May 23 10:38:44 2010 antoine luciani
-** Last update Sat May 29 21:44:37 2010 antoine luciani
+** Last update Sat May 29 22:02:56 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -51,24 +51,21 @@ void		simple_dir_print(t_btree_node *node_ptr)
 
 int		main(int argc, char **argv)
 {
-  /*
-    t_btree	elt_tree;
-    t_list	dir_list;
+  t_btree	elt_tree;
+  t_list	dir_list;
 
-    if (argc == 2)
+  if (argc == 2)
     {
-    btree_init(&elt_tree, comp_elements, clean_element);
-    list_init(&dir_list);
-    mls_read_dir(argv[1], 0, &elt_tree, &dir_list);
-    btree_clean(&elt_tree);
-    list_clean(&dir_list);
+      btree_init(&elt_tree, comp_elements, clean_element);
+      list_init(&dir_list);
+      mls_read_dir(argv[1], 0, &elt_tree, &dir_list);
+      btree_clean(&elt_tree);
+      list_clean(&dir_list);
     }
-    else
+  else
     {
-    my_puterr("[ERROR] : missing arguments!\n");
-    return (EXIT_FAILURE);
+      my_puterr("[ERROR] : missing arguments!\n");
+      return (EXIT_FAILURE);
     }
-  */
-  btree_bench();
   return (EXIT_SUCCESS);
 }
