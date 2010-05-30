@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon May 24 23:42:03 2010 antoine luciani
-** Last update Sun May 30 21:27:53 2010 antoine luciani
+** Last update Sun May 30 22:26:01 2010 antoine luciani
 */
 
 #ifndef MY_LS_H_
@@ -13,12 +13,13 @@
 
 # define ERROR_NONE 0
 # define ERROR_BAD_PATH 1
-# define ERROR_CLOSE_FILE 2
+# define ERROR_CLOSE_DIR 2
 # define ERROR_BAD_PARAM 3
 
 # define MLS_FALSE 0
 # define MLS_TRUE 1
 
+# define MLS_FLAG_UNKNOWN 0x00
 # define MLS_FLAG_HIDDEN 0x01
 # define MLS_FLAG_DESC 0x02
 # define MLS_FLAG_DETAILS 0x04
@@ -78,6 +79,12 @@ int     mls_comp_times(void *ptr1, void *ptr2);
 /*
 ** Executes the my_ls core functionnalities.
 */
-void	my_ls(const char *path, char flags);
+t_error	my_ls(const char *path, char flags);
+
+/*
+** Parses an array of arguments.
+*/
+t_error	mls_parse_args(int argc, char **argv,
+		       char *flags, int *path_begin);
 
 #endif /* !MY_LS_H_ */
