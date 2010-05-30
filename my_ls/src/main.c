@@ -59,7 +59,7 @@ int		main(int argc, char **argv)
   if (argc == 2)
     {
       btree_init(&elt_tree, comp_elements, clean_element);
-      list_init(&dir_list);
+      list_init(&dir_list, free);
       mls_read_dir(argv[1], 0, &elt_tree, &dir_list);
       simple_dir_print(elt_tree.root_ptr);
       btree_clean(&elt_tree);
