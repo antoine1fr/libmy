@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
 
 #include "btree.h"
@@ -38,33 +39,47 @@ void		clean_element(void *ptr)
   free(elt_ptr);
 }
 
-void		simple_dir_print(t_btree_node *node_ptr)
+void		mls_print_dir(const t_btree_node *node_ptr)
 {
   t_mls_element	*elt_ptr;
 
-  if (!node_ptr)
-    return;
-  simple_dir_print(node_ptr->left_ptr);
-  elt_ptr = (t_mls_element *)node_ptr->data;
-  my_putstr(elt_ptr->dirent_ptr->d_name);
-  my_putchar('\n');
-  simple_dir_print(node_ptr->right_ptr);
+  if (node_ptr)
+    {
+      mls_print_dir(node_ptr->left_ptr);
+      elt_ptr = (t_mls_element *)node_ptr->data;
+      my_putstr(elt_ptr->dirent_ptr->d_name);
+      my_putchar('\n');
+      mls_print_dir(node_ptr->right_ptr);
+    }
+}
+
+void		my_ls_simple_and_rec(const char *path)
+{
+  t_btree	elt_tree;
+  t_list	dir_list;
+  t_list_node	*node_ptr;
+
+  btree_init(&elt_tree, comp_elements, clean_element);
+  list_init(&dir_list, free);
+  mls_read_dir(path, 0, &elt_tree, &dir_list);
+  my_putstr("ls of ");
+  my_putstr(path);
+  my_putstr(" :\n");
+  mls_print_dir(elt_tree.root_ptr);
+  my_putstr("-----------\n");
+  btree_clean(&elt_tree);
+  node_ptr = dir_list.first;
+  while (node_ptr)
+    {
+      my_ls_simple_and_rec((char *)node_ptr->data);
+      node_ptr = node_ptr->next;
+    }
 }
 
 int		main(int argc, char **argv)
 {
-  t_btree	elt_tree;
-  t_list	dir_list;
-
   if (argc == 2)
-    {
-      btree_init(&elt_tree, comp_elements, clean_element);
-      list_init(&dir_list, free);
-      mls_read_dir(argv[1], 0, &elt_tree, &dir_list);
-      simple_dir_print(elt_tree.root_ptr);
-      btree_clean(&elt_tree);
-      list_clean(&dir_list);
-    }
+      my_ls_simple_and_rec(argv[1]);
   else
     {
       my_puterr("[ERROR] : missing arguments!\n");

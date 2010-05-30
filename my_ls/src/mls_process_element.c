@@ -78,7 +78,7 @@ t_bool		mls_process_element(DIR *dir_ptr, const char *root,
   else
     btree_append_data(elt, elt->dirent_ptr->d_name, elt_tree);
   if (S_ISDIR(elt->stat_ptr->st_mode) && IS_VALID_DIR(elt))
-    list_append_data(dir_list, path);
+      list_append_data(dir_list, path);
   else
     free(path);
   return (MLS_TRUE);
