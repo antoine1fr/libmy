@@ -25,7 +25,7 @@ t_list_node		*list_pop_element(t_list *list)
       node = node->next;
     }
   if (node == list->first)
-    list_init(list);
+    list_init(list, list->clean_elt);
   else
     {
       list->last = penultimate;

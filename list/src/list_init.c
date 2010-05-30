@@ -12,12 +12,14 @@
 
 #include "list.h"
 
-int		list_init(t_list *list)
+int		list_init(t_list *list,
+			  t_list_clean_func clean)
 {
   if (!list)
     return (LIST_ERROR_BAD_POINTER);
   list->first = 0;
   list->last = 0;
   list->node_count = 0;
+  list->clean_elt = clean;
   return (LIST_ERROR_OK);
 }

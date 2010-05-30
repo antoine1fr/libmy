@@ -21,8 +21,10 @@ int		list_clean(t_list *list)
     {
       node = list->first;
       list->first = list->first->next;
+      if (list->clean_elt)
+	list->clean_elt(node->data);
       free(node);
     }
-  list_init(list);
+  list_init(list, list->clean_elt);
   return (LIST_ERROR_OK);
 }

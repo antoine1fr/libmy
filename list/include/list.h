@@ -15,6 +15,8 @@
 #define LIST_ERROR_BAD_POINTER 1
 #define LIST_ERROR_MALLOC 2
 
+typedef void	(*t_list_clean_func) (void *elt_ptr);
+
 /*
 ** Describes a node in a linked list.
 */
@@ -32,12 +34,13 @@ typedef struct		s_list
   struct s_list_node	*first;
   struct s_list_node	*last;
   int			node_count;
+  t_list_clean_func	clean_elt;
 }			t_list;
 
 /*
 ** Initializes a linked list.
 */
-int		list_init(t_list *list);
+int		list_init(t_list *list, t_list_clean_func clean);
 
 /*
 ** Creates a list node.
