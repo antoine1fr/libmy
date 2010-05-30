@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Sat May 29 17:14:10 2010 antoine luciani
+** Last update Sun May 30 23:13:24 2010 antoine luciani
 */
 
 #ifndef MY_H
@@ -52,7 +52,7 @@ char	*my_strupcase(char *str);
 void	my_swap(int *p1, int *p2);
 void	*my_memset(void *ptr, int value, int size);
 void	*xmalloc(int size);
-char	*my_strdup(char *str);
+char	*my_strdup(const char *str);
 char	*my_strndup(char *src, int n);
 char	*my_untostr(unsigned int n, char *base);
 char	*my_ntostr(int n, char *base);

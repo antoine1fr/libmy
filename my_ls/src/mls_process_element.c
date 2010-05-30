@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed May 26 14:36:04 2010 antoine luciani
-** Last update Sun May 30 20:59:36 2010 antoine luciani
+** Last update Sun May 30 23:11:42 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -61,6 +61,7 @@ t_bool		mls_process_element(DIR *dir_ptr, const char *root,
       return (MLS_FALSE);
     }
   path = mls_construct_path(root, elt->dirent_ptr->d_name);
+  elt->root = my_strdup(root);
   mls_process_stat(elt, path);
   if (flags & MLS_FLAG_BY_TIME)
     btree_append_data(elt, &(elt->stat_ptr->st_mtime), elt_tree);

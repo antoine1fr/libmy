@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun May 30 20:25:25 2010 antoine luciani
-** Last update Sun May 30 20:42:36 2010 antoine luciani
+** Last update Sun May 30 23:04:14 2010 antoine luciani
 */
 
 #include <dirent.h>

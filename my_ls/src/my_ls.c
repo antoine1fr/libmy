@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun May 30 20:19:39 2010 antoine luciani
-** Last update Sun May 30 22:45:53 2010 antoine luciani
+** Last update Sun May 30 23:10:22 2010 antoine luciani
 */
 
 #include <dirent.h>
@@ -20,6 +20,7 @@ t_error		my_ls_sub(const char *path, char flags,
 			  t_list *dir_list)
 {
   t_btree	elt_tree;
+  t_mls_element	*elt_ptr;
   t_error	error;
 
   if (flags & MLS_FLAG_BY_TIME)
@@ -30,7 +31,14 @@ t_error		my_ls_sub(const char *path, char flags,
   error = mls_read_dir(path, flags, &elt_tree, dir_list);
   if (error != ERROR_NONE)
     return (error);
+  if (elt_tree.root_ptr)
+    {
+      elt_ptr = (t_mls_element *)elt_tree.root_ptr->data;
+      my_putstr((char *)elt_ptr->root);
+      my_putstr(" : \n");
+    }
   mls_print_dir(elt_tree.root_ptr, flags);
+  my_putchar('\n');
   btree_clean(&elt_tree);
   return (ERROR_NONE);
 }

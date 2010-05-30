@@ -5,13 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Mar 17 11:38:10 2010 antoine luciani
-** Last update Fri Mar 19 13:05:04 2010 antoine luciani
+** Last update Sun May 30 23:13:33 2010 antoine luciani
 */
 
 #include <stdlib.h>
 #include "my.h"
 
-char		*my_strdup(char *str)
+char		*my_strdup(const char *str)
 {
   int		size;
   char		*new_str;

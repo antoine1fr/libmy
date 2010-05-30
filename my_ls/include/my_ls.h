@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon May 24 23:42:03 2010 antoine luciani
-** Last update Sun May 30 22:26:01 2010 antoine luciani
+** Last update Sun May 30 23:04:10 2010 antoine luciani
 */
 
 #ifndef MY_LS_H_
@@ -33,6 +33,7 @@ typedef struct  s_mls_element
 {
   struct dirent *dirent_ptr;
   struct stat   *stat_ptr;
+  char		*root;
 }               t_mls_element;
 
 /*
