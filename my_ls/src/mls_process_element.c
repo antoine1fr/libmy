@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed May 26 14:36:04 2010 antoine luciani
-** Last update Sat May 29 18:29:09 2010 antoine luciani
+** Last update Sun May 30 20:59:36 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -44,17 +44,6 @@ static void	mls_process_stat(t_mls_element *elt_ptr, const char *path)
       free(elt_ptr->stat_ptr);
       elt_ptr->stat_ptr = 0;
     }
-}
-
-static void	mls_clean_element(t_mls_element *elt_ptr)
-{
-  if (!elt_ptr)
-    return;
-  if (elt_ptr->dirent_ptr)
-    free(elt_ptr->dirent_ptr);
-  if (elt_ptr->stat_ptr)
-    free(elt_ptr->stat_ptr);
-  free(elt_ptr);
 }
 
 t_bool		mls_process_element(DIR *dir_ptr, const char *root,

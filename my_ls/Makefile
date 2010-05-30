@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Mon May 24 10:54:06 2010 antoine luciani
-## Last update Sat May 29 17:43:41 2010 antoine luciani
+## Last update Sun May 30 21:00:53 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -26,7 +26,11 @@ SOURCES		=	$(SRC_DIR)/main.c			\
 			$(SRC_DIR)/btree_bench.c		\
 			$(SRC_DIR)/mls_process_element.c	\
 			$(SRC_DIR)/mls_construct_path.c		\
-			$(SRC_DIR)/mls_readdir.c
+			$(SRC_DIR)/mls_readdir.c		\
+			$(SRC_DIR)/mls_print_dir.c		\
+			$(SRC_DIR)/my_ls.c			\
+			$(SRC_DIR)/mls_clean_element.c		\
+			$(SRC_DIR)/mls_comp_elements.c
 
 OBJECTS		=	$(SOURCES:.c=.o)
 
