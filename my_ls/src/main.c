@@ -33,7 +33,8 @@ void		clean_element(void *ptr)
 
   elt_ptr = (t_mls_element *)ptr;
   free(elt_ptr->dirent_ptr);
-  free(elt_ptr->stat_ptr);
+  if (elt_ptr->stat_ptr)
+    free(elt_ptr->stat_ptr);
   free(elt_ptr);
 }
 
@@ -46,6 +47,7 @@ void		simple_dir_print(t_btree_node *node_ptr)
   simple_dir_print(node_ptr->left_ptr);
   elt_ptr = (t_mls_element *)node_ptr->data;
   my_putstr(elt_ptr->dirent_ptr->d_name);
+  my_putchar('\n');
   simple_dir_print(node_ptr->right_ptr);
 }
 
@@ -59,6 +61,7 @@ int		main(int argc, char **argv)
       btree_init(&elt_tree, comp_elements, clean_element);
       list_init(&dir_list);
       mls_read_dir(argv[1], 0, &elt_tree, &dir_list);
+      simple_dir_print(elt_tree.root_ptr);
       btree_clean(&elt_tree);
       list_clean(&dir_list);
     }

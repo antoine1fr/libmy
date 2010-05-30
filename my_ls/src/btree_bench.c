@@ -53,8 +53,8 @@ void		btree_bench()
   srand(time(0));
   btree_init(&tree, btree_comp_element, free);
   i = 0;
-  my_putstr("Generating 1,000,000 strings...\n");
-  while (i < 1000000)
+  my_putstr("Sorting 10,000,000 strings(15) by ASCII order...\n");
+  while (i < 10000000)
     {
       str = btree_gen_str();
       btree_append_data(str, str, &tree);

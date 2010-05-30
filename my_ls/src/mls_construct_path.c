@@ -24,13 +24,13 @@ char		*mls_construct_path(const char *root, const char *rel_path)
   int		jump;
 
   root_len = my_strlen(root);
-  rel_len = my_strlen(root);
-  len = root_len + rel_len;
-  path = xmalloc(sizeof(*path) * (len + 2));
-  my_strcpy(path, root);
+  rel_len = my_strlen(rel_path);
   jump = root[root_len - 1] != '/';
+  len = root_len + rel_len + jump;
+  path = xmalloc(sizeof(*path) * (len + 1));
+  my_strcpy(path, root);
   if (jump)
-      my_strcpy(path + root_len, "/");
+    path[root_len] = '/';
   my_strcpy(path + root_len + jump, rel_path);
   return (path);
 }
