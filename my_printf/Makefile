@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Wed Apr 14 14:07:55 2010 antoine luciani
-## Last update Thu Apr 29 23:20:15 2010 antoine luciani
+## Last update Tue Jun  1 20:18:45 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -36,11 +36,9 @@ SOURCES		=	$(SRC_DIR)request.c		\
 
 OBJS		=	$(SOURCES:.c=.o)
 
-OS		=	`uname -s`
-ARCH		=	`uname -m`
-NAME		=	libmy_printf_$(ARCH)-$(OS).a
+NAME		=	libmy_printf.a
 TEST_NAME	=	test_my_printf
-CFLAGS		=	$(INCLUDES) -Wall -ansi -pedantic -g
+CFLAGS		=	$(INCLUDES) -W -Wall -Wextra -ansi -pedantic
 
 $(NAME)		:	$(OBJS)
 		$(AR) $(NAME) $(OBJS)
