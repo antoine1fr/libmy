@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Sat May 29 17:14:10 2010 antoine luciani
+** Last update Tue Jun  1 14:23:42 2010 antoine luciani
 */
 
 #ifndef MY_H
@@ -30,23 +30,23 @@ void	my_sort_int_tab(int *tab, int size);
 int	my_square_root(int nb);
 int	my_str_isalpha(char *str);
 char	*my_strtok(char *str, char delim);
-int	my_str_islower(char *str);
-int	my_str_isnum(char *str);
-int	my_str_isprintable(char *str);
-int	my_str_isupper(char *str);
+int	my_str_islower(const char *str);
+int	my_str_isnum(const char *str);
+int	my_str_isprintable(const char *str);
+int	my_str_isupper(const char *str);
 char	**my_str_to_wordtab(char *str);
 char	**my_str_to_wordtab_delim(char *str, char delim);
 void	my_free_to_wordtab(char **tab);
 char	*my_strcapitalize(char *str);
-char	*my_strcat(char *dest, char *src);
-int	my_strcmp(char *s1, char *s2);
+char	*my_strcat(char *dest, const char *src);
+int	my_strcmp(const char *s1, const char *s2);
 char	*my_strcpy(char *dest, const char *src);
 int	my_strlcat(char *dest, char *src, int size);
 int	my_strlen(const char *str);
 char	*my_strlowcase(char *str);
 char	*my_strncat(char *dest, char *src, int n);
-int	my_strncmp(char *s1, char *s2, int n);
-char	*my_strncpy(char *dest, char *src, int n);
+int	my_strncmp(const char *s1, const char *s2, int n);
+char	*my_strncpy(char *dest, const char *src, int n);
 char	*my_strstr(char *str, char *to_find);
 char	*my_strupcase(char *str);
 void	my_swap(int *p1, int *p2);

@@ -5,10 +5,10 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Mar 15 17:27:53 2010 antoine luciani
-** Last update Mon Mar 15 17:37:31 2010 antoine luciani
+** Last update Tue Jun  1 14:24:02 2010 antoine luciani
 */
 
-int		my_str_isnum(char *str)
+int		my_str_isnum(const char *str)
 {
   int		i;
 

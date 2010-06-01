@@ -5,10 +5,10 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Mar 15 14:49:51 2010 antoine luciani
-** Last update Mon Mar 15 15:22:01 2010 antoine luciani
+** Last update Tue Jun  1 14:21:51 2010 antoine luciani
 */
 
-int		my_strcmp(char *s1, char *s2)
+int		my_strcmp(const char *s1, const char *s2)
 {
   int		i;
 

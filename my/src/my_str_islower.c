@@ -5,10 +5,10 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Mar 15 17:39:16 2010 antoine luciani
-** Last update Mon Mar 15 17:44:35 2010 antoine luciani
+** Last update Tue Jun  1 14:23:52 2010 antoine luciani
 */
 
-int		my_str_islower(char *str)
+int		my_str_islower(const char *str)
 {
   int		i;
 

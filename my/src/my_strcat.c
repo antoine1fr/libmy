@@ -5,12 +5,12 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Mar 16 20:05:24 2010 antoine luciani
-** Last update Wed Mar 17 15:31:48 2010 antoine luciani
+** Last update Tue Jun  1 14:22:21 2010 antoine luciani
 */
 
 #include "my.h"
 
-char		*my_strcat(char *dest, char *src)
+char		*my_strcat(char *dest, const char *src)
 {
   int		i;
   int		len;

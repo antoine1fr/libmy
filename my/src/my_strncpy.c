@@ -5,10 +5,10 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Mar 15 10:46:42 2010 antoine luciani
-** Last update Mon Mar 15 11:02:01 2010 antoine luciani
+** Last update Tue Jun  1 14:23:11 2010 antoine luciani
 */
 
-char		*my_strncpy(char *dest, char *src, int n)
+char		*my_strncpy(char *dest, const char *src, int n)
 {
   int		i;
 

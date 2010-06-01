@@ -5,10 +5,10 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Mar 15 17:54:52 2010 antoine luciani
-** Last update Mon Mar 15 21:54:26 2010 antoine luciani
+** Last update Tue Jun  1 14:24:19 2010 antoine luciani
 */
 
-int		my_str_isprintable(char *str)
+int		my_str_isprintable(const char *str)
 {
   int		i;
 

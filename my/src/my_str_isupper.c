@@ -5,10 +5,10 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Mar 15 17:49:03 2010 antoine luciani
-** Last update Mon Mar 15 17:49:19 2010 antoine luciani
+** Last update Tue Jun  1 14:24:32 2010 antoine luciani
 */
 
-int		my_str_isupper(char *str)
+int		my_str_isupper(const char *str)
 {
   int		i;
 
