@@ -5,12 +5,12 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Mar 16 10:53:16 2010 antoine luciani
-** Last update Tue Jun  1 14:26:19 2010 antoine luciani
+** Last update Tue Jun  1 14:47:46 2010 antoine luciani
 */
 
 #include "my.h"
 
-int		my_showstr(char *str)
+void		my_showstr(char *str)
 {
   int		i;
   char		*base;
@@ -33,5 +33,4 @@ int		my_showstr(char *str)
 	my_putchar(str[i]);
       i += 1;
     }
-  return (0);
 }

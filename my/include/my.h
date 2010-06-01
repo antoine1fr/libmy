@@ -5,11 +5,16 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Tue Jun  1 14:23:42 2010 antoine luciani
+** Last update Tue Jun  1 15:01:54 2010 antoine luciani
 */
 
 #ifndef MY_H
 # define MY_H
+
+# define MY_FALSE 0
+# define MY_TRUE 1
+
+typedef char t_my_bool;
 
 int	my_find_prime_sup(int nb);
 int	my_getnbr(char *str);
@@ -21,19 +26,14 @@ void	my_put_nbr(int n);
 void	my_puterr(char *str);
 int	my_putnbr_base(int nbr, char *base);
 void	my_putchar(char c);
-void	my_putstr(char *str);
+void	my_putstr(const char *str);
 char	*my_revstr(char *str);
-int	my_show_to_wordtab(char **tab);
+void	my_show_to_wordtab(char **tab);
 void	my_showmem(char *str, int size);
-int	my_showstr(char *str);
+void	my_showstr(char *str);
 void	my_sort_int_tab(int *tab, int size);
 int	my_square_root(int nb);
-int	my_str_isalpha(char *str);
 char	*my_strtok(char *str, char delim);
-int	my_str_islower(const char *str);
-int	my_str_isnum(const char *str);
-int	my_str_isprintable(const char *str);
-int	my_str_isupper(const char *str);
 char	**my_str_to_wordtab(char *str);
 char	**my_str_to_wordtab_delim(char *str, char delim);
 void	my_free_to_wordtab(char **tab);
@@ -57,5 +57,11 @@ char	*my_strndup(char *src, int n);
 char	*my_untostr(unsigned int n, char *base);
 char	*my_ntostr(int n, char *base);
 void	my_memcpy(void *dest, void *src, unsigned int size);
+
+t_my_bool	my_str_isalpha(char *str);
+t_my_bool	my_str_islower(const char *str);
+t_my_bool	my_str_isnum(const char *str);
+t_my_bool	my_str_isprintable(const char *str);
+t_my_bool	my_str_isupper(const char *str);
 
 #endif /* !MY_H */

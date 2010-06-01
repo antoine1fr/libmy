@@ -5,10 +5,12 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Mar 15 17:49:03 2010 antoine luciani
-** Last update Tue Jun  1 14:24:32 2010 antoine luciani
+** Last update Tue Jun  1 14:52:22 2010 antoine luciani
 */
 
-int		my_str_isupper(const char *str)
+#include "my.h"
+
+t_my_bool	my_str_isupper(const char *str)
 {
   int		i;
 
@@ -16,8 +18,8 @@ int		my_str_isupper(const char *str)
   while (str[i] != '\0')
     {
       if (str[i] < 'A' || str[i] > 'Z')
-	return (0);
+	return (MY_FALSE);
       i += 1;
     }
-  return (1);
+  return (MY_TRUE);
 }

@@ -5,10 +5,12 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Mar 16 13:24:21 2010 antoine luciani
-** Last update Tue Mar 16 13:27:46 2010 antoine luciani
+** Last update Tue Jun  1 14:53:06 2010 antoine luciani
 */
 
-int		my_str_isalpha(char *str)
+#include "my.h"
+
+t_my_bool	my_str_isalpha(char *str)
 {
   int		i;
 
@@ -17,8 +19,8 @@ int		my_str_isalpha(char *str)
     {
       if ((str[i] < 'a' || str[i] > 'z') &&
 	  (str[i] < 'A' || str[i] > 'Z'))
-	return (0);
+	return (MY_FALSE);
       i += 1;
     }
-  return (1);
+  return (MY_TRUE);
 }

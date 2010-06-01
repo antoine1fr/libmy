@@ -5,10 +5,12 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Mar 15 17:39:16 2010 antoine luciani
-** Last update Tue Jun  1 14:23:52 2010 antoine luciani
+** Last update Tue Jun  1 14:53:30 2010 antoine luciani
 */
 
-int		my_str_islower(const char *str)
+#include "my.h"
+
+t_my_bool	my_str_islower(const char *str)
 {
   int		i;
 
@@ -16,8 +18,8 @@ int		my_str_islower(const char *str)
   while (str[i] != '\0')
     {
       if (str[i] < 'a' || str[i] > 'z')
-	return (0);
+	return (MY_FALSE);
       i += 1;
     }
-  return (1);
+  return (MY_TRUE);
 }

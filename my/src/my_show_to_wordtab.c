@@ -4,7 +4,7 @@
 
 #include "my.h"
 
-int		my_show_to_wordtab(char **tab)
+void		my_show_to_wordtab(char **tab)
 {
   while (*tab != 0)
     {
@@ -12,5 +12,4 @@ int		my_show_to_wordtab(char **tab)
       my_putchar('\n');
       tab += 1;
     }
-  return (0);
 }

@@ -5,19 +5,23 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Mar 11 10:00:15 2010 antoine luciani
-** Last update Fri Mar 19 10:59:59 2010 antoine luciani
+** Last update Tue Jun  1 14:43:22 2010 antoine luciani
 */
+
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <unistd.h>
 
 #include "my.h"
 
-void		my_putstr(char *str)
+void		my_putstr(const char *str)
 {
-  int		i;
+  int		len;
 
-  i = 0;
-  while (str[i] != '\0')
+  if (str)
     {
-      my_putchar(str[i]);
-      i = i + 1;
+      len = my_strlen(str);
+      if (len > 0)
+	write(1, str, len);
     }
 }
