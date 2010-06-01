@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 12:00:53 2010 antoine luciani
-** Last update Tue Jun  1 14:19:23 2010 antoine luciani
+** Last update Tue Jun  1 14:36:31 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -16,7 +16,9 @@
 
 #include "my.h"
 
-char		*get_path_from_env(const char **env)
+#define UNUSED __attribute__((unused))
+
+const char	*get_path_from_env(const char **env)
 {
   int		size;
   int		i;
@@ -32,12 +34,13 @@ char		*get_path_from_env(const char **env)
   return (0);
 }
 
-int		main(int argc, const char **argv, const char **env)
+int		main(int UNUSED argc, const char UNUSED **argv, const char **env)
 {
-  int		i;
+  const char	*path;
 
-  i = 0;
-  while (env[i] != 0)
-    printf("%s\n", env[i++]);
+  path = get_path_from_env(env);
+  if (path)
+    my_putstr(path);
+  my_putchar('\n');
   return (EXIT_SUCCESS);
 }
