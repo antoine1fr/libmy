@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue Jun  1 02:19:17 2010 antoine luciani
-## Last update Tue Jun  1 14:15:17 2010 antoine luciani
+## Last update Tue Jun  1 17:02:16 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -13,11 +13,13 @@ RM		=	rm -f
 
 NAME		=	mysh
 SRC_DIR		=	src
-SOURCES		=	$(SRC_DIR)/main.c
+SOURCES		=	$(SRC_DIR)/main.c			\
+			$(SRC_DIR)/msh_construct_full_path.c	\
+			$(SRC_DIR)/msh_find_valid_path.c
 OBJECTS		=	$(SOURCES:.c=.o)
 
 LDFLAGS		+=	-Iinclude -Ilibs/my/include
-CFLAGS		+=	-W -Wall -Wextra -ansi -pedantic
+CFLAGS		+=	-W -Wall -Wextra -ansi -pedantic -g3
 THIRD		+=	-Llibs/my/lib -lmy
 
 $(NAME)		:	$(OBJECTS)
