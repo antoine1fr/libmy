@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 12:00:53 2010 antoine luciani
-** Last update Tue Jun  1 17:02:54 2010 antoine luciani
+** Last update Tue Jun  1 17:10:34 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -19,22 +19,6 @@
 
 #define UNUSED __attribute__((unused))
 
-const char	*get_path_from_env(const char **env)
-{
-  int		size;
-  int		i;
-
-  i = 0;
-  while (env[i])
-    {
-      size = my_strlen(env[i]);
-      if (size >= 6 && my_strncmp(env[i], "PATH=", 5) == 0)
-	return (env[i]);
-      i += 1;
-    }
-  return (0);
-}
-
 int		main(int UNUSED argc, const char UNUSED **argv, const char **env)
 {
   const char	*path;
@@ -43,7 +27,7 @@ int		main(int UNUSED argc, const char UNUSED **argv, const char **env)
 
   if (argc == 2)
     {
-      path = get_path_from_env(env);
+      path = msh_get_env_path(env);
       if (path)
 	{
 	  path_array = my_str_to_wordtab_delim(path + 5, ':');
