@@ -5,13 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Mar 21 17:01:22 2010 antoine luciani
-** Last update Tue Jun  1 15:43:09 2010 antoine luciani
+** Last update Tue Jun  1 15:47:29 2010 antoine luciani
 */
 
 #include <stdlib.h>
 #include "my.h"
 
-int		is_alphanum(char c)
+static int	is_alphanum(char c)
 {
   if ((c >= 'A' && c <= 'Z') ||
       (c >= 'a' && c <= 'z') ||
@@ -20,7 +20,7 @@ int		is_alphanum(char c)
   return (0);
 }
 
-int		substring_length(const char *str)
+static int	substring_length(const char *str)
 {
   int		len;
 
@@ -33,7 +33,7 @@ int		substring_length(const char *str)
   return (len);
 }
 
-int		count_substrings(const char *str)
+static int	count_substrings(const char *str)
 {
   int		i;
 
@@ -47,7 +47,7 @@ int		count_substrings(const char *str)
   return (i);
 }
 
-char		*my_strtok_to_wordtab(const char *str)
+static char	*my_strtok_to_wordtab(const char *str)
 {
   int		word_len;
   char		*token;
