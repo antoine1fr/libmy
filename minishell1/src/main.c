@@ -5,30 +5,36 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 12:00:53 2010 antoine luciani
-** Last update Tue Jun  1 19:29:44 2010 antoine luciani
+** Last update Tue Jun  1 20:23:19 2010 antoine luciani
 */
 
 #include <stdlib.h>
 
 #include "my.h"
+#include "my_printf.h"
+#include "get_next_line.h"
 #include "minishell1.h"
 
 #define UNUSED __attribute__((unused))
 
-int		main(int argc, const char **argv, const char **env)
+int		main(int UNUSED argc, const char UNUSED **argv, const char **env)
 {
   char		*command_path;
+  char		*command;
 
-  if (argc == 2)
+  while (42)
     {
-      command_path = msh_get_command_path(argv[1], env);
+      my_putstr("$> ");
+      command = get_next_line(0);
+      command_path = msh_get_command_path(command, env);
+      free(command);
       if (command_path)
 	{
-	  my_putstr(command_path);
+	  my_printf("%s\n", command_path);
 	  free(command_path);
 	}
       else
-	my_puterr("[ERROR] : the command does not exist!");
+	my_puterr("[ERROR] : the command does not exist!\n");
     }
   my_putchar('\n');
   return (EXIT_SUCCESS);

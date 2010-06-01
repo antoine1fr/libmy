@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue Jun  1 02:19:17 2010 antoine luciani
-## Last update Tue Jun  1 19:28:35 2010 antoine luciani
+## Last update Tue Jun  1 20:24:02 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -18,12 +18,14 @@ SOURCES		=	$(SRC_DIR)/main.c			\
 			$(SRC_DIR)/msh_find_valid_path.c	\
 			$(SRC_DIR)/msh_get_env_path.c		\
 			$(SRC_DIR)/msh_launch_command.c		\
-			$(SRC_DIR)/msh_get_command_path.c
+			$(SRC_DIR)/msh_get_command_path.c	\
+			$(SRC_DIR)/get_next_line.c
+
 OBJECTS		=	$(SOURCES:.c=.o)
 
-LDFLAGS		+=	-Iinclude -Ilibs/my/include
+LDFLAGS		+=	-Iinclude -Ilibs/my/include -Ilibs/my_printf/include
 CFLAGS		+=	-W -Wall -Wextra -ansi -pedantic -g3
-THIRD		+=	-Llibs/my/lib -lmy
+THIRD		+=	-Llibs/my/lib -Llibs/my_printf/ -lmy_printf -lmy
 
 $(NAME)		:	$(OBJECTS)
 		$(CC) -o $(NAME) $(OBJECTS) $(THIRD)
