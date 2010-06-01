@@ -5,11 +5,17 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 16:55:55 2010 antoine luciani
-** Last update Tue Jun  1 17:10:11 2010 antoine luciani
+** Last update Tue Jun  1 17:57:02 2010 antoine luciani
 */
 
 #ifndef MINISHELL1_H_
 # define MINISHELL1_H_
+
+typedef enum	e_error
+  {
+    ERROR_NONE,
+    ERROR_COMMAND_NOT_FOUND
+  }		t_error;
 
 /*
 ** Finds the index of the folder's path in which the file file_name is.
