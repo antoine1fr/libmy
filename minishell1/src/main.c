@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 12:00:53 2010 antoine luciani
-** Last update Tue Jun  1 14:36:31 2010 antoine luciani
+** Last update Tue Jun  1 15:41:27 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -37,10 +37,13 @@ const char	*get_path_from_env(const char **env)
 int		main(int UNUSED argc, const char UNUSED **argv, const char **env)
 {
   const char	*path;
+  char		**path_array;
 
   path = get_path_from_env(env);
   if (path)
-    my_putstr(path);
+    {
+      path_array = my_str_to_wordtab_delim(path + 5, ':');
+    }
   my_putchar('\n');
   return (EXIT_SUCCESS);
 }
