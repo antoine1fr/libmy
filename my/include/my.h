@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Tue Jun  1 17:55:32 2010 antoine luciani
+** Last update Tue Jun  1 18:15:17 2010 antoine luciani
 */
 
 #ifndef MY_H
@@ -68,6 +68,8 @@ char	**my_str_to_wordtab(const char *str);
 char	**my_str_to_wordtab_delim(const char *str, char delim);
 void	my_show_to_wordtab(char **tab);
 void	my_free_to_wordtab(char **tab);
+int	my_get_wordtab_size(char **tab);
+
 char	*my_untostr(unsigned int n, char *base);
 char	*my_ntostr(int n, char *base);
 
