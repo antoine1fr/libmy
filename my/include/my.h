@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Tue Jun  1 15:01:54 2010 antoine luciani
+** Last update Tue Jun  1 15:43:29 2010 antoine luciani
 */
 
 #ifndef MY_H
@@ -33,9 +33,9 @@ void	my_showmem(char *str, int size);
 void	my_showstr(char *str);
 void	my_sort_int_tab(int *tab, int size);
 int	my_square_root(int nb);
-char	*my_strtok(char *str, char delim);
-char	**my_str_to_wordtab(char *str);
-char	**my_str_to_wordtab_delim(char *str, char delim);
+char	*my_strtok(const char *str, char delim);
+char	**my_str_to_wordtab(const char *str);
+char	**my_str_to_wordtab_delim(const char *str, char delim);
 void	my_free_to_wordtab(char **tab);
 char	*my_strcapitalize(char *str);
 char	*my_strcat(char *dest, const char *src);

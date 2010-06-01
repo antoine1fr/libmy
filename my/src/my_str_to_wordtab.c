@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Mar 21 17:01:22 2010 antoine luciani
-** Last update Sun Mar 21 18:13:14 2010 antoine luciani
+** Last update Tue Jun  1 15:43:09 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -20,7 +20,7 @@ int		is_alphanum(char c)
   return (0);
 }
 
-int		substring_length(char *str)
+int		substring_length(const char *str)
 {
   int		len;
 
@@ -33,7 +33,7 @@ int		substring_length(char *str)
   return (len);
 }
 
-int		count_substrings(char *str)
+int		count_substrings(const char *str)
 {
   int		i;
 
@@ -47,7 +47,7 @@ int		count_substrings(char *str)
   return (i);
 }
 
-char		*my_strtok_to_wordtab(char *str)
+char		*my_strtok_to_wordtab(const char *str)
 {
   int		word_len;
   char		*token;
@@ -62,7 +62,7 @@ char		*my_strtok_to_wordtab(char *str)
   return (token);
 }
 
-char		**my_str_to_wordtab(char *str)
+char		**my_str_to_wordtab(const char *str)
 {
   char		**word_tab;
   int		tab_index;

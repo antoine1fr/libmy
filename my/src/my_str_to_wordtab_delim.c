@@ -5,13 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Mar 21 14:40:56 2010 antoine luciani
-** Last update Thu May 20 14:12:01 2010 antoine luciani
+** Last update Tue Jun  1 15:42:38 2010 antoine luciani
 */
 
 #include <stdlib.h>
 #include "my.h"
 
-static int	substring_length(char *str, char delim)
+static int	substring_length(const char *str, char delim)
 {
   int		len;
 
@@ -24,7 +24,7 @@ static int	substring_length(char *str, char delim)
   return (len);
 }
 
-static int	count_substrings(char *str, char delim)
+static int	count_substrings(const char *str, char delim)
 {
   int		i;
 
@@ -38,7 +38,7 @@ static int	count_substrings(char *str, char delim)
   return (i);
 }
 
-char		**my_str_to_wordtab_delim(char *str, char delim)
+char		**my_str_to_wordtab_delim(const char *str, char delim)
 {
   char		**word_tab;
   int		tab_index;

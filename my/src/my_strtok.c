@@ -5,13 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Mar 21 15:39:19 2010 antoine luciani
-** Last update Thu May 20 14:11:59 2010 antoine luciani
+** Last update Tue Jun  1 15:43:50 2010 antoine luciani
 */
 
 #include <stdlib.h>
 #include "my.h"
 
-static int	substring_length(char *str, char delim)
+static int	substring_length(const char *str, char delim)
 {
   int		len;
 
@@ -24,7 +24,7 @@ static int	substring_length(char *str, char delim)
   return (len);
 }
 
-char		*my_strtok(char *str, char delim)
+char		*my_strtok(const char *str, char delim)
 {
   int		word_len;
   char		*token;
