@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 16:55:55 2010 antoine luciani
-** Last update Wed Jun  2 13:14:41 2010 antoine luciani
+** Last update Wed Jun  2 18:18:45 2010 antoine luciani
 */
 
 #ifndef MINISHELL1_H_
@@ -19,12 +19,18 @@ typedef enum	e_error
     ERROR_COMMAND_NOT_FOUND
   }		t_error;
 
+/*
+** Definition of a builtin command.
+*/
 typedef struct	s_builtin
 {
   char		*name;
   void		(*exec) (char **argv);
 }		t_builtin;
 
+/*
+** Definition of a boolean.
+*/
 typedef enum	e_msh_bool
   {
     MSH_FALSE,
@@ -67,5 +73,15 @@ t_msh_bool	msh_launch_builtin(char **arg_array);
 ** Exits the shell.
 */
 void		msh_exit_command(char **argv);
+
+/*
+** Tests the msh_env_get_var_index function.
+*/
+void		msh_testenv_getvarindex(char **argv);
+
+/*
+** Prints the environment.
+*/
+void		msh_env_command(char **argv);
 
 #endif /* !MINISHELL1_H_ */

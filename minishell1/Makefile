@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue Jun  1 02:19:17 2010 antoine luciani
-## Last update Wed Jun  2 13:13:59 2010 antoine luciani
+## Last update Wed Jun  2 18:30:53 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -21,7 +21,14 @@ SOURCES		=	$(SRC_DIR)/main.c			\
 			$(SRC_DIR)/msh_launch_command.c		\
 			$(SRC_DIR)/msh_get_command_path.c	\
 			$(SRC_DIR)/msh_launch_builtin.c		\
-			$(SRC_DIR)/msh_exit_command.c
+			$(SRC_DIR)/msh_exit_command.c		\
+			$(SRC_DIR)/msh_env_init.c		\
+			$(SRC_DIR)/msh_env_append.c		\
+			$(SRC_DIR)/msh_env_get_var_index.c	\
+			$(SRC_DIR)/msh_testenv_getvarindex.c	\
+			$(SRC_DIR)/msh_env_resize.c		\
+			$(SRC_DIR)/msh_env_command.c		\
+			$(SRC_DIR)/msh_env_fill_from_array.c
 
 OBJECTS		=	$(SOURCES:.c=.o)
 

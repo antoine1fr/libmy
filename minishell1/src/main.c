@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 12:00:53 2010 antoine luciani
-** Last update Wed Jun  2 13:19:47 2010 antoine luciani
+** Last update Wed Jun  2 18:32:26 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -14,15 +14,19 @@
 #include "my_printf.h"
 #include "get_next_line.h"
 #include "minishell1.h"
+#include "msh_environment.h"
 
 t_msh_bool	gl_b_quit_app;
+t_msh_env	gl_env;
 
 int		main(int UNUSED argc, char UNUSED **argv,
-		     char *env[])
+		     char **env)
 {
   char		*command;
 
   gl_b_quit_app = MY_FALSE;
+  msh_env_init(&gl_env, 0);
+  msh_env_fill_from_array(&gl_env, env);
   while (!gl_b_quit_app)
     {
       my_putstr("$> ");
