@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 15:16:49 2010 antoine luciani
-** Last update Wed Jun  2 19:17:38 2010 antoine luciani
+** Last update Wed Jun  2 21:56:47 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -50,7 +50,6 @@ void		msh_env_append(const char *key, const char *value,
 	}
       else
 	{
-	  my_putstr(envp->array[i]);
 	  free(envp->array[i]);
 	  envp->array[i] = var;
 	}
