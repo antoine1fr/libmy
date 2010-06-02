@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 15:05:00 2010 antoine luciani
-** Last update Wed Jun  2 18:30:30 2010 antoine luciani
+** Last update Wed Jun  2 19:15:12 2010 antoine luciani
 */
 
 #ifndef MSH_ENVIRONMENT_H_
@@ -49,5 +49,7 @@ void		msh_env_resize(t_msh_env *env_ptr);
 ** environment.
 */
 void		msh_env_fill_from_array(t_msh_env *envp, char **array);
+
+char		*msh_env_const_var(const char *key, const char *value);
 
 #endif /* !MSH_ENVIRONMENT_H_ */
