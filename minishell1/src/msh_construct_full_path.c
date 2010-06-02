@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 16:54:11 2010 antoine luciani
-** Last update Tue Jun  1 17:00:58 2010 antoine luciani
+** Last update Wed Jun  2 13:58:09 2010 antoine luciani
 */
 
 #include "my.h"
@@ -18,6 +18,8 @@ char		*msh_construct_full_path(const char *file_name, const char *path)
   int		path_len;
   char		*full_path;
 
+  if (!file_name)
+    return (0);
   file_name_len = my_strlen(file_name);
   path_len = my_strlen(path);
   len = file_name_len + path_len + 1;

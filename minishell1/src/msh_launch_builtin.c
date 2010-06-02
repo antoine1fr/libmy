@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 12:40:06 2010 antoine luciani
-** Last update Wed Jun  2 13:16:34 2010 antoine luciani
+** Last update Wed Jun  2 13:57:05 2010 antoine luciani
 */
 
 #include "my.h"
@@ -20,15 +20,18 @@ t_msh_bool	msh_launch_builtin(char **arg_array)
 {
   int		i;
 
-  i = 0;
-  while (g_builtin_arr[i].name != 0)
+  if (arg_array && arg_array[0])
     {
-      if (my_strcmp(arg_array[0], g_builtin_arr[i].name) == 0)
+      i = 0;
+      while (g_builtin_arr[i].name != 0)
 	{
-	  g_builtin_arr[i].exec(arg_array);
-	  return (MSH_TRUE);
+	  if (my_strcmp(arg_array[0], g_builtin_arr[i].name) == 0)
+	    {
+	      g_builtin_arr[i].exec(arg_array);
+	      return (MSH_TRUE);
+	    }
+	  i += 1;
 	}
-      i += 1;
     }
   return (MSH_FALSE);
 }
