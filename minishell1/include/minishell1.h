@@ -5,17 +5,31 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 16:55:55 2010 antoine luciani
-** Last update Wed Jun  2 12:16:07 2010 antoine luciani
+** Last update Wed Jun  2 13:14:41 2010 antoine luciani
 */
 
 #ifndef MINISHELL1_H_
 # define MINISHELL1_H_
+
+# define UNUSED __attribute__((unused))
 
 typedef enum	e_error
   {
     ERROR_NONE,
     ERROR_COMMAND_NOT_FOUND
   }		t_error;
+
+typedef struct	s_builtin
+{
+  char		*name;
+  void		(*exec) (char **argv);
+}		t_builtin;
+
+typedef enum	e_msh_bool
+  {
+    MSH_FALSE,
+    MSH_TRUE
+  }		t_msh_bool;
 
 /*
 ** Finds the index of the folder's path in which the file file_name is.
@@ -43,5 +57,15 @@ char		*msh_get_command_path(const char *command, char * const env[]);
 */
 t_error		msh_launch_command(const char *command,
 				   char * const envp[]);
+
+/*
+** Launches a builtin command, if it exists.
+*/
+t_msh_bool	msh_launch_builtin(char **arg_array);
+
+/*
+** Exits the shell.
+*/
+void		msh_exit_command(char **argv);
 
 #endif /* !MINISHELL1_H_ */

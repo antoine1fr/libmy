@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue Jun  1 02:19:17 2010 antoine luciani
-## Last update Tue Jun  1 20:24:02 2010 antoine luciani
+## Last update Wed Jun  2 13:13:59 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -14,12 +14,14 @@ RM		=	rm -f
 NAME		=	mysh
 SRC_DIR		=	src
 SOURCES		=	$(SRC_DIR)/main.c			\
+			$(SRC_DIR)/get_next_line.c		\
 			$(SRC_DIR)/msh_construct_full_path.c	\
 			$(SRC_DIR)/msh_find_valid_path.c	\
 			$(SRC_DIR)/msh_get_env_path.c		\
 			$(SRC_DIR)/msh_launch_command.c		\
 			$(SRC_DIR)/msh_get_command_path.c	\
-			$(SRC_DIR)/get_next_line.c
+			$(SRC_DIR)/msh_launch_builtin.c		\
+			$(SRC_DIR)/msh_exit_command.c
 
 OBJECTS		=	$(SOURCES:.c=.o)
 
