@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue Jun  1 02:19:17 2010 antoine luciani
-## Last update Wed Jun  2 19:28:00 2010 antoine luciani
+## Last update Wed Jun  2 19:39:39 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -29,7 +29,8 @@ SOURCES		=	$(SRC_DIR)/main.c			\
 			$(SRC_DIR)/msh_env_resize.c		\
 			$(SRC_DIR)/msh_env_command.c		\
 			$(SRC_DIR)/msh_env_fill_from_array.c	\
-			$(SRC_DIR)/msh_setenv_command.c
+			$(SRC_DIR)/msh_setenv_command.c		\
+			$(SRC_DIR)/msh_env_clean.c
 
 OBJECTS		=	$(SOURCES:.c=.o)
 
