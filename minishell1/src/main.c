@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 12:00:53 2010 antoine luciani
-** Last update Tue Jun  1 20:23:19 2010 antoine luciani
+** Last update Wed Jun  2 12:13:21 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -17,21 +17,20 @@
 
 #define UNUSED __attribute__((unused))
 
-int		main(int UNUSED argc, const char UNUSED **argv, const char **env)
+int		main(int UNUSED argc, char UNUSED **argv,
+		     char *env[])
 {
-  char		*command_path;
   char		*command;
 
   while (42)
     {
       my_putstr("$> ");
       command = get_next_line(0);
-      command_path = msh_get_command_path(command, env);
-      free(command);
-      if (command_path)
+      if (command)
 	{
-	  my_printf("%s\n", command_path);
-	  free(command_path);
+	  my_printf("Execing command '%s'...\n", command);
+	  msh_launch_command(command, env);
+	  free(command);
 	}
       else
 	my_puterr("[ERROR] : the command does not exist!\n");

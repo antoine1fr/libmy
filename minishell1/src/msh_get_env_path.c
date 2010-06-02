@@ -5,13 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 17:07:26 2010 antoine luciani
-** Last update Tue Jun  1 17:11:36 2010 antoine luciani
+** Last update Wed Jun  2 12:14:08 2010 antoine luciani
 */
 
 #include "my.h"
 #include "minishell1.h"
 
-const char	*msh_get_env_path(const char **env)
+const char	*msh_get_env_path(char * const env[])
 {
   int		size;
   int		i;

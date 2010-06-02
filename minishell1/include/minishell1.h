@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 16:55:55 2010 antoine luciani
-** Last update Tue Jun  1 19:42:42 2010 antoine luciani
+** Last update Wed Jun  2 12:16:07 2010 antoine luciani
 */
 
 #ifndef MINISHELL1_H_
@@ -30,18 +30,18 @@ char		*msh_construct_full_path(const char *file_name, const char *path);
 /*
 ** Returns the the PATH of the environment.
 */
-const char	*msh_get_env_path(const char **env);
+const char	*msh_get_env_path(char * const env[]);
 
 /*
 ** Returns the path of the directory in which a "command" is.
 ** Note : the returned string isn't automaticaly freed.
 */
-char		*msh_get_command_path(const char *command, const char **env);
+char		*msh_get_command_path(const char *command, char * const env[]);
 
 /*
 ** Launches a command.
 */
-t_error		msh_launch_command(const char *executable, const char *command,
+t_error		msh_launch_command(const char *command,
 				   char * const envp[]);
 
 #endif /* !MINISHELL1_H_ */
