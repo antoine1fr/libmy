@@ -5,31 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 15:16:49 2010 antoine luciani
-** Last update Wed Jun  2 21:56:47 2010 antoine luciani
+** Last update Thu Jun  3 09:57:30 2010 antoine luciani
 */
 
 #include <stdlib.h>
 
 #include "my.h"
 #include "msh_environment.h"
-
-char		*msh_env_const_var(const char *key, const char *value)
-{
-  int		key_len;
-  int		var_len;
-  int		value_len;
-  char		*var;
-
-  key_len = my_strlen(key);
-  value_len = my_strlen(value);
-  var_len = key_len + value_len + 1;
-  var = xmalloc(sizeof(*var) * (var_len + 1));
-  my_strncpy(var, key, key_len);
-  my_strncpy(var + key_len, "=", 1);
-  my_strcpy(var + key_len + 1, value);
-  var[var_len] = 0;
-  return (var);
-}
 
 void		msh_env_append(const char *key, const char *value,
 			       t_msh_env *envp)
