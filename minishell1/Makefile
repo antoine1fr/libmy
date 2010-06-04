@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue Jun  1 02:19:17 2010 antoine luciani
-## Last update Fri Jun  4 13:44:38 2010 antoine luciani
+## Last update Fri Jun  4 15:38:34 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -33,7 +33,9 @@ SOURCES		=	$(SRC_DIR)/main.c			\
 			$(SRC_DIR)/msh_env_clean.c		\
 			$(SRC_DIR)/msh_env_const_var.c		\
 			$(SRC_DIR)/msh_env_remove.c		\
-			$(SRC_DIR)/msh_unsetenv_command.c
+			$(SRC_DIR)/msh_unsetenv_command.c	\
+			$(SRC_DIR)/msh_env_get_value_from_key.c	\
+			$(SRC_DIR)/msh_cd_command.c
 
 OBJECTS		=	$(SOURCES:.c=.o)
 

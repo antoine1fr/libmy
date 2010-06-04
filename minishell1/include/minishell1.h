@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 16:55:55 2010 antoine luciani
-** Last update Fri Jun  4 13:47:31 2010 antoine luciani
+** Last update Fri Jun  4 15:44:26 2010 antoine luciani
 */
 
 #ifndef MINISHELL1_H_
@@ -95,5 +95,10 @@ void		msh_setenv_command(char **argv);
 ** Remove a variable from the environment.
 */
 void		msh_unsetenv_command(char **argv);
+
+/*
+** Implementation of the 'cd' builtin.
+*/
+void		msh_cd_command(char **argv);
 
 #endif /* !MINISHELL1_H_ */

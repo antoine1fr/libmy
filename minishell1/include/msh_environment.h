@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 15:05:00 2010 antoine luciani
-** Last update Fri Jun  4 13:02:42 2010 antoine luciani
+** Last update Fri Jun  4 15:34:21 2010 antoine luciani
 */
 
 #ifndef MSH_ENVIRONMENT_H_
@@ -64,5 +64,11 @@ void		msh_env_clean(t_msh_env *envp);
 ** Removes an environment's variable.
 */
 t_error		msh_env_remove(const char *key, t_msh_env *envp);
+
+/*
+** Returns the value of an environment's variable of key 'key'.
+** The returned value is freed automatically.
+*/
+const char	*msh_env_get_value_from_key(const char *key);
 
 #endif /* !MSH_ENVIRONMENT_H_ */
