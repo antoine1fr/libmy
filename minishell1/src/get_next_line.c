@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun May  9 01:05:57 2010 antoine luciani
-** Last update Fri Jun  4 12:30:45 2010 antoine luciani
+** Last update Fri Jun  4 12:47:26 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -32,7 +32,7 @@ void		gnl_strncat(char **str1, char *str2, int n)
       len_str1 = my_strlen(*str1);
   len_final = len_str1 + len_str2 + 1;
   str_tmp = *str1;
-  *str1 = malloc(len_final * sizeof(**str1));
+  *str1 = xmalloc(len_final * sizeof(**str1));
   if (*str1 == 0)
     return;
   if (len_str1 > 0)
@@ -57,7 +57,7 @@ static int	gnl_process_buffer(char **buffer, char **line)
   if ((*buffer)[i] == '\n')
     {
       len = my_strlen(&((*buffer)[i + 1])) + 1;
-      tmp = malloc(sizeof(*tmp) * len);
+      tmp = xmalloc(sizeof(*tmp) * len);
       my_strncpy(tmp, &((*buffer)[i + 1]), len);
       tmp[len - 1] = 0;
       gnl_strncat(line, *buffer, i);
