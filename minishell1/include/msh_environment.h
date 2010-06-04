@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 15:05:00 2010 antoine luciani
-** Last update Wed Jun  2 19:40:43 2010 antoine luciani
+** Last update Thu Jun  3 10:48:25 2010 antoine luciani
 */
 
 #ifndef MSH_ENVIRONMENT_H_
@@ -50,8 +50,14 @@ void		msh_env_resize(t_msh_env *env_ptr);
 */
 void		msh_env_fill_from_array(t_msh_env *envp, char **array);
 
+/*
+** Constructs an environment variable.
+*/
 char		*msh_env_const_var(const char *key, const char *value);
 
+/*
+** Cleans en environment.
+*/
 void		msh_env_clean(t_msh_env *envp);
 
 #endif /* !MSH_ENVIRONMENT_H_ */

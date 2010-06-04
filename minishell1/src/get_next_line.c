@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun May  9 01:05:57 2010 antoine luciani
-** Last update Tue May 11 12:55:29 2010 antoine luciani
+** Last update Fri Jun  4 12:30:45 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -14,35 +14,10 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
+#include "my.h"
 #include "get_next_line.h"
 
-static int	my_strlen(char *str)
-{
-  int		i;
-
-  if (!str)
-    return (0);
-  i = 0;
-  while (str[i] != 0)
-    i += 1;
-  return (i);
-}
-
-static void	my_strncpy(char *str1, char *str2, int n)
-{
-  int		i;
-
-  i = 0;
-  while (str2[i] != 0 && i < n)
-    {
-      str1[i] = str2[i];
-      i += 1;
-    }
-  while (i < n)
-    str1[i++] = 0;
-}
-
-static void	my_strncat(char **str1, char *str2, int n)
+void		gnl_strncat(char **str1, char *str2, int n)
 {
   int		len_str2;
   int		len_final;
@@ -68,7 +43,7 @@ static void	my_strncat(char **str1, char *str2, int n)
     free(str_tmp);
 }
 
-static int	process_buffer(char **buffer, char **line)
+static int	gnl_process_buffer(char **buffer, char **line)
 {
   char		*tmp;
   int		i;
@@ -85,12 +60,12 @@ static int	process_buffer(char **buffer, char **line)
       tmp = malloc(sizeof(*tmp) * len);
       my_strncpy(tmp, &((*buffer)[i + 1]), len);
       tmp[len - 1] = 0;
-      my_strncat(line, *buffer, i);
+      gnl_strncat(line, *buffer, i);
       free(*buffer);
       *buffer = tmp;
       return (1);
     }
-  my_strncat(line, *buffer, i);
+  gnl_strncat(line, *buffer, i);
   free(*buffer);
   *buffer = 0;
   return (0);
@@ -106,11 +81,11 @@ char		*get_next_line(const int fd)
   if (fd == -1)
     return (0);
   line = 0;
-  while(!process_buffer(&buffer, &line) && count != 0 && count != -1)
+  while(!gnl_process_buffer(&buffer, &line) && count != 0 && count != -1)
     {
       count = read(fd, read_buf, BUFFER_SIZE);
       if (count > 0)
-	my_strncat(&buffer, read_buf, count);
+	gnl_strncat(&buffer, read_buf, count);
     }
   return (line);
 }
