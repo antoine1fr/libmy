@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 14:56:24 2010 antoine luciani
-** Last update Wed Jun  2 19:29:55 2010 antoine luciani
+** Last update Fri Jun  4 16:15:15 2010 antoine luciani
 */
 
 #include "my.h"
@@ -21,6 +21,8 @@ void		msh_setenv_command(char **argv)
   arg_count = my_get_wordtab_size(argv);
   if (arg_count == 4)
     msh_env_append(argv[1], argv[2], &gl_env);
+  else if (arg_count == 2)
+    msh_env_command(0);
   else
-    my_puterr("[ERROR] : invalid parameters for setenv!\n");
+    my_puterr("setenv: Too many arguments.\n");
 }

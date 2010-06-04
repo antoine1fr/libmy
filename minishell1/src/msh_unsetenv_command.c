@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Jun  4 13:29:25 2010 antoine luciani
-** Last update Fri Jun  4 13:47:58 2010 antoine luciani
+** Last update Fri Jun  4 16:18:00 2010 antoine luciani
 */
 
 #include "my.h"
@@ -24,14 +24,14 @@ void		msh_unsetenv_command(char **argv)
     {
       error = msh_env_remove(argv[1], &gl_env);
       if (error == ERROR_BAD_PARAM)
-	my_puterr("[ERROR] : to few arguments!");
+	my_puterr("unsetenv: to few arguments!");
       else if (error == ERROR_UNKNOWN_VAR)
 	{
-	  my_puterr("[ERROR] : unknown variable ('");
+	  my_puterr("unsetenv: unknown variable ('");
 	  my_puterr(argv[1]);
 	  my_puterr("')\n");
 	}
     }
   else
-    my_puterr("[ERROR] : to few arguments!\n");
+    my_puterr("unsetenv : Too few arguments!\n");
 }
