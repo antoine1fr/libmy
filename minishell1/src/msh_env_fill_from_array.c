@@ -5,10 +5,11 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 18:24:54 2010 antoine luciani
-** Last update Wed Jun  2 18:31:07 2010 antoine luciani
+** Last update Fri Jun  4 13:05:29 2010 antoine luciani
 */
 
 #include "my.h"
+#include "minishell1.h"
 #include "msh_environment.h"
 
 void		msh_env_fill_from_array(t_msh_env *envp, char **array)

@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 12:40:06 2010 antoine luciani
-** Last update Wed Jun  2 19:29:13 2010 antoine luciani
+** Last update Fri Jun  4 13:46:33 2010 antoine luciani
 */
 
 #include "my.h"
@@ -16,6 +16,7 @@ t_builtin	g_builtin_arr[] = {
   {"testenv_getvarindex", msh_testenv_getvarindex},
   {"env", msh_env_command},
   {"setenv", msh_setenv_command},
+  {"unsetenv", msh_unsetenv_command},
   {0, 0}
 };
 

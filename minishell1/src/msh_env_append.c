@@ -5,12 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 15:16:49 2010 antoine luciani
-** Last update Thu Jun  3 09:57:30 2010 antoine luciani
+** Last update Fri Jun  4 13:04:23 2010 antoine luciani
 */
 
 #include <stdlib.h>
 
 #include "my.h"
+#include "minishell1.h"
 #include "msh_environment.h"
 
 void		msh_env_append(const char *key, const char *value,

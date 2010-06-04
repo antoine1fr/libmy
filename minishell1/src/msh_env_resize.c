@@ -5,12 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 18:08:41 2010 antoine luciani
-** Last update Wed Jun  2 18:09:57 2010 antoine luciani
+** Last update Fri Jun  4 13:05:17 2010 antoine luciani
 */
 
 #include <stdlib.h>
 
 #include "my.h"
+#include "minishell1.h"
 #include "msh_environment.h"
 
 void		msh_env_resize(t_msh_env *env_ptr)

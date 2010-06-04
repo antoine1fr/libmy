@@ -5,10 +5,11 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 15:07:01 2010 antoine luciani
-** Last update Wed Jun  2 15:16:04 2010 antoine luciani
+** Last update Fri Jun  4 13:04:01 2010 antoine luciani
 */
 
 #include "my.h"
+#include "minishell1.h"
 #include "msh_environment.h"
 
 void		msh_env_init(t_msh_env *envp, int size)

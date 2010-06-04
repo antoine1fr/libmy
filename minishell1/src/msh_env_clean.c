@@ -5,11 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 19:32:51 2010 antoine luciani
-** Last update Wed Jun  2 21:55:30 2010 antoine luciani
+** Last update Fri Jun  4 13:05:58 2010 antoine luciani
 */
 
 #include <stdlib.h>
+
 #include "my.h"
+#include "minishell1.h"
 #include "msh_environment.h"
 
 void		msh_env_clean(t_msh_env *envp)

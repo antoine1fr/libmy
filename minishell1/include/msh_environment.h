@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 15:05:00 2010 antoine luciani
-** Last update Thu Jun  3 10:48:25 2010 antoine luciani
+** Last update Fri Jun  4 13:02:42 2010 antoine luciani
 */
 
 #ifndef MSH_ENVIRONMENT_H_
@@ -59,5 +59,10 @@ char		*msh_env_const_var(const char *key, const char *value);
 ** Cleans en environment.
 */
 void		msh_env_clean(t_msh_env *envp);
+
+/*
+** Removes an environment's variable.
+*/
+t_error		msh_env_remove(const char *key, t_msh_env *envp);
 
 #endif /* !MSH_ENVIRONMENT_H_ */

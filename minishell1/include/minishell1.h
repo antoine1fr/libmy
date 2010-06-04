@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 16:55:55 2010 antoine luciani
-** Last update Wed Jun  2 19:28:36 2010 antoine luciani
+** Last update Fri Jun  4 13:47:31 2010 antoine luciani
 */
 
 #ifndef MINISHELL1_H_
@@ -16,7 +16,9 @@
 typedef enum	e_error
   {
     ERROR_NONE,
-    ERROR_COMMAND_NOT_FOUND
+    ERROR_COMMAND_NOT_FOUND,
+    ERROR_UNKNOWN_VAR,
+    ERROR_BAD_PARAM
   }		t_error;
 
 /*
@@ -88,5 +90,10 @@ void		msh_env_command(char **argv);
 ** Adds a variable into the environment.
 */
 void		msh_setenv_command(char **argv);
+
+/*
+** Remove a variable from the environment.
+*/
+void		msh_unsetenv_command(char **argv);
 
 #endif /* !MINISHELL1_H_ */

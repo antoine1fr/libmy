@@ -5,10 +5,11 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Jun  3 09:57:13 2010 antoine luciani
-** Last update Thu Jun  3 09:58:25 2010 antoine luciani
+** Last update Fri Jun  4 13:05:41 2010 antoine luciani
 */
 
 #include "my.h"
+#include "minishell1.h"
 #include "msh_environment.h"
 
 char		*msh_env_const_var(const char *key, const char *value)
