@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Tue Jun  1 18:15:17 2010 antoine luciani
+** Last update Tue Jun  8 12:46:28 2010 antoine luciani
 */
 
 #ifndef MY_H
@@ -36,7 +36,7 @@ void	my_memcpy(void *dest, void *src, unsigned int size);
 int	my_getnbr(char *str);
 int	my_getnbr_base(char *str, char *base);
 
-void	my_puterr(char *str);
+void	my_puterr(const char *str);
 void	my_put_nbr(int n);
 int	my_putnbr_base(int nbr, char *base);
 void	my_putchar(char c);
