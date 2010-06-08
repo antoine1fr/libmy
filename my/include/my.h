@@ -36,7 +36,7 @@ void	my_memcpy(void *dest, void *src, unsigned int size);
 int	my_getnbr(char *str);
 int	my_getnbr_base(char *str, char *base);
 
-void	my_puterr(char *str);
+void	my_puterr(const char *str);
 void	my_put_nbr(int n);
 int	my_putnbr_base(int nbr, char *base);
 void	my_putchar(char c);
