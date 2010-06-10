@@ -5,14 +5,15 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Mon Mar 22 10:40:50 2010 antoine luciani
-## Last update Tue Jun  8 10:09:15 2010 antoine luciani
+## Last update Thu Jun 10 17:27:47 2010 antoine luciani
 ##
 
-CC	=		gcc
+CC			=	gcc
 RM			=	rm -f
 AR			=	ar r
 RANLIB			=	ranlib
 MV			=	mv
+ECHO			=	echo
 
 SRC_DIR			=	src
 SOURCES			=	$(SRC_DIR)/my_find_prime_sup.c		\
@@ -89,4 +90,4 @@ re		: 	fclean all
 .SUFFIXES	:	.c .o
 
 .c.o		:
-			$(CC) -c $(INCLUDES) $(CFLAGS) $< -o $@
+			@$(CC) -c $(INCLUDES) $(CFLAGS) $< -o $@ && $(ECHO) "Generating $@..."
