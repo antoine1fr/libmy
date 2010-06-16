@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 12:40:06 2010 antoine luciani
-** Last update Fri Jun  4 15:44:46 2010 antoine luciani
+** Last update Wed Jun 16 15:08:53 2010 antoine luciani
 */
 
 #include "my.h"

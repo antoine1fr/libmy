@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Jun  4 15:05:17 2010 antoine luciani
-** Last update Fri Jun  4 15:58:30 2010 antoine luciani
+** Last update Wed Jun 16 15:52:21 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -18,7 +18,7 @@
 #define HOME_PATH_BEG "/home/"
 #define HOME_PATH_END "/cu"
 
-void		msh_cd_command(char **argv)
+t_error		msh_cd_command(char **argv)
 {
   int		size;
   const char	*home;
@@ -27,10 +27,7 @@ void		msh_cd_command(char **argv)
   if (size == 3)
     {
       if (chdir(argv[1]) == -1)
-	{
-	  my_puterr(argv[1]);
-	  my_puterr(": no such file or directory.\n");
-	}
+	return (ERROR_UNKNOWN_FILE);
     }
   else if (size == 2)
     {
@@ -39,5 +36,6 @@ void		msh_cd_command(char **argv)
 	chdir(home);
     }
   else
-    my_puterr("cd: Too many arguments.\n");
+    return (ERROR_BAD_PARAM);
+  return (ERROR_NONE);
 }

@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 17:38:33 2010 antoine luciani
-** Last update Wed Jun 16 14:53:36 2010 antoine luciani
+** Last update Wed Jun 16 15:38:09 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -16,7 +16,7 @@
 #include "my.h"
 #include "minishell1.h"
 
-static t_msh_bool	msh_exec(const char *executable, char **arg_arr,
+static t_error		msh_exec(const char *executable, char **arg_arr,
 				 char * const envp[])
 {
   pid_t			pid;
@@ -26,13 +26,13 @@ static t_msh_bool	msh_exec(const char *executable, char **arg_arr,
   if (!pid)
     {
       execve(executable, arg_arr, envp);
-      exit(EXIT_FAILURE);
+      exit(ERROR_COMMAND_NOT_FOUND);
     }
   wait(&status);
   if (WIFEXITED(status) &&
       (WEXITSTATUS(status) == EXIT_FAILURE))
-    return (MSH_FALSE);
-  return (MSH_TRUE);
+    return (ERROR_EXIT_FAILURE);
+  return (ERROR_NONE);
 }
 
 t_error		msh_launch_command(char **arg_array,

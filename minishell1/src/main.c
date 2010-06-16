@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 12:00:53 2010 antoine luciani
-** Last update Wed Jun 16 14:48:19 2010 antoine luciani
+** Last update Wed Jun 16 15:37:33 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -36,7 +36,7 @@ int		main(int UNUSED argc, char UNUSED **argv,
 	{
 	  wordtab = my_str_to_wordtab_delim(command, ' ');
 	  free(command);
-	  msh_print_error(wordtab[0], msh_launch_command(wordtab, env));
+	  msh_print_error(wordtab, msh_launch_command(wordtab, env));
 	  my_free_to_wordtab(wordtab);
 	}
       else

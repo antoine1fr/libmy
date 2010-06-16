@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 16:37:56 2010 antoine luciani
-** Last update Wed Jun  2 16:56:59 2010 antoine luciani
+** Last update Wed Jun 16 15:10:10 2010 antoine luciani
 */
 
 #include "my.h"
@@ -13,7 +13,7 @@
 #include "msh_environment.h"
 #include "my_printf.h"
 
-void		msh_testenv_getvarindex(char **argv)
+t_error		msh_testenv_getvarindex(char **argv)
 {
   t_msh_env	env;
   int		i;
@@ -40,4 +40,5 @@ void		msh_testenv_getvarindex(char **argv)
     }
   else
     my_puterr("[ERROR] : expected a variable name!\n");
+  return (ERROR_NONE);
 }

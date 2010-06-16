@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 16:55:55 2010 antoine luciani
-** Last update Wed Jun 16 14:42:23 2010 antoine luciani
+** Last update Wed Jun 16 15:38:40 2010 antoine luciani
 */
 
 #ifndef MINISHELL1_H_
@@ -18,7 +18,9 @@ typedef enum	e_error
     ERROR_NONE,
     ERROR_COMMAND_NOT_FOUND,
     ERROR_UNKNOWN_VAR,
-    ERROR_BAD_PARAM
+    ERROR_BAD_PARAM,
+    ERROR_UNKNOWN_FILE,
+    ERROR_EXIT_FAILURE
   }		t_error;
 
 /*
@@ -27,7 +29,7 @@ typedef enum	e_error
 typedef struct	s_builtin
 {
   char		*name;
-  void		(*exec) (char **argv);
+  t_error	(*exec) (char **argv);
 }		t_builtin;
 
 /*
@@ -74,36 +76,36 @@ t_msh_bool	msh_launch_builtin(char **arg_array);
 /*
 ** Exits the shell.
 */
-void		msh_exit_command(char **argv);
-
-/*
-** Tests the msh_env_get_var_index function.
-*/
-void		msh_testenv_getvarindex(char **argv);
+t_error		msh_exit_command(char **argv);
 
 /*
 ** Prints the environment.
 */
-void		msh_env_command(char **argv);
+t_error		msh_env_command(char **argv);
 
 /*
 ** Adds a variable into the environment.
 */
-void		msh_setenv_command(char **argv);
+t_error		msh_setenv_command(char **argv);
 
 /*
 ** Remove a variable from the environment.
 */
-void		msh_unsetenv_command(char **argv);
+t_error		msh_unsetenv_command(char **argv);
 
 /*
 ** Implementation of the 'cd' builtin.
 */
-void		msh_cd_command(char **argv);
+t_error		msh_cd_command(char **argv);
+
+/*
+** Tests the msh_env_get_var_index function.
+*/
+t_error		msh_testenv_getvarindex(char **argv);
 
 /*
 ** Prints human-readable errors.
 */
-void		msh_print_error(const char *command, t_error err_code);
+void		msh_print_error(char **argv, t_error err_code);
 
 #endif /* !MINISHELL1_H_ */

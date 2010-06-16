@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 18:13:01 2010 antoine luciani
-** Last update Wed Jun  2 18:20:45 2010 antoine luciani
+** Last update Wed Jun 16 15:07:56 2010 antoine luciani
 */
 
 #include "my_printf.h"
@@ -14,11 +14,12 @@
 
 extern t_msh_env	gl_env;
 
-void		msh_env_command(char UNUSED **argv)
+t_error		msh_env_command(char UNUSED **argv)
 {
   int		i;
 
   i = 0;
   while (i < gl_env.used)
     my_printf("%s\n", gl_env.array[i++]);
+  return (ERROR_NONE);
 }

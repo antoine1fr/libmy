@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 14:56:24 2010 antoine luciani
-** Last update Fri Jun  4 16:15:15 2010 antoine luciani
+** Last update Wed Jun 16 15:08:21 2010 antoine luciani
 */
 
 #include "my.h"
@@ -14,7 +14,7 @@
 
 extern t_msh_env	gl_env;
 
-void		msh_setenv_command(char **argv)
+t_error		msh_setenv_command(char **argv)
 {
   int		arg_count;
 
@@ -24,5 +24,6 @@ void		msh_setenv_command(char **argv)
   else if (arg_count == 2)
     msh_env_command(0);
   else
-    my_puterr("setenv: Too many arguments.\n");
+    return (ERROR_BAD_PARAM);
+  return (ERROR_NONE);
 }
