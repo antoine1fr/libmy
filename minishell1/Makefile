@@ -5,11 +5,12 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue Jun  1 02:19:17 2010 antoine luciani
-## Last update Fri Jun  4 15:38:34 2010 antoine luciani
+## Last update Wed Jun 16 14:25:35 2010 antoine luciani
 ##
 
 CC		=	gcc
 RM		=	rm -f
+ECHO		=	echo
 
 NAME		=	mysh
 SRC_DIR		=	src
@@ -35,7 +36,8 @@ SOURCES		=	$(SRC_DIR)/main.c			\
 			$(SRC_DIR)/msh_env_remove.c		\
 			$(SRC_DIR)/msh_unsetenv_command.c	\
 			$(SRC_DIR)/msh_env_get_value_from_key.c	\
-			$(SRC_DIR)/msh_cd_command.c
+			$(SRC_DIR)/msh_cd_command.c		\
+			$(SRC_DIR)/msh_print_error.c
 
 OBJECTS		=	$(SOURCES:.c=.o)
 
@@ -61,4 +63,4 @@ re		:	fclean all
 .SUFFIXES	:	.c .o
 
 .c.o		:	$(SOURCES)
-		$(CC) $(LDFLAGS) $(CFLAGS) -c $< -o $@
+		@$(CC) $(LDFLAGS) $(CFLAGS) -c $< -o $@ && $(ECHO) "Generating $<..."
