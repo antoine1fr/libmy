@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 17:38:33 2010 antoine luciani
-** Last update Thu Jun  3 10:35:21 2010 antoine luciani
+** Last update Wed Jun 16 14:53:36 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -35,28 +35,26 @@ static t_msh_bool	msh_exec(const char *executable, char **arg_arr,
   return (MSH_TRUE);
 }
 
-t_error		msh_launch_command(const char *command,
+t_error		msh_launch_command(char **arg_array,
 				   char * const envp[])
 {
-  char		**arg_array;
   char		*executable;
   const char	*path;
+  t_error	error;
 
-  arg_array = my_str_to_wordtab_delim(command, ' ');
+  if (!arg_array)
+    return (ERROR_BAD_PARAM);
+  error = ERROR_NONE;
   if (!msh_launch_builtin(arg_array))
     {
       if (msh_exec(arg_array[0], arg_array, envp) == MSH_TRUE)
 	return (ERROR_NONE);
       path = msh_get_command_path(arg_array[0], envp);
       if (!path)
-	{
-	  my_free_to_wordtab(arg_array);
 	  return (ERROR_COMMAND_NOT_FOUND);
-	}
       executable = msh_construct_full_path(arg_array[0], path);
-      msh_exec(executable, arg_array, envp);
+      error = msh_exec(executable, arg_array, envp);
       free(executable);
     }
-  my_free_to_wordtab(arg_array);
-  return (ERROR_NONE);
+  return (error);
 }

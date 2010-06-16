@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 12:00:53 2010 antoine luciani
-** Last update Wed Jun 16 14:11:05 2010 antoine luciani
+** Last update Wed Jun 16 14:48:19 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -23,6 +23,7 @@ int		main(int UNUSED argc, char UNUSED **argv,
 		     char **env)
 {
   char		*command;
+  char		**wordtab;
 
   gl_b_quit_app = MY_FALSE;
   msh_env_init(&gl_env, 0);
@@ -33,8 +34,10 @@ int		main(int UNUSED argc, char UNUSED **argv,
       command = get_next_line(0);
       if (command)
 	{
-	  msh_launch_command(command, env);
+	  wordtab = my_str_to_wordtab_delim(command, ' ');
 	  free(command);
+	  msh_print_error(wordtab[0], msh_launch_command(wordtab, env));
+	  my_free_to_wordtab(wordtab);
 	}
       else
 	my_puterr("[ERROR] : the command does not exist!\n");

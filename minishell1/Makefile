@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Tue Jun  1 02:19:17 2010 antoine luciani
-## Last update Wed Jun 16 14:25:35 2010 antoine luciani
+## Last update Wed Jun 16 14:36:56 2010 antoine luciani
 ##
 
 CC		=	gcc
@@ -43,7 +43,7 @@ OBJECTS		=	$(SOURCES:.c=.o)
 
 LDFLAGS		+=	-Iinclude -Ilibs/my/include -Ilibs/my_printf/include
 CFLAGS		+=	-W -Wall -Wextra -ansi -pedantic -g3
-THIRD		+=	-Llibs/my/lib -Llibs/my_printf/ -lmy_printf -lmy
+THIRD		+=	-Llibs/my -Llibs/my_printf/ -lmy_printf -lmy
 
 $(NAME)		:	$(OBJECTS)
 		$(CC) -o $(NAME) $(OBJECTS) $(THIRD)

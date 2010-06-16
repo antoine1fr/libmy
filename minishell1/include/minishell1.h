@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 16:55:55 2010 antoine luciani
-** Last update Wed Jun 16 14:23:17 2010 antoine luciani
+** Last update Wed Jun 16 14:42:23 2010 antoine luciani
 */
 
 #ifndef MINISHELL1_H_
@@ -63,7 +63,7 @@ char		*msh_get_command_path(const char *command, char * const env[]);
 /*
 ** Launches a command.
 */
-t_error		msh_launch_command(const char *command,
+t_error		msh_launch_command(char **arg_array,
 				   char * const envp[]);
 
 /*
