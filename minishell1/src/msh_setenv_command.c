@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 14:56:24 2010 antoine luciani
-** Last update Wed Jun 16 15:08:21 2010 antoine luciani
+** Last update Thu Jun 17 14:47:50 2010 antoine luciani
 */
 
 #include "my.h"
@@ -18,12 +18,18 @@ t_error		msh_setenv_command(char **argv)
 {
   int		arg_count;
 
-  arg_count = my_get_wordtab_size(argv);
-  if (arg_count == 4)
+  arg_count = my_get_wordtab_size(argv) - 1;
+  if (arg_count == 3)
     msh_env_append(argv[1], argv[2], &gl_env);
-  else if (arg_count == 2)
+  else if (arg_count == 1)
     msh_env_command(0);
+  else if (arg_count == 2)
+  {
+    if (msh_unsetenv_command(argv) == ERROR_UNKNOWN_VAR)
+      msh_env_append(argv[1], "", &gl_env);
+    return (ERROR_NONE);
+  }
   else
-    return (ERROR_BAD_PARAM);
+    return (ERROR_TOO_MANY_ARGS);
   return (ERROR_NONE);
 }

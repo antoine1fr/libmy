@@ -5,32 +5,35 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun 16 14:12:17 2010 antoine luciani
-** Last update Wed Jun 16 15:47:15 2010 antoine luciani
+** Last update Thu Jun 17 14:32:02 2010 antoine luciani
 */
 
 #include "my.h"
 #include "minishell1.h"
 
+#define MSH_PRINT_ERROR(x, y) my_puterr(x);	\
+ my_puterr(y)
+
 void		msh_print_error(char **argv, t_error err_code)
 {
   if (err_code == ERROR_COMMAND_NOT_FOUND)
   {
-    my_puterr(argv[0]);
-    my_puterr(" : Command not found.\n");
+    MSH_PRINT_ERROR(argv[0], " : Command not found.\n");
   }
   else if (err_code == ERROR_UNKNOWN_VAR)
   {
-    my_puterr(argv[1]);
-    my_puterr(" : Undefined variable.\n");
+    MSH_PRINT_ERROR(argv[1], " : Undefined variable.\n");
   }
-  else if (err_code == ERROR_BAD_PARAM)
+  else if (err_code == ERROR_TOO_FEW_ARGS)
   {
-    my_puterr(argv[1]);
-    my_puterr(" : Too few arguments.\n");
+    MSH_PRINT_ERROR(argv[0], " : Too few arguments.\n");
   }
   else if (err_code == ERROR_UNKNOWN_FILE)
   {
-    my_puterr(argv[1]);
-    my_puterr(" : No such file or directory.\n");
+    MSH_PRINT_ERROR(argv[1], " : No such file or directory.\n");
+  }
+  else if (err_code == ERROR_TOO_MANY_ARGS)
+  {
+    MSH_PRINT_ERROR(argv[0], " : Too many arguments.\n");
   }
 }
