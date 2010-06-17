@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Jun  2 12:40:06 2010 antoine luciani
-** Last update Wed Jun 16 15:08:53 2010 antoine luciani
+** Last update Wed Jun 16 16:15:33 2010 antoine luciani
 */
 
 #include "my.h"
@@ -21,9 +21,10 @@ t_builtin	g_builtin_arr[] = {
   {0, 0}
 };
 
-t_msh_bool	msh_launch_builtin(char **arg_array)
+t_error		msh_launch_builtin(char **arg_array)
 {
   int		i;
+  t_error	error;
 
   if (arg_array && arg_array[0])
     {
@@ -32,11 +33,11 @@ t_msh_bool	msh_launch_builtin(char **arg_array)
 	{
 	  if (my_strcmp(arg_array[0], g_builtin_arr[i].name) == 0)
 	    {
-	      g_builtin_arr[i].exec(arg_array);
-	      return (MSH_TRUE);
+	      error = g_builtin_arr[i].exec(arg_array);
+	      return (error);
 	    }
 	  i += 1;
 	}
     }
-  return (MSH_FALSE);
+  return (ERROR_NOT_A_BUILTIN);
 }

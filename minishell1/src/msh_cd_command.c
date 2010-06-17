@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Jun  4 15:05:17 2010 antoine luciani
-** Last update Wed Jun 16 15:52:21 2010 antoine luciani
+** Last update Thu Jun 17 14:17:45 2010 antoine luciani
 */
 
 #include <stdlib.h>
@@ -36,6 +36,6 @@ t_error		msh_cd_command(char **argv)
 	chdir(home);
     }
   else
-    return (ERROR_BAD_PARAM);
+    return (ERROR_TOO_MANY_ARGS);
   return (ERROR_NONE);
 }

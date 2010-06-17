@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 16:55:55 2010 antoine luciani
-** Last update Wed Jun 16 15:38:40 2010 antoine luciani
+** Last update Thu Jun 17 14:17:09 2010 antoine luciani
 */
 
 #ifndef MINISHELL1_H_
@@ -20,7 +20,10 @@ typedef enum	e_error
     ERROR_UNKNOWN_VAR,
     ERROR_BAD_PARAM,
     ERROR_UNKNOWN_FILE,
-    ERROR_EXIT_FAILURE
+    ERROR_NOT_A_BUILTIN,
+    ERROR_EXIT_FAILURE,
+    ERROR_TOO_FEW_ARGS,
+    ERROR_TOO_MANY_ARGS
   }		t_error;
 
 /*
@@ -71,7 +74,7 @@ t_error		msh_launch_command(char **arg_array,
 /*
 ** Launches a builtin command, if it exists.
 */
-t_msh_bool	msh_launch_builtin(char **arg_array);
+t_error		msh_launch_builtin(char **arg_array);
 
 /*
 ** Exits the shell.

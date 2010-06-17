@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Tue Jun  1 17:38:33 2010 antoine luciani
-** Last update Wed Jun 16 15:38:09 2010 antoine luciani
+** Last update Thu Jun 17 14:16:00 2010 antoine luciani
 */
 
 #include <sys/types.h>
@@ -26,12 +26,12 @@ static t_error		msh_exec(const char *executable, char **arg_arr,
   if (!pid)
     {
       execve(executable, arg_arr, envp);
-      exit(ERROR_COMMAND_NOT_FOUND);
+      exit(EXIT_FAILURE);
     }
   wait(&status);
   if (WIFEXITED(status) &&
       (WEXITSTATUS(status) == EXIT_FAILURE))
-    return (ERROR_EXIT_FAILURE);
+    return (ERROR_COMMAND_NOT_FOUND);
   return (ERROR_NONE);
 }
 
@@ -44,11 +44,12 @@ t_error		msh_launch_command(char **arg_array,
 
   if (!arg_array)
     return (ERROR_BAD_PARAM);
-  error = ERROR_NONE;
-  if (!msh_launch_builtin(arg_array))
+  error = msh_launch_builtin(arg_array);
+  if (error == ERROR_NOT_A_BUILTIN)
     {
-      if (msh_exec(arg_array[0], arg_array, envp) == MSH_TRUE)
-	return (ERROR_NONE);
+      error = msh_exec(arg_array[0], arg_array, envp);
+      if (error != ERROR_COMMAND_NOT_FOUND)
+	return (error);
       path = msh_get_command_path(arg_array[0], envp);
       if (!path)
 	  return (ERROR_COMMAND_NOT_FOUND);
