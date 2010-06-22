@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Mon Mar 22 10:40:50 2010 antoine luciani
-## Last update Thu Jun 10 17:27:47 2010 antoine luciani
+## Last update Tue Jun 22 12:47:33 2010 antoine luciani
 ##
 
 CC			=	gcc
@@ -68,6 +68,7 @@ SOURCES			=	$(SRC_DIR)/my_find_prime_sup.c		\
 INCLUDES		=	-Iinclude
 CFLAGS			+=	-W -Wall -Wextra -ansi -pedantic
 OBJ			=	$(SOURCES:.c=.o)
+
 NAME			=	libmy.a
 
 $(NAME)		: 	$(OBJ)
