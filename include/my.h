@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Thu Jun 10 17:50:54 2010 antoine luciani
+** Last update Tue Jun 29 18:48:02 2010 antoine luciani
 */
 
 #ifndef MY_H
@@ -16,6 +16,8 @@ typedef enum	e_my_bool
     MY_FALSE,
     MY_TRUE
   }		t_my_bool;
+
+# define MY_UNUSED __attribute__((unused))
 
 int	my_find_prime_sup(int nb);
 int	my_is_prime(int nbr);

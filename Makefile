@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Mon Mar 22 10:40:50 2010 antoine luciani
-## Last update Tue Jun 22 12:47:33 2010 antoine luciani
+## Last update Tue Jun 29 18:45:37 2010 antoine luciani
 ##
 
 CC			=	gcc
@@ -63,7 +63,20 @@ SOURCES			=	$(SRC_DIR)/my_find_prime_sup.c		\
 				$(SRC_DIR)/count_nbr_digits.c		\
 				$(SRC_DIR)/count_unbr_digits.c		\
 				$(SRC_DIR)/my_memcpy.c			\
-				$(SRC_DIR)/my_get_wordtab_size.c
+				$(SRC_DIR)/my_get_wordtab_size.c	\
+				$(SRC_DIR)/free_str_tab.c		\
+				$(SRC_DIR)/my_printf.c			\
+				$(SRC_DIR)/request.c			\
+				$(SRC_DIR)/transform_S.c		\
+				$(SRC_DIR)/transform_X.c		\
+				$(SRC_DIR)/transform_b.c		\
+				$(SRC_DIR)/transform_c.c		\
+				$(SRC_DIR)/transform_d.c		\
+				$(SRC_DIR)/transform_o.c		\
+				$(SRC_DIR)/transform_p.c		\
+				$(SRC_DIR)/transform_s.c		\
+				$(SRC_DIR)/transform_u.c		\
+				$(SRC_DIR)/transform_x.c		\
 
 INCLUDES		=	-Iinclude
 CFLAGS			+=	-W -Wall -Wextra -ansi -pedantic
