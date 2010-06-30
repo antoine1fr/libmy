@@ -5,7 +5,7 @@
 ## Login   <lucian_b@epitech.net>
 ## 
 ## Started on  Mon Mar 22 10:40:50 2010 antoine luciani
-## Last update Tue Jun 29 18:45:37 2010 antoine luciani
+## Last update Wed Jun 30 10:01:14 2010 antoine luciani
 ##
 
 CC			=	gcc
@@ -77,6 +77,7 @@ SOURCES			=	$(SRC_DIR)/my_find_prime_sup.c		\
 				$(SRC_DIR)/transform_s.c		\
 				$(SRC_DIR)/transform_u.c		\
 				$(SRC_DIR)/transform_x.c		\
+				$(SRC_DIR)/print_request.c		\
 
 INCLUDES		=	-Iinclude
 CFLAGS			+=	-W -Wall -Wextra -ansi -pedantic
