@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Fri Mar 19 10:47:57 2010 antoine luciani
-** Last update Tue Jun 29 18:48:02 2010 antoine luciani
+** Last update Fri Jul  2 14:45:04 2010 antoine luciani
 */
 
 #ifndef MY_H
@@ -78,6 +78,7 @@ void	my_put_nbr(int n);
 int	my_putnbr_base(int nbr, char *base);
 void	my_putchar(char c);
 void	my_putstr(const char *str);
+void	my_printf(char *fmt, ...);
 
 char	*my_strtok(const char *str, char delim);
 char	*my_strcapitalize(char *str);
