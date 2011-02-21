@@ -5,88 +5,64 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Mar 21 17:01:22 2010 antoine luciani
-** Last update Tue Jun  1 15:47:29 2010 antoine luciani
+** Last update Mon Feb 21 13:22:03 2011 antoine luciani
 */
 
 #include <stdlib.h>
+#include <stdbool.h>
+
 #include "my.h"
 
-static int	is_alphanum(char c)
-{
-  if ((c >= 'A' && c <= 'Z') ||
-      (c >= 'a' && c <= 'z') ||
-      (c >= '0' && c <= '9'))
-    return (1);
-  return (0);
-}
+#define IS_SPACE_CHAR(x) (((x) == ' ') || ((x) == '\t')	\
+			  || ((x) == '\n'))
 
-static int	substring_length(const char *str)
+static unsigned int	count_words(const char *str)
 {
-  int		len;
+  bool			in_word;
+  unsigned int		count;
 
-  len = 0;
-  while (*str != 0 && is_alphanum(*str))
+  in_word = false;
+  count = 0;
+  while (*str)
+  {
+    if (!in_word && !IS_SPACE_CHAR(*str))
     {
-      len += 1;
-      str += 1;
+      in_word = true;
+      count += 1;
     }
-  return (len);
+    else if (in_word && IS_SPACE_CHAR(*str))
+      in_word = false;
+    str += 1;
+  }
+  return (count);
 }
 
-static int	count_substrings(const char *str)
+static const char	*find_word_pos(const char *str, bool begin)
 {
-  int		i;
-
-  i = 1;
-  while (*str != 0)
-    {
-      if (is_alphanum(*str))
-	i += 1;
-      str += 1;
-    }
-  return (i);
-}
-
-static char	*my_strtok_to_wordtab(const char *str)
-{
-  int		word_len;
-  char		*token;
-
-  word_len = substring_length(str);
-  if (word_len <= 0)
-    return (0);
-  token = malloc(word_len + 1);
-  if (!token)
-    return (0);
-  my_strncpy(token, str, word_len);
-  return (token);
+  while (begin && IS_SPACE_CHAR(*str))
+    str += 1;
+  while (!begin && !IS_SPACE_CHAR(*str))
+    str += 1;
+  return (str);
 }
 
 char		**my_str_to_wordtab(const char *str)
 {
   char		**word_tab;
+  const char	*word_end;
   int		tab_index;
-  int		word_len;
   int		word_count;
 
-  word_count = count_substrings(str);
-  if (word_count < 1)
-    return (0);
-  word_tab = malloc((word_count + 1) * sizeof(str));
-  if (!word_tab)
-    return (0);
+  word_count = count_words(str);
+  word_tab = xmalloc(word_count);
   tab_index = 0;
-  while (*str != 0)
-    {
-      if (is_alphanum(*str))
-	{
-	  word_len = substring_length(str);
-	  word_tab[tab_index++] = my_strtok_to_wordtab(str);
-	  str += word_len;
-	}
-      else
-	str += 1;
-    }
+  while (tab_index < word_count)
+  {
+    str = find_word_pos(str, true);
+    word_end = find_word_pos(str, false);
+    word_tab[tab_index++] = my_strndup(str, word_end - str);
+    str = word_end;
+  }
   word_tab[tab_index] = 0;
   return (word_tab);
 }
