@@ -5,14 +5,14 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Apr 21 10:12:31 2010 antoine luciani
-** Last update Thu Apr 29 23:06:39 2010 antoine luciani
+** Last update Mon Feb 21 12:53:13 2011 antoine luciani
 */
-
-#include "my_printf.h"
-#include "my.h"
 
 #include <stdlib.h>
 #include <stdarg.h>
+
+#include "my_printf.h"
+#include "my.h"
 
 char	*transform_c(t_request *request, va_list *ap);
 char	*transform_b(t_request *request, va_list *ap);

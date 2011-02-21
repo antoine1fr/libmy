@@ -5,13 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Apr 29 22:40:58 2010 antoine luciani
-** Last update Tue Jun 29 18:48:46 2010 antoine luciani
+** Last update Mon Feb 21 12:52:42 2011 antoine luciani
 */
+
+#include <stdarg.h>
 
 #include "my.h"
 #include "request.h"
-
-#include <stdarg.h>
 
 #define HEX_BASE "0123456789ABCDEF"
 

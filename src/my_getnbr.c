@@ -5,14 +5,14 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Mar 11 11:51:55 2010 antoine luciani
-** Last update Thu Mar 11 17:23:47 2010 antoine luciani
+** Last update Mon Feb 21 12:52:16 2011 antoine luciani
 */
 
 char		my_get_sign(char *str)
 {
   int		i;
   int		minus_count;
-  
+
   i = 0;
   minus_count = 0;
   while (str[i] == '-' || str[i] == '+')
@@ -31,7 +31,7 @@ int		my_comp_end_off(char *str)
 {
   int		i;
   int		offset;
-  
+
   i = 0;
   offset = 0;
   while (str[i] >= '0' && str[i] <= '9')

@@ -5,14 +5,14 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Wed Apr 21 10:03:01 2010 antoine luciani
-** Last update Wed Apr 21 15:04:09 2010 antoine luciani
+** Last update Mon Feb 21 12:56:04 2011 antoine luciani
 */
 
 #ifndef _MY_PRINTF_H_
 # define _MY_PRINTF_H_
 
-#include "request.h"
 #include <stdarg.h>
+#include "request.h"
 
 void	my_printf(char *fmt, ...);
 

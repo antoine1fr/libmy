@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Apr 26 12:18:22 2010 antoine luciani
-** Last update Thu Apr 29 19:34:48 2010 antoine luciani
+** Last update Mon Feb 21 12:54:10 2011 antoine luciani
 */
 
 #include "my.h"
@@ -13,7 +13,8 @@
 int	count_nbr_digits(int n, int base);
 int	count_unbr_digits(unsigned int n, int base);
 
-static char	*my_untostr_sub(char *str, int index, unsigned int n, char *base)
+static char	*my_untostr_sub(char *str, int index, unsigned int n,
+				char *base)
 {
   int		base_len;
 

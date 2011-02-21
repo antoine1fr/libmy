@@ -5,13 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Mon Apr 26 11:39:44 2010 antoine luciani
-** Last update Mon Apr 26 11:58:18 2010 antoine luciani
+** Last update Mon Feb 21 12:52:54 2011 antoine luciani
 */
+
+#include <stdarg.h>
 
 #include "request.h"
 #include "my.h"
-
-#include <stdarg.h>
 
 #define BINARY_BASE "01"
 

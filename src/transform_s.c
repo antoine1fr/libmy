@@ -5,12 +5,13 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Thu Apr 29 22:39:56 2010 antoine luciani
-** Last update Tue Jun 29 18:49:31 2010 antoine luciani
+** Last update Mon Feb 21 12:54:28 2011 antoine luciani
 */
+
+#include <stdarg.h>
 
 #include "my.h"
 #include "request.h"
-#include <stdarg.h>
 
 char		*transform_s(t_request MY_UNUSED *request, va_list *ap)
 {

@@ -5,7 +5,7 @@
 ** Login   <lucian_b@epitech.net>
 ** 
 ** Started on  Sun Mar 21 15:39:19 2010 antoine luciani
-** Last update Tue Jun  1 15:43:50 2010 antoine luciani
+** Last update Mon Feb 21 12:54:54 2011 antoine luciani
 */
 
 #include <stdlib.h>
@@ -32,7 +32,7 @@ char		*my_strtok(const char *str, char delim)
   word_len = substring_length(str, delim);
   if (word_len <= 0)
     return (0);
-  token = malloc(word_len + 1);
+  token = xmalloc(word_len + 1);
   if (!token)
     return (0);
   my_strncpy(token, str, word_len);
